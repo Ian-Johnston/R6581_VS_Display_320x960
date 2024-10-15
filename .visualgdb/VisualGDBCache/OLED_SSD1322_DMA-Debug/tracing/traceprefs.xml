@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<TracingPreferences xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <FavoriteDataItems />
+  <ViewerNodes />
+  <ViewerTypes />
+  <VirtualFolders />
+  <Tracepoints />
+  <StickyItems />
+  <StickyGroups />
+  <StickyViews />
+  <FavoriteTracepoints />
+</TracingPreferences>
