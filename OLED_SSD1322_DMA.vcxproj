@@ -43,7 +43,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
     <ClCompile>
-      <AdditionalIncludeDirectories>\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Core\Inc;\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc;\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy;\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\CMSIS\Device\ST\STM32F1xx\Include;\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\CMSIS\Include;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Code_STM32\OLED_SSD1322_DMA\Original code - FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Core\Inc;D:\Code_STM32\OLED_SSD1322_DMA\Original code - FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc;D:\Code_STM32\OLED_SSD1322_DMA\Original code - FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy;D:\Code_STM32\OLED_SSD1322_DMA\Original code - FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\CMSIS\Device\ST\STM32F1xx\Include;D:\Code_STM32\OLED_SSD1322_DMA\Original code - FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\CMSIS\Include;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>USE_HAL_DRIVER;STM32F103xB;%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalOptions />
       <CLanguageStandard />
@@ -53,7 +53,7 @@
       <LibrarySearchDirectories>%(Link.LibrarySearchDirectories)</LibrarySearchDirectories>
       <AdditionalLibraryNames>%(Link.AdditionalLibraryNames)</AdditionalLibraryNames>
       <AdditionalLinkerInputs>%(Link.AdditionalLinkerInputs)</AdditionalLinkerInputs>
-      <LinkerScript>\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\STM32F103C8TX_FLASH.ld</LinkerScript>
+      <LinkerScript>D:\Code_STM32\OLED_SSD1322_DMA\Original code - FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\STM32F103C8TX_FLASH.ld</LinkerScript>
       <AdditionalOptions />
     </Link>
   </ItemDefinitionGroup>
