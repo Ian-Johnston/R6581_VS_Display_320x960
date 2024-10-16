@@ -55,11 +55,12 @@
       <AdditionalLinkerInputs>%(Link.AdditionalLinkerInputs)</AdditionalLinkerInputs>
       <LinkerScript>Files\STM32F103C8TX_FLASH.ld</LinkerScript>
       <AdditionalOptions />
+      <ProduceRelocationRecords>true</ProduceRelocationRecords>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
     <ClCompile>
-      <AdditionalIncludeDirectories>\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Core\Inc;\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc;\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy;\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\CMSIS\Device\ST\STM32F1xx\Include;\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\CMSIS\Include;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>\Core\Inc;\Drivers\STM32F1xx_HAL_Driver\Inc;\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy;\Drivers\CMSIS\Device\ST\STM32F1xx\Include;\Drivers\CMSIS\Include;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>USE_HAL_DRIVER;STM32F103xB;%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalOptions />
       <CLanguageStandard />
@@ -69,7 +70,7 @@
       <LibrarySearchDirectories>%(Link.LibrarySearchDirectories)</LibrarySearchDirectories>
       <AdditionalLibraryNames>%(Link.AdditionalLibraryNames)</AdditionalLibraryNames>
       <AdditionalLinkerInputs>%(Link.AdditionalLinkerInputs)</AdditionalLinkerInputs>
-      <LinkerScript>\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\STM32F103C8TX_FLASH.ld</LinkerScript>
+      <LinkerScript>\STM32F103C8TX_FLASH.ld</LinkerScript>
       <AdditionalOptions />
     </Link>
   </ItemDefinitionGroup>
@@ -79,94 +80,94 @@
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
   <ItemGroup>
-    <ClCompile Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Core\Src\dma.c" />
-    <ClCompile Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Core\Src\gpio.c" />
-    <ClCompile Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Core\Src\main.c" />
-    <ClCompile Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Core\Src\spi.c" />
-    <ClCompile Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Core\Src\stm32f1xx_hal_msp.c" />
-    <ClCompile Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Core\Src\stm32f1xx_it.c" />
-    <ClCompile Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Core\Src\syscalls.c" />
-    <ClCompile Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Core\Src\sysmem.c" />
-    <ClCompile Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Core\Src\system_stm32f1xx.c" />
-    <ClCompile Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Core\Src\SSD1322_OLED_lib\SSD1322_API.c" />
-    <ClCompile Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Core\Src\SSD1322_OLED_lib\SSD1322_GFX.c" />
-    <ClCompile Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Core\Src\SSD1322_OLED_lib\SSD1322_HW_Driver.c" />
-    <ClCompile Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Core\Startup\startup_stm32f103c8tx.S" />
-    <ClCompile Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal.c" />
-    <ClCompile Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_cortex.c" />
-    <ClCompile Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_dma.c" />
-    <ClCompile Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_exti.c" />
-    <ClCompile Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_flash.c" />
-    <ClCompile Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_flash_ex.c" />
-    <ClCompile Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_gpio.c" />
-    <ClCompile Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_gpio_ex.c" />
-    <ClCompile Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_pwr.c" />
-    <ClCompile Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_rcc.c" />
-    <ClCompile Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_rcc_ex.c" />
-    <ClCompile Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_spi.c" />
-    <ClCompile Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_tim.c" />
-    <ClCompile Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_tim_ex.c" />
+    <ClCompile Include="D:\Code_STM32\OLED_SSD1322_DMA\Core\Src\dma.c" />
+    <ClCompile Include="D:\Code_STM32\OLED_SSD1322_DMA\Core\Src\gpio.c" />
+    <ClCompile Include="D:\Code_STM32\OLED_SSD1322_DMA\Core\Src\main.c" />
+    <ClCompile Include="D:\Code_STM32\OLED_SSD1322_DMA\Core\Src\spi.c" />
+    <ClCompile Include="D:\Code_STM32\OLED_SSD1322_DMA\Core\Src\stm32f1xx_hal_msp.c" />
+    <ClCompile Include="D:\Code_STM32\OLED_SSD1322_DMA\Core\Src\stm32f1xx_it.c" />
+    <ClCompile Include="D:\Code_STM32\OLED_SSD1322_DMA\Core\Src\syscalls.c" />
+    <ClCompile Include="D:\Code_STM32\OLED_SSD1322_DMA\Core\Src\sysmem.c" />
+    <ClCompile Include="D:\Code_STM32\OLED_SSD1322_DMA\Core\Src\system_stm32f1xx.c" />
+    <ClCompile Include="D:\Code_STM32\OLED_SSD1322_DMA\Core\Src\SSD1322_OLED_lib\SSD1322_API.c" />
+    <ClCompile Include="D:\Code_STM32\OLED_SSD1322_DMA\Core\Src\SSD1322_OLED_lib\SSD1322_GFX.c" />
+    <ClCompile Include="D:\Code_STM32\OLED_SSD1322_DMA\Core\Src\SSD1322_OLED_lib\SSD1322_HW_Driver.c" />
+    <ClCompile Include="D:\Code_STM32\OLED_SSD1322_DMA\Core\Startup\startup_stm32f103c8tx.S" />
+    <ClCompile Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal.c" />
+    <ClCompile Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_cortex.c" />
+    <ClCompile Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_dma.c" />
+    <ClCompile Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_exti.c" />
+    <ClCompile Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_flash.c" />
+    <ClCompile Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_flash_ex.c" />
+    <ClCompile Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_gpio.c" />
+    <ClCompile Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_gpio_ex.c" />
+    <ClCompile Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_pwr.c" />
+    <ClCompile Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_rcc.c" />
+    <ClCompile Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_rcc_ex.c" />
+    <ClCompile Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_spi.c" />
+    <ClCompile Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_tim.c" />
+    <ClCompile Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_tim_ex.c" />
     <None Include="stm32.props" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Core\Inc\dma.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Core\Inc\gpio.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Core\Inc\main.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Core\Inc\spi.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Core\Inc\stm32f1xx_hal_conf.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Core\Inc\stm32f1xx_it.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Core\Src\SSD1322_OLED_lib\SSD1322_API.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Core\Src\SSD1322_OLED_lib\SSD1322_GFX.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Core\Src\SSD1322_OLED_lib\SSD1322_HW_Driver.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xb.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\CMSIS\Include\cmsis_armcc.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\CMSIS\Include\cmsis_armclang.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\CMSIS\Include\cmsis_compiler.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\CMSIS\Include\cmsis_gcc.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\CMSIS\Include\cmsis_iccarm.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\CMSIS\Include\cmsis_version.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\CMSIS\Include\core_armv8mbl.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\CMSIS\Include\core_armv8mml.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\CMSIS\Include\core_cm0.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\CMSIS\Include\core_cm0plus.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\CMSIS\Include\core_cm1.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\CMSIS\Include\core_cm23.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\CMSIS\Include\core_cm3.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\CMSIS\Include\core_cm33.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\CMSIS\Include\core_cm4.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\CMSIS\Include\core_cm7.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\CMSIS\Include\core_sc000.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\CMSIS\Include\core_sc300.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\CMSIS\Include\mpu_armv7.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\CMSIS\Include\mpu_armv8.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\CMSIS\Include\tz_context.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_cortex.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_def.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma_ex.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_exti.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash_ex.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio_ex.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc_ex.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_spi.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_ll_bus.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_ll_cortex.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_ll_dma.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_ll_exti.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_ll_gpio.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_ll_pwr.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_ll_rcc.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_ll_spi.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_ll_system.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_ll_utils.h" />
-    <ClInclude Include="\\192.168.1.73\SafeArea\Electronics\Test Equip - Advantest R6581T\VFD to OLED LCD conversion\FW_STM32F103_OLED_SSD1322_DMA\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Core\Inc\dma.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Core\Inc\gpio.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Core\Inc\main.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Core\Inc\spi.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Core\Inc\stm32f1xx_hal_conf.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Core\Inc\stm32f1xx_it.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Core\Src\SSD1322_OLED_lib\SSD1322_API.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Core\Src\SSD1322_OLED_lib\SSD1322_GFX.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Core\Src\SSD1322_OLED_lib\SSD1322_HW_Driver.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xb.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\CMSIS\Include\cmsis_armcc.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\CMSIS\Include\cmsis_armclang.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\CMSIS\Include\cmsis_compiler.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\CMSIS\Include\cmsis_gcc.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\CMSIS\Include\cmsis_iccarm.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\CMSIS\Include\cmsis_version.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\CMSIS\Include\core_armv8mbl.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\CMSIS\Include\core_armv8mml.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\CMSIS\Include\core_cm0.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\CMSIS\Include\core_cm0plus.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\CMSIS\Include\core_cm1.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\CMSIS\Include\core_cm23.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\CMSIS\Include\core_cm3.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\CMSIS\Include\core_cm33.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\CMSIS\Include\core_cm4.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\CMSIS\Include\core_cm7.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\CMSIS\Include\core_sc000.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\CMSIS\Include\core_sc300.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\CMSIS\Include\mpu_armv7.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\CMSIS\Include\mpu_armv8.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\CMSIS\Include\tz_context.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_cortex.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_def.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma_ex.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_exti.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash_ex.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio_ex.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc_ex.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_spi.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_ll_bus.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_ll_cortex.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_ll_dma.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_ll_exti.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_ll_gpio.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_ll_pwr.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_ll_rcc.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_ll_spi.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_ll_system.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_ll_utils.h" />
+    <ClInclude Include="D:\Code_STM32\OLED_SSD1322_DMA\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h" />
     <None Include="OLED_SSD1322_DMA-Debug.vgdbsettings" />
     <None Include="OLED_SSD1322_DMA-Release.vgdbsettings" />
     <None Include="stm32.xml" />

@@ -45,6 +45,7 @@
     <ShowMessageAfterExecuting>true</ShowMessageAfterExecuting>
   </CustomShortcuts>
   <UserDefinedVariables />
+  <ImportedPropertySheets />
   <CodeSense>
     <Enabled>Unknown</Enabled>
     <ExtraSettings>
@@ -57,6 +58,8 @@
       <Enabled>false</Enabled>
     </CodeAnalyzerSettings>
   </CodeSense>
+  <Configurations />
+  <ProgramArgumentsSuggestions />
   <Debug xsi:type="com.visualgdb.debug.embedded">
     <AdditionalStartupCommands />
     <AdditionalGDBSettings>
@@ -130,16 +133,60 @@
     <ValidateEndOfStackAddress>true</ValidateEndOfStackAddress>
     <StopAtEntryPoint>false</StopAtEntryPoint>
     <EnableVirtualHalts>false</EnableVirtualHalts>
-    <DynamicAnalysisSettings />
+    <DynamicAnalysisSettings>
+      <StackVerifier>
+        <VerifyStackBounds>false</VerifyStackBounds>
+        <AutoStepOutOfHook>true</AutoStepOutOfHook>
+        <StackLimitControlledByUser>false</StackLimitControlledByUser>
+        <ExplicitSizeLimit>0</ExplicitSizeLimit>
+        <ExplicitStackBase>0</ExplicitStackBase>
+        <Mode>Auto</Mode>
+      </StackVerifier>
+      <RealTimeWatch>
+        <SupportRTOSAnalysis>false</SupportRTOSAnalysis>
+        <SupportFunctionInstrumentation>false</SupportFunctionInstrumentation>
+        <MeasureOverhead>true</MeasureOverhead>
+      </RealTimeWatch>
+      <InstrumentedFunctions>
+        <InstrumentNewFunctions>true</InstrumentNewFunctions>
+        <ExplicitEndOfFLASH>0</ExplicitEndOfFLASH>
+        <ExplicitEndOfRAM>0</ExplicitEndOfRAM>
+      </InstrumentedFunctions>
+    </DynamicAnalysisSettings>
     <EndOfStackSymbol>_estack</EndOfStackSymbol>
     <TimestampProviderTicksPerSecond>0</TimestampProviderTicksPerSecond>
     <KeepConsoleAfterExit>false</KeepConsoleAfterExit>
+    <CodeCoverage>
+      <EnableLiveCoverage>false</EnableLiveCoverage>
+      <CreateCoverageReports>false</CreateCoverageReports>
+      <UpdateInterval>500</UpdateInterval>
+      <CoverageReportDirectory>$(ProjectDir)\CoverageReports</CoverageReportDirectory>
+    </CodeCoverage>
     <UnusedStackFillPattern xsi:nil="true" />
     <SoftwareTracingSettings>
       <TraceWhileDebugging>true</TraceWhileDebugging>
       <AutoStart>false</AutoStart>
+      <TracingDriverID>com.sysprogs.tracing.driver.arm_cortex</TracingDriverID>
+      <TracingDriverConfiguration>
+        <InstructionSet>THUMB2</InstructionSet>
+      </TracingDriverConfiguration>
+      <WorkArea xsi:type="AtEndOfRAM">
+        <EndOfStackSymbol>_estack</EndOfStackSymbol>
+      </WorkArea>
+      <StaticTracePrograms xsi:type="AfterSection">
+        <SectionName>.text</SectionName>
+        <AddressLimit>18446744073709551615</AddressLimit>
+        <SectionGap>1048576</SectionGap>
+        <MaxSize>1048576</MaxSize>
+        <Alignment>64</Alignment>
+      </StaticTracePrograms>
       <DynamicProgramAreaSize>0</DynamicProgramAreaSize>
       <SkipInitiallyDisabledTracepoints>false</SkipInitiallyDisabledTracepoints>
+      <TracepointMechanism xsi:type="SystemCalls">
+        <FirstSyscall>128</FirstSyscall>
+        <LastSyscall>192</LastSyscall>
+        <InterruptVectorTableSymbol>g_pfnVectors</InterruptVectorTableSymbol>
+      </TracepointMechanism>
       <TraceProgramOptimization>Size</TraceProgramOptimization>
       <OutputMode>NonBlocking</OutputMode>
       <AssumeFramePointerIsValid>true</AssumeFramePointerIsValid>
