@@ -1,0 +1,47 @@
+Compile with VS2022 (w/VisualGDB plugin).
+
+STM32 BluePill, both jumpers BOOT0 & BOOT1 set to 0 (zero).
+
+Plug in 4-way SWD header to ST-LINK V2 programmer and open ST-LINK Utility software
+OPEN,
+D:\Code_STM32\OLED_SSD1322_DMA\VisualGDB\Debug\OLED_SSD1322_DMA.hex
+
+CONNECT then PROGRAM WITH VERIFY.
+
+Example Result:
+14:16:47 : [OLED_SSD1322_DMA.hex] opened successfully.
+14:16:47 : [OLED_SSD1322_DMA.hex] checksum : 0x0015CF5F 
+14:16:50 : ST-LINK SN : 30FF6C064E58373547450643
+14:16:50 : V2J29S7
+14:16:50 : Connected via SWD.
+14:16:50 : SWD Frequency = 4,0 MHz.
+14:16:50 : Connection mode : Normal.
+14:16:50 : Debug in Low Power mode enabled.
+14:16:50 : Device ID:0x410 
+14:16:50 : Device flash Size : 64KBytes
+14:16:50 : Device family :STM32F10xx Medium-density
+14:16:57 : Memory programmed in 1s and 141ms.
+14:16:57 : Verification...OK
+14:16:57 : Programmed memory Checksum: 0x0015CF5F
+
+NOTES:
+ST-LINK V3 hardware can be used but needs 3.3V supply to the BluPill board.
+Use the home made adaptor that gives 3.3V out to the BluePill then follow the procedure above.
+Example Result:
+14:55:10 : [OLED_SSD1322_DMA.hex] opened successfully.
+14:55:10 : [OLED_SSD1322_DMA.hex] checksum : 0x0015CF5F 
+14:55:13 : ST-LINK SN : 001C00283137510B39383538
+14:55:13 : V3J4M2B3S1
+14:55:13 : Connected via SWD.
+14:55:13 : Connection mode : Normal.
+14:55:13 : Debug in Low Power mode enabled.
+14:55:13 : Device ID:0x410 
+14:55:13 : Device flash Size : 64KBytes
+14:55:13 : Device family :STM32F10xx Medium-density
+14:55:21 : Memory programmed in 1s and 46ms.
+14:55:21 : Verification...OK
+14:55:21 : Programmed memory Checksum: 0x0015CF5F
+
+
+IanJ
+16/10/24
