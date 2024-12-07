@@ -12,10 +12,14 @@
 
 #include <stdint.h>
 #include <stddef.h>
+#include "main.h"
 
 // External global variable
 extern char G[48];
 extern _Bool Annunc[19];
+extern uint32_t MainColourFore;
+extern uint32_t AuxColourFore;
+extern uint32_t AnnunColourFore;
 
 // Function prototypes
 void DisplayMain(void);

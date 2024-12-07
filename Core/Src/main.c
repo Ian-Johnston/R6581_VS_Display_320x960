@@ -29,6 +29,7 @@
 #include <stdbool.h>    // bool support, otherwise use _Bool
 //#include <stdlib.h> // For rand()
 #include "display.h"
+#include "stm32f1xx_hal.h"
 
 // Test only
 //volatile int myVariable1 = 0; // Prevent optimization
@@ -449,6 +450,20 @@ int main(void) {
 	MX_SPI2_Init();
 
 	TIM2_Init();					// Initialize the timer
+
+	// Set colours for MAIN & AUX dependent on pin B9
+	if (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_9) == GPIO_PIN_SET) {
+		// B9 high
+		MainColourFore = 0xFFFFFF;
+		AuxColourFore = 0xFFFF00;
+		AnnunColourFore = 0x00FF00;
+	}
+	else {
+		// B9 low
+		MainColourFore = 0xFFFF00;
+		AuxColourFore = 0xFFFFFF;
+		AnnunColourFore = 0x00FF00;
+	}
 		
 	HardwareReset();				// Reset LT7680 - Pull LCM_RESET low for 100ms and wait
 

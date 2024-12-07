@@ -78,6 +78,15 @@ void MX_GPIO_Init(void) {
 	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
 	HAL_GPIO_Init(LCD_SDI_Port, &GPIO_InitStruct);
 
+
+
+    // Configure GPIO pin B9
+    GPIO_InitStruct.Pin = GPIO_PIN_9;       // Select pin B9
+    GPIO_InitStruct.Mode = GPIO_MODE_INPUT; // Set as input
+    GPIO_InitStruct.Pull = GPIO_PULLDOWN;   // Enable pull-down resistor
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW; // Low speed is sufficient for input
+    HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
 	
 	
     /* Configure GPIO pin : LT7680 MISO Pin */

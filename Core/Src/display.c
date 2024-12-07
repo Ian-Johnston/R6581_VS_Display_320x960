@@ -18,13 +18,18 @@
 #define DURATION_MS 5000     // 5 seconds in milliseconds
 #define TIMER_INTERVAL_MS 35 // The interval of your timed sub in milliseconds
 
+// Display colours default
+uint32_t MainColourFore = 0xFFFF00; // Yellow
+uint32_t AuxColourFore = 0xFFFFFF; // White
+uint32_t AnnunColourFore = 0x00FF00; // Green
+
 //************************************************************************************************************************************************************
 
 
 void DisplayMain() {
 
 	// MAIN ROW - Print text to LCD, detect if there is an OHM symbol ($) and if so split into 3 parts, before-OHM-after
-	SetTextColors(0xFFFF00, 0x000000); // Foreground: Yellow, Background: Black
+	SetTextColors(MainColourFore, 0x000000); // Foreground: Yellow, Background: Black
 
 	char MaindisplayString[19] = "";              // String for G[1] to G[18]
 	char BeforeDollar[19] = "";                   // To store characters before the $
@@ -158,7 +163,7 @@ void DisplayAuxFirstHalf() {
 
 	// AUX ROW 1st half - Print text to LCD
 
-	SetTextColors(0xFFFFFF, 0x000000); // Foreground: Yellow, Background: Black
+	SetTextColors(AuxColourFore, 0x000000); // Foreground: Yellow, Background: Black
 
 	char AuxdisplayString[16] = "";              // String for G[19] to G[33]
 	char BeforeDollar[16] = "";                   // To store characters before the $
@@ -261,7 +266,6 @@ void DisplayAuxFirstHalf() {
 
 	} else {
 
-		//SetTextColors(0xFFFFFF, 0x0000FF); // Foreground: White, Background: Black
 		ConfigureFontAndPosition(
 			0b00,    // Internal CGROM
 			0b01,    // Font size
@@ -293,7 +297,7 @@ void DisplayAuxFirstHalf() {
 void DisplayAuxSecondHalf() {
 
 	// AUX ROW 2nd half - Print text to LCD (no OHM symbols in this 2nd half so no need for extra work)
-	SetTextColors(0xFFFFFF, 0x000000); // Foreground: white, Background: Black
+	SetTextColors(AuxColourFore, 0x000000); // Foreground: white, Background: Black
 	ConfigureFontAndPosition(
 		0b00,    // Internal CGROM
 		0b01,    // Font size
@@ -355,7 +359,7 @@ void DisplayAnnunciators() {
 
 	for (int i = 0; i < 18; i++) {
 		if (Annunc[i + 1] == 1) {  // Turn the annunciator ON
-			SetTextColors(0x00FF00, 0x000000); // Foreground: Green, Background: Black
+			SetTextColors(AnnunColourFore, 0x000000); // Foreground: Green, Background: Black
 			ConfigureFontAndPosition(
 				0b00,    // Internal CGROM
 				0b00,    // 16-dot font size
