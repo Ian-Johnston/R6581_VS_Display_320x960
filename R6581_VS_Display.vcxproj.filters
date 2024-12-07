@@ -407,8 +407,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedBinaryFile Include="VisualGDB\Debug\R6581_VS_Display.hex">
-      <Filter>Resource files</Filter>
-    </EmbeddedBinaryFile>
+    <EmbeddedBinaryFile Include="VisualGDB\Debug\R6581_VS_Display.hex" />
   </ItemGroup>
 </Project>

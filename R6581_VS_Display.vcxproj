@@ -178,6 +178,8 @@
     <None Include="stm32.xml" />
     <EmbeddedBinaryFile Include="VisualGDB\Debug\R6581_VS_Display.hex">
       <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">false</ExcludedFromBuild>
     </EmbeddedBinaryFile>
   </ItemGroup>
 </Project>
