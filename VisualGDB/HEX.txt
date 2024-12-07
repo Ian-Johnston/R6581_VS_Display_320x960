@@ -1,2 +1,0 @@
-The compiled .HEX file is in:
-\Debug
