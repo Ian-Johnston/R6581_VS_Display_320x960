@@ -176,5 +176,8 @@
     <None Include="R6581_VS_Display-Debug.vgdbsettings" />
     <None Include="R6581_VS_Display-Release.vgdbsettings" />
     <None Include="stm32.xml" />
+    <EmbeddedBinaryFile Include="VisualGDB\Debug\R6581_VS_Display.hex">
+      <FileType>Document</FileType>
+    </EmbeddedBinaryFile>
   </ItemGroup>
 </Project>

@@ -406,4 +406,9 @@
       <Filter>Source files</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedBinaryFile Include="VisualGDB\Debug\R6581_VS_Display.hex">
+      <Filter>Resource files</Filter>
+    </EmbeddedBinaryFile>
+  </ItemGroup>
 </Project>
