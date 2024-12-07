@@ -4,13 +4,13 @@ STM32 BluePill, both jumpers BOOT0 & BOOT1 set to 0 (zero).
 
 Plug in 4-way SWD header to ST-LINK V2 programmer and open ST-LINK Utility software
 OPEN,
-D:\Code_STM32\OLED_SSD1322_DMA\VisualGDB\Debug\OLED_SSD1322_DMA.hex
+D:\Code_STM32\OLED_SSD1322_DMA\VisualGDB\Debug\yourprogram.hex
 
 CONNECT then PROGRAM WITH VERIFY.
 
 Example Result:
-14:16:47 : [OLED_SSD1322_DMA.hex] opened successfully.
-14:16:47 : [OLED_SSD1322_DMA.hex] checksum : 0x0015CF5F 
+14:16:47 : [yourprogram.hex] opened successfully.
+14:16:47 : [yourprogram.hex] checksum : 0x0015CF5F 
 14:16:50 : ST-LINK SN : 30FF6C064E58373547450643
 14:16:50 : V2J29S7
 14:16:50 : Connected via SWD.
@@ -25,11 +25,11 @@ Example Result:
 14:16:57 : Programmed memory Checksum: 0x0015CF5F
 
 NOTES:
-ST-LINK V3 hardware can be used but needs 3.3V supply to the BluPill board.
+ST-LINK V3 hardware can be used but needs 3.3V supply to the BluePill board.
 Use the home made adaptor that gives 3.3V out to the BluePill then follow the procedure above.
 Example Result:
-14:55:10 : [OLED_SSD1322_DMA.hex] opened successfully.
-14:55:10 : [OLED_SSD1322_DMA.hex] checksum : 0x0015CF5F 
+14:55:10 : [yourprogram.hex] opened successfully.
+14:55:10 : [yourprogram.hex] checksum : 0x0015CF5F 
 14:55:13 : ST-LINK SN : 001C00283137510B39383538
 14:55:13 : V3J4M2B3S1
 14:55:13 : Connected via SWD.
