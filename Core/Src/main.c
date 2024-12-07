@@ -427,39 +427,6 @@ void Main_Aux_R6581(void) {
 
 
 //************************************************************************************************************************************************************
-
-// Timed Action - Write to the TFT LCD - Every XXms
-void LT7680TFTLCD(void) {
-
-	// Blue Pill LCD update rate:
-	// Resistance mode = 14Hz
-	// All other modes = 20.4Hz
-
-	HAL_GPIO_TogglePin(GPIOC, TEST_OUT_Pin); // Test LED toggle
-
-	DisplaySplash();
-
-	HAL_Delay(6); // Allow the LT7680 sufficient processing time
-
-	DisplayMain();
-
-	HAL_Delay(6); // Allow the LT7680 sufficient processing time
-
-	DisplayAuxFirstHalf();
-
-	HAL_Delay(6); // Allow the LT7680 sufficient processing time
-
-	DisplayAuxSecondHalf();
-
-	HAL_Delay(6); // Allow the LT7680 sufficient processing time
-
-	DisplayAnnunciators();
-
-	HAL_Delay(6); // Allow the LT7680 sufficient processing time
-
-}
-
-//************************************************************************************************************************************************************
 //************************************************************************************************************************************************************
 
 // Main
@@ -496,7 +463,7 @@ int main(void) {
 	HAL_Delay(10);
 
 	// Main loop timer
-	SetTimerDuration(35);			// 20 ms (100Hz) timed action for LT7680TFTLCD()
+	SetTimerDuration(35);			// 35 ms timed action set
 
 	LCDConfigTurnOn_LT();           // Turn on the LCD (at last minute)
 
@@ -512,13 +479,38 @@ int main(void) {
 
 		task_ready = 1; // Mark tasks as complete so the timer driven code is allowed to run again
 
-		//myVariable1++; // Modify the value to observe changes
-
-		// Check if timer flag is set and tasks are ready and run the LCD sub
+		//*******************************************************************************************
+		// Timed Action - Check if timer flag is set and tasks are ready and run the LCD sub
 		if (timer_flag && task_ready) {
 			timer_flag = 0;   // Clear the timer flag
 			task_ready = 0;   // Reset task-ready flag    
-			LT7680TFTLCD();   // Run the new subroutine at the designated interval
+			
+			// Blue Pill LCD update rate:
+			// Resistance mode = 14Hz
+			// All other modes = 20.4Hz
+
+			HAL_GPIO_TogglePin(GPIOC, TEST_OUT_Pin); // Test LED toggle
+
+			DisplaySplash();
+
+			HAL_Delay(6); // Allow the LT7680 sufficient processing time
+
+			DisplayMain();
+
+			HAL_Delay(6); // Allow the LT7680 sufficient processing time
+
+			DisplayAuxFirstHalf();
+
+			HAL_Delay(6); // Allow the LT7680 sufficient processing time
+
+			DisplayAuxSecondHalf();
+
+			HAL_Delay(6); // Allow the LT7680 sufficient processing time
+
+			DisplayAnnunciators();
+
+			HAL_Delay(6); // Allow the LT7680 sufficient processing time
+
 		}
 	}
 
