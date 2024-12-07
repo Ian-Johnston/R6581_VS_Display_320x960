@@ -454,14 +454,14 @@ int main(void) {
 	// Set colours for MAIN & AUX dependent on pin B9
 	if (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_9) == GPIO_PIN_SET) {
 		// B9 high
-		MainColourFore = 0xFFFFFF;
-		AuxColourFore = 0xFFFF00;
+		MainColourFore = 0xFFFF00;
+		AuxColourFore = 0xFFFFFF;
 		AnnunColourFore = 0x00FF00;
 	}
 	else {
 		// B9 low
-		MainColourFore = 0xFFFF00;
-		AuxColourFore = 0xFFFFFF;
+		MainColourFore = 0xFFFFFF;
+		AuxColourFore = 0xFFFF00;
 		AnnunColourFore = 0x00FF00;
 	}
 		
