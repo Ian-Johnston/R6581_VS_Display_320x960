@@ -196,6 +196,7 @@
     <ClCompile Include="D:\Code_STM32\R6581_VS_Display\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_tim_ex.c">
       <Filter>Source files</Filter>
     </ClCompile>
+    <None Include="VisualGDB\Debug\R6581_VS_Display.hex" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="D:\Code_STM32\R6581_VS_Display\Core\Inc\dma.h">
