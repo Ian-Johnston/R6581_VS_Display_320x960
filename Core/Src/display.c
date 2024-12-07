@@ -420,9 +420,9 @@ void DisplaySplash() {
 				1,       // Line spacing
 				4,       // Character spacing
 				Xpos_SPLASH,     // Cursor X
-				370      // Cursor Y
+				80      // Cursor Y
 			);
-			char text[] = "                  ";
+			char text[] = "                                                               ";
 			DrawText(text);
 		}
 		else {
@@ -441,9 +441,9 @@ void DisplaySplash() {
 				1,       // Line spacing
 				4,       // Character spacing
 				Xpos_SPLASH,     // Cursor X	230
-				370      // Cursor Y	360
+				80      // Cursor Y	360
 			);
-			char text[] = "By MickleT / IanJ ";
+			char text[] = "Reverse engineering by By MickleT / TFT LCD by IanscottJohnston";
 			DrawText(text);
 		}
 	}
