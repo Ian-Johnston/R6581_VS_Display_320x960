@@ -80,10 +80,10 @@ void MX_GPIO_Init(void) {
 
 
 
-    // Configure GPIO pin B9
-    GPIO_InitStruct.Pin = GPIO_PIN_9;       // Select pin B9
+    // Configure GPIO pin B0
+    GPIO_InitStruct.Pin = GPIO_PIN_0;       // Select pin B0
     GPIO_InitStruct.Mode = GPIO_MODE_INPUT; // Set as input
-    GPIO_InitStruct.Pull = GPIO_PULLDOWN;   // Enable pull-down resistor
+    GPIO_InitStruct.Pull = GPIO_PULLUP;   // Enable pull-up resistor
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW; // Low speed is sufficient for input
     HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
