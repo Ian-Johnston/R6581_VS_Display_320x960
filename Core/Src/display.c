@@ -23,6 +23,8 @@ uint32_t MainColourFore = 0xFFFF00; // Yellow
 uint32_t AuxColourFore = 0xFFFFFF; // White
 uint32_t AnnunColourFore = 0x00FF00; // Green
 
+//uint16_t dollarPositionAUX = 0xFFFF;
+
 //************************************************************************************************************************************************************
 
 
@@ -169,7 +171,7 @@ void DisplayAuxFirstHalf() {
 	char BeforeDollar[16] = "";                   // To store characters before the $
 	char AfterDollar[16] = "";                    // To store characters after the $
 	uint16_t dollarPositionAUX = 0xFFFF;            // Initialize to an invalid position
-
+	//dollarPositionAUX = 0xFFFF;            // Initialize to an invalid position
 	// Populate AuxdisplayString from G[19] to G[33]
 	for (int i = 19; i <= 33; i++) {
 		AuxdisplayString[i - 19] = G[i];
@@ -208,6 +210,8 @@ void DisplayAuxFirstHalf() {
 		for (int i = 0; i < dollarPositionAUX; i++) { // Corrected loop condition
 			AuxdisplayStringBefore[i] = AuxdisplayString[i]; // Corrected indexing
 		}
+		dollarPositionAUX = dollarPositionAUX + 1;		// compensate for original zero indexed position, i.e. in 2W ohms mode position = 6
+		
 		AuxdisplayStringBefore[dollarPositionAUX] = '\0'; // Null-terminate
 		DrawText(AuxdisplayStringBefore);
 
@@ -217,8 +221,15 @@ void DisplayAuxFirstHalf() {
 		Text_Mode();
 
 		// Calculate position of $(OHM) symbol
-		//       yposohm = (dollarPositionAUX * widthmultiplier * fontwidth) + (characterspacing * dollarPositionAUX) + startoffset(60)
-		uint16_t yposohm = (dollarPositionAUX * 1 * 12) + (4 * dollarPositionAUX) + 100;  // Y position of the OHM symbol
+		//       yposohm = (dollarPositionAUX * widthmultiplier * fontwidth) + (characterspacing * dollarPositionAUX) + startoffset(60) - 1 digit width(doubled)
+		//uint16_t yposohm = (dollarPositionAUX * 2 * 12) + (2 * dollarPositionAUX) + 60;  // Y position of the OHM symbol
+		//uint16_t yposohm = (dollarPositionAUX * 2 * 12) + (4 * dollarPositionAUX) + 60 - 24;  // Y position of the OHM symbol
+		//int16_t yposohm = (dollarPositionAUX * 2 * 12) + ((3+1) * dollarPositionAUX) + (2*(3+1)) + 2 ;  // Y position of the OHM symbol
+
+		// hold on to your hats, I couldn't map 6th and 10th positions to pixels, so fudged it as follows
+		uint16_t calculated_value = (dollarPositionAUX * 2 * 12) + ((3 + 1) * dollarPositionAUX) + (2 * (3 + 1)) + 2;
+		//uint16_t yposohm = (uint16_t)((calculated_value * 0.875) + 23);  // Adjusted Y position of the OHM symbol
+		uint16_t yposohm = (uint16_t)((calculated_value * 0.875) + 24);  // Adjusted Y position of the OHM symbol
 		// The actual OHM
 		ConfigureFontAndPosition(
 			0b10,    // User-Defined Font mode
@@ -254,7 +265,7 @@ void DisplayAuxFirstHalf() {
 			5,       // Line spacing
 			0,       // Character spacing
 			Xpos_AUX,     // Cursor X
-			(dollarPositionAUX * 32) + 44  // Cursor     includes a tweak factor because calc didn't quite set Y properly
+			(dollarPositionAUX * 32) + 12  // Cursor     includes a tweak factor because calc didn't quite set Y properly
 		);
 		int found = 0;
 		char AuxdisplayStringAfter[15] = "";
@@ -310,7 +321,7 @@ void DisplayAuxSecondHalf() {
 		5,       // Line spacing
 		0,       // Character spacing
 		Xpos_AUX,     // Cursor X 170
-		398      // Cursor Y 480
+		396      // Cursor Y 480
 	);
 
 	char AuxdisplayString2[14] = "";				// String for G[34] to G[47]

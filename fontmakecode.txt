@@ -1,0 +1,1639 @@
+
+<!DOCTYPE html>
+<html class='v2' dir='ltr' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+<link href='https://www.blogger.com/static/v1/widgets/3566091532-css_bundle_v2.css' rel='stylesheet' type='text/css'/>
+<meta content='RtlA0zqaOUOH5XA4nFvVXTCkfflpM3035eD86sbVu-c' name='google-site-verification'/>
+<meta content='width=1100' name='viewport'/>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<meta content='blogger' name='generator'/>
+<link href="https://www.riyas.org/favicon.ico" rel='icon' type='image/x-icon' />
+<link href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html" rel='canonical' />
+<link rel="alternate" type="application/atom+xml" title=" Learn on the fly  - Atom" href="https://www.riyas.org/feeds/posts/default" />
+<link rel="alternate" type="application/rss+xml" title=" Learn on the fly  - RSS" href="https://www.riyas.org/feeds/posts/default?alt=rss" />
+<link rel="service.post" type="application/atom+xml" title=" Learn on the fly  - Atom" href="https://www.blogger.com/feeds/8392959180134867028/posts/default" />
+
+<link rel="alternate" type="application/atom+xml" title=" Learn on the fly  - Atom" href="https://www.riyas.org/feeds/6509502210521228262/comments/default" />
+<!--Can't find substitution for tag [blog.ieCssRetrofitLinks]-->
+<link href='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEghxWIj4MKuM_41uOsdCRQoyi5YEN78wEdk77Oiuihua4lbc7cpfOpwAK6TSQ9Ewtj5z94qlWFPoPcthQmD78gRvz9BXd9KwUbYCrccymE_Bne8bLFf1w1fox-_5-R3ztHFeA3b6PNCg54g/s200/images.jpg' rel='image_src'/>
+<meta content='Online led matrix font generator with binary and hex codes for Arduino' name='description'/>
+<meta content='http://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html' property='og:url'/>
+<meta content='Online led matrix font generator with binary and hex codes for Arduino' property='og:title'/>
+<meta content='Online led matrix font generator with binary and hex codes for Arduino' property='og:description'/>
+<meta content='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEghxWIj4MKuM_41uOsdCRQoyi5YEN78wEdk77Oiuihua4lbc7cpfOpwAK6TSQ9Ewtj5z94qlWFPoPcthQmD78gRvz9BXd9KwUbYCrccymE_Bne8bLFf1w1fox-_5-R3ztHFeA3b6PNCg54g/w1200-h630-p-k-no-nu/images.jpg' property='og:image'/>
+<title> Learn on the fly : Online led matrix font generator with binary and hex codes for Arduino</title>
+<style type='text/css'>@font-face{font-family:'Unkempt';font-style:normal;font-weight:700;font-display:swap;src:url(//fonts.gstatic.com/s/unkempt/v21/2EbiL-Z2DFZue0DScTow5zK5qg.woff2)format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}</style>
+<style id='page-skin-1' type='text/css'><!--
+/*
+-----------------------------------------------
+Blogger Template Style
+Name:     Simple
+Designer: Blogger
+URL:      www.blogger.com
+----------------------------------------------- */
+/* Content
+----------------------------------------------- */
+body {
+font: normal normal 14px Georgia, Utopia, 'Palatino Linotype', Palatino, serif;
+color: #000000;
+background: #000000 url(//themes.googleusercontent.com/image?id=1UFnEr5qCWmP6E2Fj-CwUwdwtJ4QoBcysH7RN0eo0ceToGyOEzraZcUjDOCE0t8j5Dn2e) repeat scroll top center /* Credit: blue_baron (http://www.istockphoto.com/file_closeup.php?id=6174206&platform=blogger) */;
+padding: 0 40px 40px 40px;
+}
+html body .region-inner {
+min-width: 0;
+max-width: 100%;
+width: auto;
+}
+h2 {
+font-size: 22px;
+}
+a:link {
+text-decoration:none;
+color: #c24a4a;
+}
+a:visited {
+text-decoration:none;
+color: #0d0dc2;
+}
+a:hover {
+text-decoration:underline;
+color: #0086c3;
+}
+.body-fauxcolumn-outer .fauxcolumn-inner {
+background: transparent none repeat scroll top left;
+_background-image: none;
+}
+.body-fauxcolumn-outer .cap-top {
+position: absolute;
+z-index: 1;
+height: 400px;
+width: 100%;
+}
+.body-fauxcolumn-outer .cap-top .cap-left {
+width: 100%;
+background: transparent none repeat-x scroll top left;
+_background-image: none;
+}
+.content-outer {
+-moz-box-shadow: 0 0 40px rgba(0, 0, 0, .15);
+-webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .15);
+-goog-ms-box-shadow: 0 0 10px #333333;
+box-shadow: 0 0 40px rgba(0, 0, 0, .15);
+margin-bottom: 1px;
+}
+.content-inner {
+padding: 10px 10px;
+}
+.content-inner {
+background-color: #e1e5ff;
+}
+/* Header
+----------------------------------------------- */
+.header-outer {
+background: #4a4ac2 url(https://resources.blogblog.com/blogblog/data/1kt/simple/gradients_light.png) repeat-x scroll 0 -400px;
+_background-image: none;
+}
+.Header h1 {
+font: normal bold 48px Unkempt;
+color: #f0f2ff;
+text-shadow: 1px 2px 3px rgba(0, 0, 0, .2);
+}
+.Header h1 a {
+color: #f0f2ff;
+}
+.Header .description {
+font-size: 140%;
+color: #8694ee;
+}
+.header-inner .Header .titlewrapper {
+padding: 22px 30px;
+}
+.header-inner .Header .descriptionwrapper {
+padding: 0 30px;
+}
+/* Tabs
+----------------------------------------------- */
+.tabs-inner .section:first-child {
+border-top: 0 solid #dde6ee;
+}
+.tabs-inner .section:first-child ul {
+margin-top: -0;
+border-top: 0 solid #dde6ee;
+border-left: 0 solid #dde6ee;
+border-right: 0 solid #dde6ee;
+}
+.tabs-inner .widget ul {
+background: #000000 none repeat-x scroll 0 -800px;
+_background-image: none;
+border-bottom: 1px solid #dde6ee;
+margin-top: 0;
+margin-left: -30px;
+margin-right: -30px;
+}
+.tabs-inner .widget li a {
+display: inline-block;
+padding: .6em 1em;
+font: normal normal 20px Georgia, Utopia, 'Palatino Linotype', Palatino, serif;
+color: #0cc20c;
+border-left: 1px solid #e1e5ff;
+border-right: 1px solid #dde6ee;
+}
+.tabs-inner .widget li:first-child a {
+border-left: none;
+}
+.tabs-inner .widget li.selected a, .tabs-inner .widget li a:hover {
+color: #ff6161;
+background-color: #0000ff;
+text-decoration: none;
+}
+/* Columns
+----------------------------------------------- */
+.main-outer {
+border-top: 0 solid #d3d9e9;
+}
+.fauxcolumn-left-outer .fauxcolumn-inner {
+border-right: 1px solid #d3d9e9;
+}
+.fauxcolumn-right-outer .fauxcolumn-inner {
+border-left: 1px solid #d3d9e9;
+}
+/* Headings
+----------------------------------------------- */
+div.widget > h2,
+div.widget h2.title {
+margin: 0 0 1em 0;
+font: normal bold 12px Georgia, Utopia, 'Palatino Linotype', Palatino, serif;
+color: #000000;
+}
+/* Widgets
+----------------------------------------------- */
+.widget .zippy {
+color: #868686;
+text-shadow: 2px 2px 1px rgba(0, 0, 0, .1);
+}
+.widget .popular-posts ul {
+list-style: none;
+}
+/* Posts
+----------------------------------------------- */
+h2.date-header {
+font: normal bold 11px Arial, Tahoma, Helvetica, FreeSans, sans-serif;
+}
+.date-header span {
+background-color: rgba(0, 0, 0, 0);
+color: #000000;
+padding: inherit;
+letter-spacing: inherit;
+margin: inherit;
+}
+.main-inner {
+padding-top: 30px;
+padding-bottom: 30px;
+}
+.main-inner .column-center-inner {
+padding: 0 15px;
+}
+.main-inner .column-center-inner .section {
+margin: 0 15px;
+}
+.post {
+margin: 0 0 25px 0;
+}
+h3.post-title, .comments h4 {
+font: normal normal 24px Georgia, Utopia, 'Palatino Linotype', Palatino, serif;
+margin: .75em 0 0;
+}
+.post-body {
+font-size: 110%;
+line-height: 1.4;
+position: relative;
+}
+.post-body img, .post-body .tr-caption-container, .Profile img, .Image img,
+.BlogList .item-thumbnail img {
+padding: 2px;
+background: #d2d8ff;
+border: 1px solid #d2d8ff;
+-moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, .1);
+-webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, .1);
+box-shadow: 1px 1px 5px rgba(0, 0, 0, .1);
+}
+.post-body img, .post-body .tr-caption-container {
+padding: 5px;
+}
+.post-body .tr-caption-container {
+color: #151508;
+}
+.post-body .tr-caption-container img {
+padding: 0;
+background: transparent;
+border: none;
+-moz-box-shadow: 0 0 0 rgba(0, 0, 0, .1);
+-webkit-box-shadow: 0 0 0 rgba(0, 0, 0, .1);
+box-shadow: 0 0 0 rgba(0, 0, 0, .1);
+}
+.post-header {
+margin: 0 0 1.5em;
+line-height: 1.6;
+font-size: 90%;
+}
+.post-footer {
+margin: 20px -2px 0;
+padding: 5px 10px;
+color: #000000;
+background-color: #d3d4e9;
+border-bottom: 1px solid #e7e7e7;
+line-height: 1.6;
+font-size: 90%;
+}
+#comments .comment-author {
+padding-top: 1.5em;
+border-top: 1px solid #d3d9e9;
+background-position: 0 1.5em;
+}
+#comments .comment-author:first-child {
+padding-top: 0;
+border-top: none;
+}
+.avatar-image-container {
+margin: .2em 0 0;
+}
+#comments .avatar-image-container img {
+border: 1px solid #d2d8ff;
+}
+/* Comments
+----------------------------------------------- */
+.comments .comments-content .icon.blog-author {
+background-repeat: no-repeat;
+background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEgAACxIB0t1+/AAAAAd0SU1FB9sLFwMeCjjhcOMAAAD+SURBVDjLtZSvTgNBEIe/WRRnm3U8RC1neQdsm1zSBIU9VVF1FkUguQQsD9ITmD7ECZIJSE4OZo9stoVjC/zc7ky+zH9hXwVwDpTAWWLrgS3QAe8AZgaAJI5zYAmc8r0G4AHYHQKVwII8PZrZFsBFkeRCABYiMh9BRUhnSkPTNCtVXYXURi1FpBDgArj8QU1eVXUzfnjv7yP7kwu1mYrkWlU33vs1QNu2qU8pwN0UpKoqokjWwCztrMuBhEhmh8bD5UDqur75asbcX0BGUB9/HAMB+r32hznJgXy2v0sGLBcyAJ1EK3LFcbo1s91JeLwAbwGYu7TP/3ZGfnXYPgAVNngtqatUNgAAAABJRU5ErkJggg==);
+}
+.comments .comments-content .loadmore a {
+border-top: 1px solid #868686;
+border-bottom: 1px solid #868686;
+}
+.comments .comment-thread.inline-thread {
+background-color: #d3d4e9;
+}
+.comments .continue {
+border-top: 2px solid #868686;
+}
+/* Accents
+---------------------------------------------- */
+.section-columns td.columns-cell {
+border-left: 1px solid #d3d9e9;
+}
+.blog-pager {
+background: transparent none no-repeat scroll top center;
+}
+.blog-pager-older-link, .home-link,
+.blog-pager-newer-link {
+background-color: #e1e5ff;
+padding: 5px;
+}
+.footer-outer {
+border-top: 0 dashed #bbbbbb;
+}
+/* Mobile
+----------------------------------------------- */
+body.mobile  {
+background-size: auto;
+}
+.mobile .body-fauxcolumn-outer {
+background: transparent none repeat scroll top left;
+}
+.mobile .body-fauxcolumn-outer .cap-top {
+background-size: 100% auto;
+}
+.mobile .content-outer {
+-webkit-box-shadow: 0 0 3px rgba(0, 0, 0, .15);
+box-shadow: 0 0 3px rgba(0, 0, 0, .15);
+}
+.mobile .tabs-inner .widget ul {
+margin-left: 0;
+margin-right: 0;
+}
+.mobile .post {
+margin: 0;
+}
+.mobile .main-inner .column-center-inner .section {
+margin: 0;
+}
+.mobile .date-header span {
+padding: 0.1em 10px;
+margin: 0 -10px;
+}
+.mobile h3.post-title {
+margin: 0;
+}
+.mobile .blog-pager {
+background: transparent none no-repeat scroll top center;
+}
+.mobile .footer-outer {
+border-top: none;
+}
+.mobile .main-inner, .mobile .footer-inner {
+background-color: #e1e5ff;
+}
+.mobile-index-contents {
+color: #000000;
+}
+.mobile-link-button {
+background-color: #c24a4a;
+}
+.mobile-link-button a:link, .mobile-link-button a:visited {
+color: #ffffff;
+}
+.mobile .tabs-inner .section:first-child {
+border-top: none;
+}
+.mobile .tabs-inner .PageList .widget-content {
+background-color: #0000ff;
+color: #ff6161;
+border-top: 1px solid #dde6ee;
+border-bottom: 1px solid #dde6ee;
+}
+.mobile .tabs-inner .PageList .widget-content .pagelist-arrow {
+border-left: 1px solid #dde6ee;
+}
+
+--></style>
+<style id='template-skin-1' type='text/css'><!--
+body {
+min-width: 1110px;
+}
+.content-outer, .content-fauxcolumn-outer, .region-inner {
+min-width: 1110px;
+max-width: 1110px;
+_width: 1110px;
+}
+.main-inner .columns {
+padding-left: 336px;
+padding-right: 0px;
+}
+.main-inner .fauxcolumn-center-outer {
+left: 336px;
+right: 0px;
+/* IE6 does not respect left and right together */
+_width: expression(this.parentNode.offsetWidth -
+parseInt("336px") -
+parseInt("0px") + 'px');
+}
+.main-inner .fauxcolumn-left-outer {
+width: 336px;
+}
+.main-inner .fauxcolumn-right-outer {
+width: 0px;
+}
+.main-inner .column-left-outer {
+width: 336px;
+right: 100%;
+margin-left: -336px;
+}
+.main-inner .column-right-outer {
+width: 0px;
+margin-right: -0px;
+}
+#layout {
+min-width: 0;
+}
+#layout .content-outer {
+min-width: 0;
+width: 800px;
+}
+#layout .region-inner {
+min-width: 0;
+width: auto;
+}
+body#layout div.add_widget {
+padding: 8px;
+}
+body#layout div.add_widget a {
+margin-left: 32px;
+}
+--></style>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-2260500998550491",
+    enable_page_level_ads: true
+  });
+</script>
+
+< async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js""></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-2260500998550491",
+          enable_page_level_ads: true
+     });
+</script>
+
+  <link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=8392959180134867028&amp;zx=e6d6692c-6d7c-4dca-b706-d597bc79ebf7' media='none' onload='if(media!=&#39;all&#39;)media=&#39;all&#39;' rel='stylesheet'/><noscript><link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=8392959180134867028&amp;zx=e6d6692c-6d7c-4dca-b706-d597bc79ebf7' rel='stylesheet'/></noscript>
+<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
+<meta name='google-adsense-platform-domain' content='blogspot.com'/>
+
+<!-- data-ad-client=ca-pub-2260500998550491 -->
+
+<script type="text/javascript" language="javascript">
+  // Supply ads personalization default for EEA readers
+  // See https://www.blogger.com/go/adspersonalization
+  adsbygoogle = window.adsbygoogle || [];
+  if (typeof adsbygoogle.requestNonPersonalizedAds === 'undefined') {
+    adsbygoogle.requestNonPersonalizedAds = 1;
+  }
+</script>
+
+
+</head>
+<body class='loading variant-literate'>
+<div class='navbar no-items section' id='navbar' name='Navbar'>
+</div>
+<div class='body-fauxcolumns'>
+<div class='fauxcolumn-outer body-fauxcolumn-outer'>
+<div class='cap-top'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+<div class='fauxborder-left'>
+<div class='fauxborder-right'></div>
+<div class='fauxcolumn-inner'>
+</div>
+</div>
+<div class='cap-bottom'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+</div>
+</div>
+<div class='content'>
+<div class='content-fauxcolumns'>
+<div class='fauxcolumn-outer content-fauxcolumn-outer'>
+<div class='cap-top'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+<div class='fauxborder-left'>
+<div class='fauxborder-right'></div>
+<div class='fauxcolumn-inner'>
+</div>
+</div>
+<div class='cap-bottom'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+</div>
+</div>
+<div class='content-outer'>
+<div class='content-cap-top cap-top'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+<div class='fauxborder-left content-fauxborder-left'>
+<div class='fauxborder-right content-fauxborder-right'></div>
+<div class='content-inner'>
+<header>
+<div class='header-outer'>
+<div class='header-cap-top cap-top'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+<div class='fauxborder-left header-fauxborder-left'>
+<div class='fauxborder-right header-fauxborder-right'></div>
+<div class='region-inner header-inner'>
+<div class='header section' id='header' name='Header'><div class='widget Header' data-version='1' id='Header1'>
+<div id='header-inner'>
+<div class='titlewrapper'>
+<h1 class='title'>
+<a href="https://www.riyas.org/">
+ Learn on the fly 
+</a>
+</h1>
+</div>
+<div class='descriptionwrapper'>
+<p class='description'><span>To share random thoughts and projects on a wide range of topics like microcontrollers, iot, amateur radio &amp; medical technology </span></p>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+<div class='header-cap-bottom cap-bottom'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+</div>
+</header>
+<div class='tabs-outer'>
+<div class='tabs-cap-top cap-top'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+<div class='fauxborder-left tabs-fauxborder-left'>
+<div class='fauxborder-right tabs-fauxborder-right'></div>
+<div class='region-inner tabs-inner'>
+<div class='tabs section' id='crosscol' name='Cross-Column'><div class='widget PageList' data-version='1' id='PageList1'>
+<h2>Pages</h2>
+<div class='widget-content'>
+<ul>
+<li>
+<a href="https://www.riyas.org/">Home</a>
+</li>
+<li>
+<a href="https://www.riyas.org/search/label/STM32F4">STM32</a>
+</li>
+<li>
+<a href="https://www.riyas.org/search/label/radio">Radio (RF)</a>
+</li>
+<li>
+<a href='http://blog.riyas.org/search/label/Arduino'>AVR</a>
+</li>
+<li>
+<a href="https://www.riyas.org/search/label/raspberry%20pi">Raspberry Pi</a>
+</li>
+<li>
+<a href="https://www.riyas.org/search/label/esp8266">esp8266</a>
+</li>
+<li>
+<a href="https://www.riyas.org/search/label/ili9341">ili9341</a>
+</li>
+<li>
+<a href="https://www.riyas.org/search/label/infrared">Infrared</a>
+</li>
+<li>
+<a href="https://www.riyas.org/search/label/nrf24l01%20arduino">nrf24l01</a>
+</li>
+<li>
+<a href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html">Online tool</a>
+</li>
+<li>
+<a href="https://www.riyas.org/2015/04/a-simple-standalone-antenna-analyzer-with-ili9341tft.html">Antenna Analyser</a>
+</li>
+<li>
+<a href="https://www.riyas.org/2017/01/online-tool-to-convert-bitmap-to-hex-nokia-arduino.html">Bitmap2Hex</a>
+</li>
+<li>
+<a href="https://www.riyas.org/p/disclaimer.html">Disclaimer</a>
+</li>
+<li>
+<a href="https://www.riyas.org/p/contact.html">Contact</a>
+</li>
+<li>
+<a href="https://www.riyas.org/p/table-of.html">Table of Contents</a>
+</li>
+</ul>
+<div class='clear'></div>
+</div>
+</div></div>
+<div class='tabs no-items section' id='crosscol-overflow' name='Cross-Column 2'></div>
+</div>
+</div>
+<div class='tabs-cap-bottom cap-bottom'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+</div>
+<div class='main-outer'>
+<div class='main-cap-top cap-top'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+<div class='fauxborder-left main-fauxborder-left'>
+<div class='fauxborder-right main-fauxborder-right'></div>
+<div class='region-inner main-inner'>
+<div class='columns fauxcolumns'>
+<div class='fauxcolumn-outer fauxcolumn-center-outer'>
+<div class='cap-top'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+<div class='fauxborder-left'>
+<div class='fauxborder-right'></div>
+<div class='fauxcolumn-inner'>
+</div>
+</div>
+<div class='cap-bottom'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+</div>
+<div class='fauxcolumn-outer fauxcolumn-left-outer'>
+<div class='cap-top'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+<div class='fauxborder-left'>
+<div class='fauxborder-right'></div>
+<div class='fauxcolumn-inner'>
+</div>
+</div>
+<div class='cap-bottom'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+</div>
+<div class='fauxcolumn-outer fauxcolumn-right-outer'>
+<div class='cap-top'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+<div class='fauxborder-left'>
+<div class='fauxborder-right'></div>
+<div class='fauxcolumn-inner'>
+</div>
+</div>
+<div class='cap-bottom'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+</div>
+<!-- corrects IE6 width calculation -->
+<div class='columns-inner'>
+<div class='column-center-outer'>
+<div class='column-center-inner'>
+<div class='main section' id='main' name='Main'><div class='widget Blog' data-version='1' id='Blog1'>
+<div class='blog-posts hfeed'>
+
+          <div class="date-outer">
+        
+<h2 class='date-header'><span>Thursday, December 26, 2013</span></h2>
+
+          <div class="date-posts">
+        
+<div class='post-outer'>
+<div class='post hentry uncustomized-post-template' itemprop='blogPost' itemscope='itemscope' itemtype='http://schema.org/BlogPosting'>
+<meta content='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEghxWIj4MKuM_41uOsdCRQoyi5YEN78wEdk77Oiuihua4lbc7cpfOpwAK6TSQ9Ewtj5z94qlWFPoPcthQmD78gRvz9BXd9KwUbYCrccymE_Bne8bLFf1w1fox-_5-R3ztHFeA3b6PNCg54g/s200/images.jpg' itemprop='image_url'/>
+<meta content='8392959180134867028' itemprop='blogId'/>
+<meta content='6509502210521228262' itemprop='postId'/>
+<a name='6509502210521228262'></a>
+<h3 class='post-title entry-title' itemprop='name'>
+Online led matrix font generator with binary and hex codes for Arduino
+</h3>
+<div class='post-header'>
+<div class='post-header-line-1'></div>
+</div>
+<div class='post-body entry-content' id='post-body-6509502210521228262' itemprop='articleBody'>
+<div id='adsense-content' style='display:block;text-align: center'>ADVERTISEMENT
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- leader board DIY electronics -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-2260500998550491"
+     data-ad-slot="7501866414"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div id='adsense-target'><blockquote class="tr_bq">
+If you are looking for the nokia lcd (bitmap to hex codes for 84X48 lcd with PCD8544, it can be accessed at the link here <a href="https://www.riyas.org/2017/01/online-tool-to-convert-bitmap-to-hex-nokia-arduino.html" rel="nofollow" target="_blank">Nokia LCD Hex Generator</a></blockquote>
+<div class="separator" style="clear: both; text-align: center;">
+</div>
+<style>
+table.leds,
+table.leds {
+    background-color: #333;
+    box-shadow: 1px 1px 10px #333;
+}
+table.leds td,
+table.leds td {
+    border-radius: 50%;
+    box-shadow: inset 0 0 1px #666666;
+    background: lightgrey radial-gradient(ellipse at center, lightgrey 0%, white 50%, lightgrey 100%);
+}
+table.leds td.active {
+    background: orangered radial-gradient(ellipse at center, lightcoral 0%, orangered 50%, red 100%);
+}
+#previews table.preview td.active {
+    background: orangered;
+}
+</style> Scrolling text patterns on 8x8 led matrix displays from one of the common and favorite Arduino projects. It is necessary to set the led pixels in binary or hex to the corresponding led to being kept on. Example sketch can be viewed&nbsp;<a href="http://playground.arduino.cc/Main/DirectDriveLEDMatrix" rel="nofollow" target="_blank">here</a><br />
+<div class="separator" style="clear: both; text-align: center;">
+</div>
+Here is an easy to use, web-based online font generator. click on the matrix to toggle the led status to on or off and get the hex codes.<br />
+<br />
+<div style="text-align: center;">
+<span style="color: red;"><b>8x8 ONLINE LED HEX/ BINARY PATTERN GENERATOR FOR ARDUINO</b></span></div>
+<div style="text-align: center;">
+<span style="color: red;"><b><br /></b></span></div>
+<table border="0" cellpadding="5" cellspacing="5">
+<tbody>
+<tr>
+<td><table border="0" cellpadding="0" cellspacing="0" class="leds" style="cursor: pointer; height: 200px; width: 200px;">
+<tbody>
+<tr>
+<td id="100001" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100002" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100003" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100004" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100005" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100006" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100007" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100008" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+</tr>
+<tr>
+<td id="100009" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100010" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100011" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100012" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100013" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100014" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100015" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100016" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+</tr>
+<tr>
+<td id="100017" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100018" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100019" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100020" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100021" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100022" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100023" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100024" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+</tr>
+<tr>
+<td id="100025" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100026" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100027" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100028" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100029" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100030" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100031" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100032" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+</tr>
+<tr>
+<td id="100033" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100034" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100035" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100036" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100037" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100038" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100039" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100040" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+</tr>
+<tr>
+<td id="100041" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100042" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100043" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100044" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100045" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100046" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100047" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100048" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+</tr>
+<tr>
+<td id="100049" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100050" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100051" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100052" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100053" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100054" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100055" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100056" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+</tr>
+<tr>
+<td id="100057" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100058" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100059" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100060" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100061" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100062" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100063" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+<td id="100064" onmousedown="toggle(this)" style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;">&nbsp;0</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td valign="top">Binary values:<br />
+<textarea cols="14" id="txtBinary" rows="9"></textarea> <br />
+<input onclick="resetall()" style="height: 30px; width: 130px;" type="button" value="Clear" /> </td>
+<td valign="top">Hex values:<br />
+<textarea cols="14" id="txtHex" rows="9"></textarea> <br />
+<input onclick="resetall()" style="height: 30px; width: 130px;" type="button" value="Clear" /></td>
+</tr>
+</tbody>
+</table>
+<br />
+<script type="text/javascript"><!--
+  function toggle(obj)
+  {
+   if(obj.innerHTML == "&nbsp;0")
+   {
+    obj.style.background = "orangered radial-gradient(ellipse at center, lightcoral 0%, orangered 50%, red 100%)";
+    obj.innerHTML = "&nbsp;1";
+   } else {
+    obj.style.background = "lightgrey radial-gradient(ellipse at center, lightgrey 0%, white 50%, lightgrey 100%)";
+    obj.innerHTML = "&nbsp;0";
+   }
+   createbincode();
+  }
+  function resetall()
+  {
+   var tdObj;
+   for(var i=100001;i<100065;i++)
+   {
+    tdObj = document.getElementById(i);
+    tdObj.style.background = "lightgrey radial-gradient(ellipse at center, lightgrey 0%, white 50%, lightgrey 100%)";
+    tdObj.innerHTML = "&nbsp;0";
+   }
+   createbincode();
+  }
+  function createbincode()
+  {
+   var tdObj;
+   var binObj = document.getElementById("txtBinary");
+   var hexObj = document.getElementById("txtHex");
+                        binObj.value = "";                      
+   for(var i=100001;i<100065;i++)
+   {
+    tdObj = document.getElementById(i);
+    if(((i-1)==0) || (((i-1)%8) == 0))
+    {
+     if(i-1 == 100000)
+      binObj.value += "{B";
+                                                
+     else
+      binObj.value += "B";
+      
+    }
+    if(tdObj.innerHTML == "&nbsp;0")
+    {
+     binObj.value += "0";
+    } else {
+     binObj.value += "1";
+    }
+    if((i%8)==0)
+    {
+     if(i!=100064)
+      binObj.value += ",\n";
+     else
+      binObj.value += "}";
+    }
+   }
+  hexObj.value = tBin(binObj.value); 
+  hexObj.value = hexObj.value.replace(/(\r\n|\n|\r|B|{|})/gm,"");
+  var res = hexObj.value.split(",");
+  hexObj.value ="{";
+  for(var j=0;j<8;j++)
+   {
+    hexstr=Bin2Hex(res[j]);
+    if (hexstr.length==1)
+        hexstr="0x0"+hexstr;
+    else
+        hexstr="0x"+hexstr;
+    hexObj.value += hexstr;
+    if(j!=7)
+    hexObj.value += ",";
+   }
+  hexObj.value +="}";
+  }
+function tBin(n){return n}
+function checkBin(n){return/^[01]{1,64}$/.test(n)}
+function Bin2Hex(n){if(!checkBin(n))return 0;return parseInt(n,2).toString(16)}
+
+// --></script> This can be used to generate fonts and patterns for using with arduino sketches. Insert the generated codes in the font or pattern definitions in the sketch. Both forms will work and the hex form will keep the source code small and neat. For example, see the following direct drive sketch. To generate a pattern , click on the grid and toggle it to on (1). Once you are done with the font / pattern, copy the binary values or hex values to your sketch.<br />
+<br />
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEghxWIj4MKuM_41uOsdCRQoyi5YEN78wEdk77Oiuihua4lbc7cpfOpwAK6TSQ9Ewtj5z94qlWFPoPcthQmD78gRvz9BXd9KwUbYCrccymE_Bne8bLFf1w1fox-_5-R3ztHFeA3b6PNCg54g/s1600/images.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="200" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEghxWIj4MKuM_41uOsdCRQoyi5YEN78wEdk77Oiuihua4lbc7cpfOpwAK6TSQ9Ewtj5z94qlWFPoPcthQmD78gRvz9BXd9KwUbYCrccymE_Bne8bLFf1w1fox-_5-R3ztHFeA3b6PNCg54g/s200/images.jpg" width="183" /></a></div>
+<div class="separator" style="clear: both; text-align: center;">
+<br /></div>
+<div class="separator" style="clear: both; text-align: center;">
+<br /></div>
+<div style="text-align: center;">
+<span style="color: blue;"><b>8X16 and DYNAMIC ONLINE LED BINARY CODE PATTERN GENERATOR FOR BIGGER DISPLAYS like 16 X 8 </b></span></div>
+<div style="text-align: center;">
+To make a bigger one for e.g a 16 X 8 matrix, just fill 16 in the columns and 8 in the rows field and click update<br />
+<span style="color: red;"><b> </b></span>
+<br />
+<form name="myform">
+<span style="color: red;"><b>Rows: <input id="row" name="row" type="text" value="8" /> Columns: <input id="col" name="col" type="text" value="16" /> </b></span><br />
+<span style="color: red;"><b><input onclick="createTable(8,16)" style="height: 30px; width: 130px;" type="button" value="Update" /></b></span></form>
+<span style="color: red;"><b> </b></span></div>
+<div align="center">
+<table border="0" cellpadding="0" cellspacing="0" class="leds" id="LCDARRAY" style="cursor: pointer; height: 80px; table-layout: fixed; width: 160px;">
+</table>
+</div>
+<div style="text-align: center;">
+<div valign="top">
+Binary values:<br />
+<textarea cols="32" id="ltxtBinary" rows="8"></textarea> <br />
+<input onclick="xresetall()" style="height: 30px; width: 130px;" type="button" value="Clear" /> </div>
+</div>
+<br />
+<script type="text/javascript">
+    window.onload = function() {
+        document.myform.action = get_action();
+    }
+
+    function get_action() {
+        return createTable(8,16);
+    }
+</script> <script type="text/javascript"><!--
+   
+  function xtoggle(obj)
+  {
+   if(obj.innerHTML == "&nbsp;0")
+   {
+    obj.style.background = "orangered radial-gradient(ellipse at center, lightcoral 0%, orangered 50%, red 100%)";
+    obj.innerHTML = "&nbsp;1";
+   } else {
+    obj.style.background = "lightgrey radial-gradient(ellipse at center, lightgrey 0%, white 50%, lightgrey 100%)";
+    obj.innerHTML = "&nbsp;0";
+   }
+   xcreatebincode();
+  }
+  function xresetall()
+  {
+   var tdObj;
+   
+   for(var i=1;i<(document.getElementById('row').value*document.getElementById('col').value + 1 );i++)
+   {
+    tdObj = document.getElementById(i);
+    tdObj.style.background = "lightgrey radial-gradient(ellipse at center, lightgrey 0%, white 50%, lightgrey 100%)";
+    tdObj.innerHTML = "&nbsp;0";
+   }
+   xcreatebincode();
+  }
+  function xcreatebincode()
+  {
+   var tdObj;
+   var binObj = document.getElementById("ltxtBinary");
+   var hexObj = document.getElementById("ltxtHex");
+                        binObj.value = "";                      
+   for(var i=1;i<(document.getElementById('row').value*document.getElementById('col').value + 1);i++)
+   {
+    tdObj = document.getElementById(i);
+    if(((i-1)==0) || (((i-1)% (document.getElementById('col').value)  == 0)))
+    {
+     if(i-1 == 0)
+      binObj.value += "{B";
+                                                
+     else
+      binObj.value += "B";
+      
+    }
+    if(tdObj.innerHTML == "&nbsp;0")
+    {
+     binObj.value += "0";
+    } else {
+     binObj.value += "1";
+    }
+    if((i% (document.getElementById('col').value))==0)
+    {
+     if(i!= (document.getElementById('row').value*document.getElementById('col').value))
+      binObj.value += ",\n";
+     else
+      binObj.value += "}";
+    }
+   }
+ }
+function xtBin(n){return n}
+function xcheckBin(n){return/^[01]{1,(document.getElementById('row').value*document.getElementById('col').value)}$/.test(n)}
+function xBin2Hex(n){if(!xcheckBin(n))return 0;return parseInt(n,2).toString(4)}
+
+// --></script> <script type="text/javascript">
+function createTable(rn,cn)
+{
+//rn = window.prompt("Input number of rows", 1);
+//cn = window.prompt("Input number of columns",1);
+cn=document.getElementById('col').value; 
+rn=document.getElementById('row').value; 
+
+if ( (cn<3)|| (cn>=100)||(rn<3)|| (rn>=100))
+{
+cn=8;
+rn=8;
+}
+var Table = document.getElementById("LCDARRAY");
+if(Table)
+{
+while(Table.rows.length > 0) {
+  Table.deleteRow(0);
+}
+}
+  
+ for(var r=0;r<parseInt(rn,10);r++)
+  {
+   var x=document.getElementById('LCDARRAY').insertRow(r);
+   for(var c=0;c<parseInt(cn,10);c++)  
+    {
+     var y=  x.insertCell(c);
+     y.innerHTML="0"; 
+  y.id = (r*cn)+(c+1);
+  y.onmousedown=function(){ xtoggle(this); } ;
+  y.style="background-color: #383838; border: 1px solid #cccccc; height: 10px; width: 10px;";
+    }
+   }
+   xresetall();
+var Table = document.getElementById("LCDARRAY");
+if(Table)
+{
+Table.style='cursor: pointer; height: '+(rn*10)+'px; width: '+(cn*20)+'px;';
+Table.border="0";
+Table.cellpadding="0";
+Table.cellspacing="0";
+}
+   
+}
+
+</script>
+</div>
+<div style='clear: both;'></div>
+</div>
+<div class='post-footer'>
+<div class='post-footer-line post-footer-line-1'>
+<span class='post-author vcard'>
+Posted by
+<span class='fn' itemprop='author' itemscope='itemscope' itemtype='http://schema.org/Person'>
+<meta content='https://www.blogger.com/profile/00155693473706220430' itemprop='url'/>
+<a class='g-profile' href='https://www.blogger.com/profile/00155693473706220430' rel='author' title='author profile'>
+<span itemprop='name'>RiYa</span>
+</a>
+</span>
+</span>
+<span class='post-timestamp'>
+at
+<meta content='http://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html' itemprop='url'/>
+<a class='timestamp-link' href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html" rel='bookmark' title='permanent link'><abbr class='published' itemprop='datePublished' title='2013-12-26T21:38:00+01:00'>9:38&#8239;PM</abbr></a>
+</span>
+<span class='reaction-buttons'>
+</span>
+<span class='post-comment-link'>
+</span>
+<span class='post-backlinks post-comment-link'>
+</span>
+<span class='post-icons'>
+<span class='item-control blog-admin pid-768936876'>
+<a href='https://www.blogger.com/post-edit.g?blogID=8392959180134867028&postID=6509502210521228262&from=pencil' title='Edit Post'>
+<img alt='' class='icon-action' height='18' src='https://resources.blogblog.com/img/icon18_edit_allbkg.gif' width='18'/>
+</a>
+</span>
+</span>
+<div class='post-share-buttons goog-inline-block'>
+<a class='goog-inline-block share-button sb-email' href='https://www.blogger.com/share-post.g?blogID=8392959180134867028&postID=6509502210521228262&target=email' target='_blank' title='Email This'><span class='share-button-link-text'>Email This</span></a><a class='goog-inline-block share-button sb-blog' href='https://www.blogger.com/share-post.g?blogID=8392959180134867028&postID=6509502210521228262&target=blog' onclick='window.open(this.href, "_blank", "height=270,width=475"); return false;' target='_blank' title='BlogThis!'><span class='share-button-link-text'>BlogThis!</span></a><a class='goog-inline-block share-button sb-twitter' href='https://www.blogger.com/share-post.g?blogID=8392959180134867028&postID=6509502210521228262&target=twitter' target='_blank' title='Share to X'><span class='share-button-link-text'>Share to X</span></a><a class='goog-inline-block share-button sb-facebook' href='https://www.blogger.com/share-post.g?blogID=8392959180134867028&postID=6509502210521228262&target=facebook' onclick='window.open(this.href, "_blank", "height=430,width=640"); return false;' target='_blank' title='Share to Facebook'><span class='share-button-link-text'>Share to Facebook</span></a><a class='goog-inline-block share-button sb-pinterest' href='https://www.blogger.com/share-post.g?blogID=8392959180134867028&postID=6509502210521228262&target=pinterest' target='_blank' title='Share to Pinterest'><span class='share-button-link-text'>Share to Pinterest</span></a>
+</div>
+</div>
+<div class='post-footer-line post-footer-line-2'>
+<span class='post-labels'>
+Labels:
+<a href="https://www.riyas.org/search/label/8x8%20font%20generator" rel='tag'>8x8 font generator</a>,
+<a href="https://www.riyas.org/search/label/Arduino" rel='tag'>Arduino</a>,
+<a href="https://www.riyas.org/search/label/arduino%20led%20patterns" rel='tag'>arduino led patterns</a>,
+<a href="https://www.riyas.org/search/label/hex%20code%20for%20led%20matrix" rel='tag'>hex code for led matrix</a>,
+<a href="https://www.riyas.org/search/label/led%20matrix" rel='tag'>led matrix</a>,
+<a href="https://www.riyas.org/search/label/Online%20Tools" rel='tag'>Online Tools</a>
+</span>
+</div>
+<div class='post-footer-line post-footer-line-3'>
+<span class='post-location'>
+</span>
+</div>
+</div>
+</div>
+<div class='comments' id='comments'>
+<a name='comments'></a>
+<h4>56 comments:</h4>
+<div class='comments-content'>
+<script async='async' src='' type='text/javascript'></script>
+<script type='text/javascript'>
+    (function() {
+      var items = null;
+      var msgs = null;
+      var config = {};
+
+// <![CDATA[
+      var cursor = null;
+      if (items && items.length > 0) {
+        cursor = parseInt(items[items.length - 1].timestamp) + 1;
+      }
+
+      var bodyFromEntry = function(entry) {
+        var text = (entry &&
+                    ((entry.content && entry.content.$t) ||
+                     (entry.summary && entry.summary.$t))) ||
+            '';
+        if (entry && entry.gd$extendedProperty) {
+          for (var k in entry.gd$extendedProperty) {
+            if (entry.gd$extendedProperty[k].name == 'blogger.contentRemoved') {
+              return '<span class="deleted-comment">' + text + '</span>';
+            }
+          }
+        }
+        return text;
+      }
+
+      var parse = function(data) {
+        cursor = null;
+        var comments = [];
+        if (data && data.feed && data.feed.entry) {
+          for (var i = 0, entry; entry = data.feed.entry[i]; i++) {
+            var comment = {};
+            // comment ID, parsed out of the original id format
+            var id = /blog-(\d+).post-(\d+)/.exec(entry.id.$t);
+            comment.id = id ? id[2] : null;
+            comment.body = bodyFromEntry(entry);
+            comment.timestamp = Date.parse(entry.published.$t) + '';
+            if (entry.author && entry.author.constructor === Array) {
+              var auth = entry.author[0];
+              if (auth) {
+                comment.author = {
+                  name: (auth.name ? auth.name.$t : undefined),
+                  profileUrl: (auth.uri ? auth.uri.$t : undefined),
+                  avatarUrl: (auth.gd$image ? auth.gd$image.src : undefined)
+                };
+              }
+            }
+            if (entry.link) {
+              if (entry.link[2]) {
+                comment.link = comment.permalink = entry.link[2].href;
+              }
+              if (entry.link[3]) {
+                var pid = /.*comments\/default\/(\d+)\?.*/.exec(entry.link[3].href);
+                if (pid && pid[1]) {
+                  comment.parentId = pid[1];
+                }
+              }
+            }
+            comment.deleteclass = 'item-control blog-admin';
+            if (entry.gd$extendedProperty) {
+              for (var k in entry.gd$extendedProperty) {
+                if (entry.gd$extendedProperty[k].name == 'blogger.itemClass') {
+                  comment.deleteclass += ' ' + entry.gd$extendedProperty[k].value;
+                } else if (entry.gd$extendedProperty[k].name == 'blogger.displayTime') {
+                  comment.displayTime = entry.gd$extendedProperty[k].value;
+                }
+              }
+            }
+            comments.push(comment);
+          }
+        }
+        return comments;
+      };
+
+      var paginator = function(callback) {
+        if (hasMore()) {
+          var url = config.feed + '?alt=json&v=2&orderby=published&reverse=false&max-results=50';
+          if (cursor) {
+            url += '&published-min=' + new Date(cursor).toISOString();
+          }
+          window.bloggercomments = function(data) {
+            var parsed = parse(data);
+            cursor = parsed.length < 50 ? null
+                : parseInt(parsed[parsed.length - 1].timestamp) + 1
+            callback(parsed);
+            window.bloggercomments = null;
+          }
+          url += '&callback=bloggercomments';
+          var script = document.createElement('script');
+          script.type = 'text/javascript';
+          script.src = url;
+          document.getElementsByTagName('head')[0].appendChild(script);
+        }
+      };
+      var hasMore = function() {
+        return !!cursor;
+      };
+      var getMeta = function(key, comment) {
+        if ('iswriter' == key) {
+          var matches = !!comment.author
+              && comment.author.name == config.authorName
+              && comment.author.profileUrl == config.authorUrl;
+          return matches ? 'true' : '';
+        } else if ('deletelink' == key) {
+          return config.baseUri + '/delete-comment.g?blogID='
+               + config.blogId + '&postID=' + comment.id;
+        } else if ('deleteclass' == key) {
+          return comment.deleteclass;
+        }
+        return '';
+      };
+
+      var replybox = null;
+      var replyUrlParts = null;
+      var replyParent = undefined;
+
+      var onReply = function(commentId, domId) {
+        if (replybox == null) {
+          // lazily cache replybox, and adjust to suit this style:
+          replybox = document.getElementById('comment-editor');
+          if (replybox != null) {
+            replybox.height = '250px';
+            replybox.style.display = 'block';
+            replyUrlParts = replybox.src.split('#');
+          }
+        }
+        if (replybox && (commentId !== replyParent)) {
+          replybox.src = '';
+          document.getElementById(domId).insertBefore(replybox, null);
+          replybox.src = replyUrlParts[0]
+              + (commentId ? '&parentID=' + commentId : '')
+              + '#' + replyUrlParts[1];
+          replyParent = commentId;
+        }
+      };
+
+      var hash = (window.location.hash || '#').substring(1);
+      var startThread, targetComment;
+      if (/^comment-form_/.test(hash)) {
+        startThread = hash.substring('comment-form_'.length);
+      } else if (/^c[0-9]+$/.test(hash)) {
+        targetComment = hash.substring(1);
+      }
+
+      // Configure commenting API:
+      var configJso = {
+        'maxDepth': config.maxThreadDepth
+      };
+      var provider = {
+        'id': config.postId,
+        'data': items,
+        'loadNext': paginator,
+        'hasMore': hasMore,
+        'getMeta': getMeta,
+        'onReply': onReply,
+        'rendered': true,
+        'initComment': targetComment,
+        'initReplyThread': startThread,
+        'config': configJso,
+        'messages': msgs
+      };
+
+      var render = function() {
+        if (window.goog && window.goog.comments) {
+          var holder = document.getElementById('comment-holder');
+          window.goog.comments.render(holder, provider);
+        }
+      };
+
+      // render now, or queue to render when library loads:
+      if (window.goog && window.goog.comments) {
+        render();
+      } else {
+        window.goog = window.goog || {};
+        window.goog.comments = window.goog.comments || {};
+        window.goog.comments.loadQueue = window.goog.comments.loadQueue || [];
+        window.goog.comments.loadQueue.push(render);
+      }
+    })();
+// ]]>
+  </script>
+<div id='comment-holder'>
+<div class="comment-thread toplevel-thread"><ol id="top-ra"><li class="comment" id="c6432936715035108685"><div class="avatar-image-container"><img src="//blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEii9BYXSUzjlJqA8AAyqvtNOYs2iTYnRvwSpMA7b-VERp8CPEQm-YX_cS6jKT8E6-l2LIoMsaA-E_0wv479VhL4qatzv2oZls-QxORKFpN2TwgHTzMotfW-MkNo9EEPJA/s45-c/jim+desktop.png" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/13820141119875040536" rel="nofollow">Jim</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1399494426674#c6432936715035108685">May 7, 2014 at 10:27&#8239;PM</a></span></div><p class="comment-content">Excellent tool!  Thank you so much.</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="6432936715035108685">Reply</a><span class="item-control blog-admin blog-admin pid-489647920"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=6432936715035108685">Delete</a></span></span></div><div class="comment-replies"><div id="c6432936715035108685-rt" class="comment-thread inline-thread"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c6432936715035108685-ra" class="thread-chrome thread-expanded"><div><li class="comment" id="c6910264675734865436"><div class="avatar-image-container"><img src="//resources.blogblog.com/img/blank.gif" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user">Anonymous</cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1574699744692#c6910264675734865436">November 25, 2019 at 5:35&#8239;PM</a></span></div><p class="comment-content">duda</p><span class="comment-actions secondary-text"><span class="item-control blog-admin blog-admin pid-352684498"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=6910264675734865436">Delete</a></span></span></div><div class="comment-replies"><div id="c6910264675734865436-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c6910264675734865436-ra" class="thread-chrome thread-expanded"><div></div><div id="c6910264675734865436-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="6910264675734865436">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c6910264675734865436-ce"></div></li><li class="comment" id="c4048458511560878086"><div class="avatar-image-container"><img src="//resources.blogblog.com/img/blank.gif" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user">Anonymous</cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1574699938963#c4048458511560878086">November 25, 2019 at 5:38&#8239;PM</a></span></div><p class="comment-content"> thank you so much harja!</p><span class="comment-actions secondary-text"><span class="item-control blog-admin blog-admin pid-352684498"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=4048458511560878086">Delete</a></span></span></div><div class="comment-replies"><div id="c4048458511560878086-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c4048458511560878086-ra" class="thread-chrome thread-expanded"><div></div><div id="c4048458511560878086-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="4048458511560878086">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c4048458511560878086-ce"></div></li></div><div id="c6432936715035108685-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="6432936715035108685">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c6432936715035108685-ce"></div></li><li class="comment" id="c4691016111155771547"><div class="avatar-image-container"><img src="//resources.blogblog.com/img/blank.gif" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user">Anonymous</cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1412235881016#c4691016111155771547">October 2, 2014 at 9:44&#8239;AM</a></span></div><p class="comment-content">Great stuff -- exactly what I needed.  Thank you!</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="4691016111155771547">Reply</a><span class="item-control blog-admin blog-admin pid-352684498"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=4691016111155771547">Delete</a></span></span></div><div class="comment-replies"><div id="c4691016111155771547-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c4691016111155771547-ra" class="thread-chrome thread-expanded"><div></div><div id="c4691016111155771547-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="4691016111155771547">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c4691016111155771547-ce"></div></li><li class="comment" id="c7048916740127730669"><div class="avatar-image-container"><img src="//www.blogger.com/img/blogger_logo_round_35.png" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/05958392917278134573" rel="nofollow">Unknown</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1438540772161#c7048916740127730669">August 2, 2015 at 8:39&#8239;PM</a></span></div><p class="comment-content">excellent</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="7048916740127730669">Reply</a><span class="item-control blog-admin blog-admin pid-585981098"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=7048916740127730669">Delete</a></span></span></div><div class="comment-replies"><div id="c7048916740127730669-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c7048916740127730669-ra" class="thread-chrome thread-expanded"><div></div><div id="c7048916740127730669-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="7048916740127730669">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c7048916740127730669-ce"></div></li><li class="comment" id="c6142600684032692474"><div class="avatar-image-container"><img src="//www.blogger.com/img/blogger_logo_round_35.png" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/13972812302376436829" rel="nofollow">Fanus Groenewald</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1446748837007#c6142600684032692474">November 5, 2015 at 7:40&#8239;PM</a></span></div><p class="comment-content">Just what I was looking for!</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="6142600684032692474">Reply</a><span class="item-control blog-admin blog-admin pid-808722500"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=6142600684032692474">Delete</a></span></span></div><div class="comment-replies"><div id="c6142600684032692474-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c6142600684032692474-ra" class="thread-chrome thread-expanded"><div></div><div id="c6142600684032692474-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="6142600684032692474">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c6142600684032692474-ce"></div></li><li class="comment" id="c6106352546319274882"><div class="avatar-image-container"><img src="//www.blogger.com/img/blogger_logo_round_35.png" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/16692981290657534412" rel="nofollow">Loko90</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1447097803091#c6106352546319274882">November 9, 2015 at 8:36&#8239;PM</a></span></div><p class="comment-content">as you would for q flashes<br></p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="6106352546319274882">Reply</a><span class="item-control blog-admin blog-admin pid-718512191"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=6106352546319274882">Delete</a></span></span></div><div class="comment-replies"><div id="c6106352546319274882-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c6106352546319274882-ra" class="thread-chrome thread-expanded"><div></div><div id="c6106352546319274882-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="6106352546319274882">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c6106352546319274882-ce"></div></li><li class="comment" id="c8152903016823742383"><div class="avatar-image-container"><img src="//blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgY8eBTF53K6aMk-2sgbQcynByTfLx962YMVrrEFEuFQJpqw52n1FKPHc_rO89qcpeTbRztxYaQHwQJ4HvhX_qiuWkfRCR-4V5SrPAehBML9_SOcWUyMKOSeYKAPfV3PQ/s45-c/su_damlasi.jpg" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/01608012366510032480" rel="nofollow">Katre.</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1451909483527#c8152903016823742383">January 4, 2016 at 1:11&#8239;PM</a></span></div><p class="comment-content">good tool bro.</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="8152903016823742383">Reply</a><span class="item-control blog-admin blog-admin pid-1270265203"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=8152903016823742383">Delete</a></span></span></div><div class="comment-replies"><div id="c8152903016823742383-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c8152903016823742383-ra" class="thread-chrome thread-expanded"><div></div><div id="c8152903016823742383-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="8152903016823742383">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c8152903016823742383-ce"></div></li><li class="comment" id="c8137139455010217611"><div class="avatar-image-container"><img src="//www.blogger.com/img/blogger_logo_round_35.png" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/17891324706061455612" rel="nofollow">Unknown</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1456118904714#c8137139455010217611">February 22, 2016 at 6:28&#8239;AM</a></span></div><p class="comment-content">thank you sooooooooooooooooooooooooo much ........................</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="8137139455010217611">Reply</a><span class="item-control blog-admin blog-admin pid-1778429441"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=8137139455010217611">Delete</a></span></span></div><div class="comment-replies"><div id="c8137139455010217611-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c8137139455010217611-ra" class="thread-chrome thread-expanded"><div></div><div id="c8137139455010217611-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="8137139455010217611">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c8137139455010217611-ce"></div></li><li class="comment" id="c552453845855604304"><div class="avatar-image-container"><img src="//www.blogger.com/img/blogger_logo_round_35.png" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/07584974771240817539" rel="nofollow">antros</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1463699782745#c552453845855604304">May 20, 2016 at 1:16&#8239;AM</a></span></div><p class="comment-content">Gracias, buen utilitario!!!!!!!!!!!!!!!!!</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="552453845855604304">Reply</a><span class="item-control blog-admin blog-admin pid-213382363"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=552453845855604304">Delete</a></span></span></div><div class="comment-replies"><div id="c552453845855604304-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c552453845855604304-ra" class="thread-chrome thread-expanded"><div></div><div id="c552453845855604304-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="552453845855604304">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c552453845855604304-ce"></div></li><li class="comment" id="c8176029021350581463"><div class="avatar-image-container"><img src="//4.bp.blogspot.com/_Gv_XL5UyXqs/S73EXpxKuXI/AAAAAAAAAAw/nQtLjoCynvw/S45-s35/Tolak.jpg" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/07521802538321985083" rel="nofollow">ltolak</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1472552998354#c8176029021350581463">August 30, 2016 at 12:29&#8239;PM</a></span></div><p class="comment-content">Will be awesome if you can adjust size of matrix, ie. 8x16, 32x32... </p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="8176029021350581463">Reply</a><span class="item-control blog-admin blog-admin pid-1988343013"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=8176029021350581463">Delete</a></span></span></div><div class="comment-replies"><div id="c8176029021350581463-rt" class="comment-thread inline-thread"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c8176029021350581463-ra" class="thread-chrome thread-expanded"><div><li class="comment" id="c6419685730825326664"><div class="avatar-image-container"><img src="//blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEguo426DpB6zmmcm8i4_8s_EM98lGUElUplbREukC_xTalVeBYPoU-xzJwIuYuBpUCyIkrjdoB_oqTkmMclOI7k0zOfLHcRHj53JdMZ4VQdEimAh0h5mF21yr8dKXbN-A/s45-c/depositphotos_1328084-Blue-diamond.jpg" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/00155693473706220430" rel="nofollow">RiYa</a></cite><span class="icon user blog-author"></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1472554203932#c6419685730825326664">August 30, 2016 at 12:50&#8239;PM</a></span></div><p class="comment-content">Thanks for the feedback,  will update soon </p><span class="comment-actions secondary-text"><span class="item-control blog-admin blog-admin pid-768936876"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=6419685730825326664">Delete</a></span></span></div><div class="comment-replies"><div id="c6419685730825326664-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c6419685730825326664-ra" class="thread-chrome thread-expanded"><div></div><div id="c6419685730825326664-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="6419685730825326664">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c6419685730825326664-ce"></div></li><li class="comment" id="c5716150839438791862"><div class="avatar-image-container"><img src="//4.bp.blogspot.com/_Gv_XL5UyXqs/S73EXpxKuXI/AAAAAAAAAAw/nQtLjoCynvw/S45-s35/Tolak.jpg" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/07521802538321985083" rel="nofollow">ltolak</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1472844470245#c5716150839438791862">September 2, 2016 at 9:27&#8239;PM</a></span></div><p class="comment-content">FANTASTIC! best option is if you can just put value for both <br>variables</p><span class="comment-actions secondary-text"><span class="item-control blog-admin blog-admin pid-1988343013"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=5716150839438791862">Delete</a></span></span></div><div class="comment-replies"><div id="c5716150839438791862-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c5716150839438791862-ra" class="thread-chrome thread-expanded"><div></div><div id="c5716150839438791862-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="5716150839438791862">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c5716150839438791862-ce"></div></li><li class="comment" id="c8630931566301120254"><div class="avatar-image-container"><img src="//4.bp.blogspot.com/_Gv_XL5UyXqs/S73EXpxKuXI/AAAAAAAAAAw/nQtLjoCynvw/S45-s35/Tolak.jpg" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/07521802538321985083" rel="nofollow">ltolak</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1475433983980#c8630931566301120254">October 2, 2016 at 8:46&#8239;PM</a></span></div><p class="comment-content">THANK YOU SO MUCH!</p><span class="comment-actions secondary-text"><span class="item-control blog-admin blog-admin pid-1988343013"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=8630931566301120254">Delete</a></span></span></div><div class="comment-replies"><div id="c8630931566301120254-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c8630931566301120254-ra" class="thread-chrome thread-expanded"><div></div><div id="c8630931566301120254-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="8630931566301120254">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c8630931566301120254-ce"></div></li></div><div id="c8176029021350581463-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="8176029021350581463">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c8176029021350581463-ce"></div></li><li class="comment" id="c4452503848744650681"><div class="avatar-image-container"><img src="//4.bp.blogspot.com/_Gv_XL5UyXqs/S73EXpxKuXI/AAAAAAAAAAw/nQtLjoCynvw/S45-s35/Tolak.jpg" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/07521802538321985083" rel="nofollow">ltolak</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1476902343914#c4452503848744650681">October 19, 2016 at 8:39&#8239;PM</a></span></div><p class="comment-content">Will you be so great and add HEX values calculator for dynamic generator with custom size? (same as for 8x8) :)<br>Regards</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="4452503848744650681">Reply</a><span class="item-control blog-admin blog-admin pid-1988343013"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=4452503848744650681">Delete</a></span></span></div><div class="comment-replies"><div id="c4452503848744650681-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c4452503848744650681-ra" class="thread-chrome thread-expanded"><div></div><div id="c4452503848744650681-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="4452503848744650681">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c4452503848744650681-ce"></div></li><li class="comment" id="c8871152410546485748"><div class="avatar-image-container"><img src="//resources.blogblog.com/img/blank.gif" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user">Anonymous</cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1477999970616#c8871152410546485748">November 1, 2016 at 12:32&#8239;PM</a></span></div><p class="comment-content">Thanks!!!</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="8871152410546485748">Reply</a><span class="item-control blog-admin blog-admin pid-352684498"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=8871152410546485748">Delete</a></span></span></div><div class="comment-replies"><div id="c8871152410546485748-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c8871152410546485748-ra" class="thread-chrome thread-expanded"><div></div><div id="c8871152410546485748-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="8871152410546485748">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c8871152410546485748-ce"></div></li><li class="comment" id="c6214989271313716872"><div class="avatar-image-container"><img src="//www.blogger.com/img/blogger_logo_round_35.png" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/07131005273445488420" rel="nofollow">Unknown</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1484997177630#c6214989271313716872">January 21, 2017 at 12:12&#8239;PM</a></span></div><p class="comment-content">Very useful utility and nice work!<br>Thank you very much :-)</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="6214989271313716872">Reply</a><span class="item-control blog-admin blog-admin pid-314242797"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=6214989271313716872">Delete</a></span></span></div><div class="comment-replies"><div id="c6214989271313716872-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c6214989271313716872-ra" class="thread-chrome thread-expanded"><div></div><div id="c6214989271313716872-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="6214989271313716872">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c6214989271313716872-ce"></div></li><li class="comment" id="c1235986985588038931"><div class="avatar-image-container"><img src="//www.blogger.com/img/blogger_logo_round_35.png" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/10313886455704827956" rel="nofollow">Istvan Lacza</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1486502738545#c1235986985588038931">February 7, 2017 at 10:25&#8239;PM</a></span></div><p class="comment-content">Thanks Fantastis !!!!!</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="1235986985588038931">Reply</a><span class="item-control blog-admin blog-admin pid-1058398877"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=1235986985588038931">Delete</a></span></span></div><div class="comment-replies"><div id="c1235986985588038931-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c1235986985588038931-ra" class="thread-chrome thread-expanded"><div></div><div id="c1235986985588038931-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="1235986985588038931">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c1235986985588038931-ce"></div></li><li class="comment" id="c4307148853342548635"><div class="avatar-image-container"><img src="//www.blogger.com/img/blogger_logo_round_35.png" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/09941906961475663017" rel="nofollow">Unknown</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1487048454431#c4307148853342548635">February 14, 2017 at 6:00&#8239;AM</a></span></div><p class="comment-content">please provide me code to upload this binary on my arduino</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="4307148853342548635">Reply</a><span class="item-control blog-admin blog-admin pid-1381470327"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=4307148853342548635">Delete</a></span></span></div><div class="comment-replies"><div id="c4307148853342548635-rt" class="comment-thread inline-thread"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c4307148853342548635-ra" class="thread-chrome thread-expanded"><div><li class="comment" id="c4989712475985643950"><div class="avatar-image-container"><img src="//blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgVpparz77tTkmaY13CwdKL4PRtK57soLYII4RL5CtDr45osSsxUJizZ1F8eY17xZV4pm9sAKpA2iSVGdVpnD92NfAJKKFANIxS5AMYKl40RUK-MDee2_51H7hv5MbBVd8/s45-c/100_4012.JPG" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/10848165878915773741" rel="nofollow">Anidn Menoscwicz</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1504946516442#c4989712475985643950">September 9, 2017 at 10:41&#8239;AM</a></span></div><p class="comment-content">put it into an array, define it, and call it from your code, silly</p><span class="comment-actions secondary-text"><span class="item-control blog-admin blog-admin pid-16853181"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=4989712475985643950">Delete</a></span></span></div><div class="comment-replies"><div id="c4989712475985643950-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c4989712475985643950-ra" class="thread-chrome thread-expanded"><div></div><div id="c4989712475985643950-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="4989712475985643950">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c4989712475985643950-ce"></div></li></div><div id="c4307148853342548635-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="4307148853342548635">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c4307148853342548635-ce"></div></li><li class="comment" id="c8620390618119157793"><div class="avatar-image-container"><img src="//www.blogger.com/img/blogger_logo_round_35.png" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/13863953123383414792" rel="nofollow">Unknown</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1487536452898#c8620390618119157793">February 19, 2017 at 9:34&#8239;PM</a></span></div><p class="comment-content">Super job! Very useful for novice! Thanks a lot!</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="8620390618119157793">Reply</a><span class="item-control blog-admin blog-admin pid-1863506876"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=8620390618119157793">Delete</a></span></span></div><div class="comment-replies"><div id="c8620390618119157793-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c8620390618119157793-ra" class="thread-chrome thread-expanded"><div></div><div id="c8620390618119157793-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="8620390618119157793">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c8620390618119157793-ce"></div></li><li class="comment" id="c834252366436349609"><div class="avatar-image-container"><img src="//www.blogger.com/img/blogger_logo_round_35.png" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/05666712386340266454" rel="nofollow">Unknown</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1490537859654#c834252366436349609">March 26, 2017 at 4:17&#8239;PM</a></span></div><p class="comment-content">i love it so much</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="834252366436349609">Reply</a><span class="item-control blog-admin blog-admin pid-2057981246"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=834252366436349609">Delete</a></span></span></div><div class="comment-replies"><div id="c834252366436349609-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c834252366436349609-ra" class="thread-chrome thread-expanded"><div></div><div id="c834252366436349609-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="834252366436349609">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c834252366436349609-ce"></div></li><li class="comment" id="c9113701334884715257"><div class="avatar-image-container"><img src="//www.blogger.com/img/blogger_logo_round_35.png" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/05511309421382971740" rel="nofollow">Unknown</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1491286403828#c9113701334884715257">April 4, 2017 at 8:13&#8239;AM</a></span></div><p class="comment-content">thank you man so much you help me &lt;3</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="9113701334884715257">Reply</a><span class="item-control blog-admin blog-admin pid-1123663211"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=9113701334884715257">Delete</a></span></span></div><div class="comment-replies"><div id="c9113701334884715257-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c9113701334884715257-ra" class="thread-chrome thread-expanded"><div></div><div id="c9113701334884715257-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="9113701334884715257">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c9113701334884715257-ce"></div></li><li class="comment" id="c8250457252572028526"><div class="avatar-image-container"><img src="//www.blogger.com/img/blogger_logo_round_35.png" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/02644543916782478853" rel="nofollow">ramon12300</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1494711825069#c8250457252572028526">May 13, 2017 at 11:43&#8239;PM</a></span></div><p class="comment-content">Hello and that is ecxellent!!, form: Xalapa Ver.. &quot;AMPG&quot;</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="8250457252572028526">Reply</a><span class="item-control blog-admin blog-admin pid-1039159039"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=8250457252572028526">Delete</a></span></span></div><div class="comment-replies"><div id="c8250457252572028526-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c8250457252572028526-ra" class="thread-chrome thread-expanded"><div></div><div id="c8250457252572028526-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="8250457252572028526">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c8250457252572028526-ce"></div></li><li class="comment" id="c2169275261620080389"><div class="avatar-image-container"><img src="//www.blogger.com/img/blogger_logo_round_35.png" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/13429314022902180291" rel="nofollow">Ramakrishnan Viswanathan</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1499040931121#c2169275261620080389">July 3, 2017 at 2:15&#8239;AM</a></span></div><p class="comment-content">It is an excellent tool for the novice like me.at the age of 65 I am learning the MCU programming.Kudos to you.God bless you with more and more intelligence to you.<br>V.Ramakrishnan</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="2169275261620080389">Reply</a><span class="item-control blog-admin blog-admin pid-531044860"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=2169275261620080389">Delete</a></span></span></div><div class="comment-replies"><div id="c2169275261620080389-rt" class="comment-thread inline-thread"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c2169275261620080389-ra" class="thread-chrome thread-expanded"><div><li class="comment" id="c1829942879238274661"><div class="avatar-image-container"><img src="//www.blogger.com/img/blogger_logo_round_35.png" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/14900381370503757086" rel="nofollow">Unknown</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1533145398843#c1829942879238274661">August 1, 2018 at 7:43&#8239;PM</a></span></div><p class="comment-content">For learning age is just a number....</p><span class="comment-actions secondary-text"><span class="item-control blog-admin blog-admin pid-183290709"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=1829942879238274661">Delete</a></span></span></div><div class="comment-replies"><div id="c1829942879238274661-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c1829942879238274661-ra" class="thread-chrome thread-expanded"><div></div><div id="c1829942879238274661-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="1829942879238274661">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c1829942879238274661-ce"></div></li><li class="comment" id="c6257615332417441489"><div class="avatar-image-container"><img src="//www.blogger.com/img/blogger_logo_round_35.png" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/14900381370503757086" rel="nofollow">Unknown</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1533145566344#c6257615332417441489">August 1, 2018 at 7:46&#8239;PM</a></span></div><p class="comment-content">For learning age is just a number</p><span class="comment-actions secondary-text"><span class="item-control blog-admin blog-admin pid-183290709"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=6257615332417441489">Delete</a></span></span></div><div class="comment-replies"><div id="c6257615332417441489-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c6257615332417441489-ra" class="thread-chrome thread-expanded"><div></div><div id="c6257615332417441489-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="6257615332417441489">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c6257615332417441489-ce"></div></li></div><div id="c2169275261620080389-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="2169275261620080389">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c2169275261620080389-ce"></div></li><li class="comment" id="c7940753276192426641"><div class="avatar-image-container"><img src="//www.blogger.com/img/blogger_logo_round_35.png" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/09017323470726875563" rel="nofollow">Unknown</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1504023846726#c7940753276192426641">August 29, 2017 at 6:24&#8239;PM</a></span></div><p class="comment-content">Thks bro</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="7940753276192426641">Reply</a><span class="item-control blog-admin blog-admin pid-1093445245"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=7940753276192426641">Delete</a></span></span></div><div class="comment-replies"><div id="c7940753276192426641-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c7940753276192426641-ra" class="thread-chrome thread-expanded"><div></div><div id="c7940753276192426641-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="7940753276192426641">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c7940753276192426641-ce"></div></li><li class="comment" id="c7945938151217453957"><div class="avatar-image-container"><img src="//resources.blogblog.com/img/blank.gif" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user">Anonymous</cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1515074768626#c7945938151217453957">January 4, 2018 at 3:06&#8239;PM</a></span></div><p class="comment-content">Amazing!This is really helpful!</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="7945938151217453957">Reply</a><span class="item-control blog-admin blog-admin pid-352684498"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=7945938151217453957">Delete</a></span></span></div><div class="comment-replies"><div id="c7945938151217453957-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c7945938151217453957-ra" class="thread-chrome thread-expanded"><div></div><div id="c7945938151217453957-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="7945938151217453957">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c7945938151217453957-ce"></div></li><li class="comment" id="c8313823059505414920"><div class="avatar-image-container"><img src="//resources.blogblog.com/img/blank.gif" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user">Anonymous</cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1516907446166#c8313823059505414920">January 25, 2018 at 8:10&#8239;PM</a></span></div><p class="comment-content">Really helpful. Thanks a lot!</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="8313823059505414920">Reply</a><span class="item-control blog-admin blog-admin pid-352684498"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=8313823059505414920">Delete</a></span></span></div><div class="comment-replies"><div id="c8313823059505414920-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c8313823059505414920-ra" class="thread-chrome thread-expanded"><div></div><div id="c8313823059505414920-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="8313823059505414920">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c8313823059505414920-ce"></div></li><li class="comment" id="c38817632187316430"><div class="avatar-image-container"><img src="//resources.blogblog.com/img/blank.gif" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user">Anonymous</cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1519133176280#c38817632187316430">February 20, 2018 at 2:26&#8239;PM</a></span></div><p class="comment-content">Thanks a lot</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="38817632187316430">Reply</a><span class="item-control blog-admin blog-admin pid-352684498"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=38817632187316430">Delete</a></span></span></div><div class="comment-replies"><div id="c38817632187316430-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c38817632187316430-ra" class="thread-chrome thread-expanded"><div></div><div id="c38817632187316430-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="38817632187316430">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c38817632187316430-ce"></div></li><li class="comment" id="c7233845077666064734"><div class="avatar-image-container"><img src="//www.blogger.com/img/blogger_logo_round_35.png" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/00004375988252000267" rel="nofollow">Unknown</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1527409256806#c7233845077666064734">May 27, 2018 at 10:20&#8239;AM</a></span></div><p class="comment-content">Nice!<br></p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="7233845077666064734">Reply</a><span class="item-control blog-admin blog-admin pid-1954419556"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=7233845077666064734">Delete</a></span></span></div><div class="comment-replies"><div id="c7233845077666064734-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c7233845077666064734-ra" class="thread-chrome thread-expanded"><div></div><div id="c7233845077666064734-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="7233845077666064734">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c7233845077666064734-ce"></div></li><li class="comment" id="c7275441375062448749"><div class="avatar-image-container"><img src="//www.blogger.com/img/blogger_logo_round_35.png" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/03097804641268428220" rel="nofollow">Unknown</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1531324903254#c7275441375062448749">July 11, 2018 at 6:01&#8239;PM</a></span></div><p class="comment-content">Very gooooooooooooooooooooooo<br>ooooooooooooooooooooood</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="7275441375062448749">Reply</a><span class="item-control blog-admin blog-admin pid-596456628"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=7275441375062448749">Delete</a></span></span></div><div class="comment-replies"><div id="c7275441375062448749-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c7275441375062448749-ra" class="thread-chrome thread-expanded"><div></div><div id="c7275441375062448749-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="7275441375062448749">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c7275441375062448749-ce"></div></li><li class="comment" id="c4900578828029580213"><div class="avatar-image-container"><img src="//www.blogger.com/img/blogger_logo_round_35.png" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/16508057148794786344" rel="nofollow">Unknown</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1533203811289#c4900578828029580213">August 2, 2018 at 11:56&#8239;AM</a></span></div><p class="comment-content">thanks for sharing<br></p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="4900578828029580213">Reply</a><span class="item-control blog-admin blog-admin pid-1067992318"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=4900578828029580213">Delete</a></span></span></div><div class="comment-replies"><div id="c4900578828029580213-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c4900578828029580213-ra" class="thread-chrome thread-expanded"><div></div><div id="c4900578828029580213-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="4900578828029580213">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c4900578828029580213-ce"></div></li><li class="comment" id="c1607072567581303156"><div class="avatar-image-container"><img src="//www.blogger.com/img/blogger_logo_round_35.png" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/03600182361406279001" rel="nofollow">Marco Antonio</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1533822489577#c1607072567581303156">August 9, 2018 at 3:48&#8239;PM</a></span></div><p class="comment-content">Congratulations, excellent tool</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="1607072567581303156">Reply</a><span class="item-control blog-admin blog-admin pid-1887840891"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=1607072567581303156">Delete</a></span></span></div><div class="comment-replies"><div id="c1607072567581303156-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c1607072567581303156-ra" class="thread-chrome thread-expanded"><div></div><div id="c1607072567581303156-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="1607072567581303156">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c1607072567581303156-ce"></div></li><li class="comment" id="c4180341226087863374"><div class="avatar-image-container"><img src="//resources.blogblog.com/img/blank.gif" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user">Anonymous</cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1550072730784#c4180341226087863374">February 13, 2019 at 4:45&#8239;PM</a></span></div><p class="comment-content">Thanks for the awesome tool man!!! You&#39;re the best person on the planet! I love this tool! It makes my life so much easier!</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="4180341226087863374">Reply</a><span class="item-control blog-admin blog-admin pid-352684498"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=4180341226087863374">Delete</a></span></span></div><div class="comment-replies"><div id="c4180341226087863374-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c4180341226087863374-ra" class="thread-chrome thread-expanded"><div></div><div id="c4180341226087863374-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="4180341226087863374">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c4180341226087863374-ce"></div></li><li class="comment" id="c1360406191468016744"><div class="avatar-image-container"><img src="//resources.blogblog.com/img/blank.gif" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user">Anonymous</cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1550074829853#c1360406191468016744">February 13, 2019 at 5:20&#8239;PM</a></span></div><p class="comment-content">I hate this, it&#39;s terrible. I can&#39;t make a troll face. Waaaah<br>I&#39;m going to eat my first born.</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="1360406191468016744">Reply</a><span class="item-control blog-admin blog-admin pid-352684498"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=1360406191468016744">Delete</a></span></span></div><div class="comment-replies"><div id="c1360406191468016744-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c1360406191468016744-ra" class="thread-chrome thread-expanded"><div></div><div id="c1360406191468016744-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="1360406191468016744">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c1360406191468016744-ce"></div></li><li class="comment" id="c4390814674267597847"><div class="avatar-image-container"><img src="//blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg6Y49tVTusgGz8eoAERJszQoc4vaTjff_FC5-nxLx7lrwD3n1JCtfFWVsmyL7066gFcnPA94BF5lP_G5yxRm0t6D8-lCQeOj4dCCzCNUhioh1bWtuAoF8vAmVUyx8WUSU/s45-c/logo.jpg" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/07890252693318536223" rel="nofollow">peej</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1553334324560#c4390814674267597847">March 23, 2019 at 10:45&#8239;AM</a></span></div><p class="comment-content">thank you so much - a great help to make the code for my led 64 matrix and my arduino :&#172;)</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="4390814674267597847">Reply</a><span class="item-control blog-admin blog-admin pid-2102913323"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=4390814674267597847">Delete</a></span></span></div><div class="comment-replies"><div id="c4390814674267597847-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c4390814674267597847-ra" class="thread-chrome thread-expanded"><div></div><div id="c4390814674267597847-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="4390814674267597847">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c4390814674267597847-ce"></div></li><li class="comment" id="c5578345185898014990"><div class="avatar-image-container"><img src="//www.blogger.com/img/blogger_logo_round_35.png" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/03545837855326756920" rel="nofollow">shubham mishra</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1566382884533#c5578345185898014990">August 21, 2019 at 12:21&#8239;PM</a></span></div><p class="comment-content">Thanks a lot!</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="5578345185898014990">Reply</a><span class="item-control blog-admin blog-admin pid-1323140140"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=5578345185898014990">Delete</a></span></span></div><div class="comment-replies"><div id="c5578345185898014990-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c5578345185898014990-ra" class="thread-chrome thread-expanded"><div></div><div id="c5578345185898014990-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="5578345185898014990">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c5578345185898014990-ce"></div></li><li class="comment" id="c460933526992380069"><div class="avatar-image-container"><img src="//www.blogger.com/img/blogger_logo_round_35.png" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/02289096476484501999" rel="nofollow">Christian</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1567332570482#c460933526992380069">September 1, 2019 at 12:09&#8239;PM</a></span></div><p class="comment-content">Excellent, thaks</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="460933526992380069">Reply</a><span class="item-control blog-admin blog-admin pid-817656021"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=460933526992380069">Delete</a></span></span></div><div class="comment-replies"><div id="c460933526992380069-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c460933526992380069-ra" class="thread-chrome thread-expanded"><div></div><div id="c460933526992380069-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="460933526992380069">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c460933526992380069-ce"></div></li><li class="comment" id="c7260535890184506137"><div class="avatar-image-container"><img src="//resources.blogblog.com/img/blank.gif" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user">Anonymous</cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1569176584349#c7260535890184506137">September 22, 2019 at 8:23&#8239;PM</a></span></div><p class="comment-content">Thanks a lot.</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="7260535890184506137">Reply</a><span class="item-control blog-admin blog-admin pid-352684498"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=7260535890184506137">Delete</a></span></span></div><div class="comment-replies"><div id="c7260535890184506137-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c7260535890184506137-ra" class="thread-chrome thread-expanded"><div></div><div id="c7260535890184506137-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="7260535890184506137">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c7260535890184506137-ce"></div></li><li class="comment" id="c2602169125359952406"><div class="avatar-image-container"><img src="//www.blogger.com/img/blogger_logo_round_35.png" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/06721444164676446860" rel="nofollow">All Electronics Projects</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1579111666306#c2602169125359952406">January 15, 2020 at 7:07&#8239;PM</a></span></div><p class="comment-content">Amazing</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="2602169125359952406">Reply</a><span class="item-control blog-admin blog-admin pid-1429786951"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=2602169125359952406">Delete</a></span></span></div><div class="comment-replies"><div id="c2602169125359952406-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c2602169125359952406-ra" class="thread-chrome thread-expanded"><div></div><div id="c2602169125359952406-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="2602169125359952406">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c2602169125359952406-ce"></div></li><li class="comment" id="c885247130263188733"><div class="avatar-image-container"><img src="//www.blogger.com/img/blogger_logo_round_35.png" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/09343807163741003268" rel="nofollow">Mightyphysicist</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1581552132916#c885247130263188733">February 13, 2020 at 1:02&#8239;AM</a></span></div><p class="comment-content">very helpful thanks a lot </p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="885247130263188733">Reply</a><span class="item-control blog-admin blog-admin pid-511800090"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=885247130263188733">Delete</a></span></span></div><div class="comment-replies"><div id="c885247130263188733-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c885247130263188733-ra" class="thread-chrome thread-expanded"><div></div><div id="c885247130263188733-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="885247130263188733">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c885247130263188733-ce"></div></li><li class="comment" id="c5767377614788570521"><div class="avatar-image-container"><img src="//resources.blogblog.com/img/blank.gif" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user">Anonymous</cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1586345695188#c5767377614788570521">April 8, 2020 at 1:34&#8239;PM</a></span></div><p class="comment-content">thank you bro</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="5767377614788570521">Reply</a><span class="item-control blog-admin blog-admin pid-352684498"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=5767377614788570521">Delete</a></span></span></div><div class="comment-replies"><div id="c5767377614788570521-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c5767377614788570521-ra" class="thread-chrome thread-expanded"><div></div><div id="c5767377614788570521-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="5767377614788570521">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c5767377614788570521-ce"></div></li><li class="comment" id="c7211817417019188152"><div class="avatar-image-container"><img src="//www.blogger.com/img/blogger_logo_round_35.png" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/11153634888920702830" rel="nofollow">qwed</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1586683414208#c7211817417019188152">April 12, 2020 at 11:23&#8239;AM</a></span></div><p class="comment-content">can you provide hex value for variable matrix</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="7211817417019188152">Reply</a><span class="item-control blog-admin blog-admin pid-1445683896"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=7211817417019188152">Delete</a></span></span></div><div class="comment-replies"><div id="c7211817417019188152-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c7211817417019188152-ra" class="thread-chrome thread-expanded"><div></div><div id="c7211817417019188152-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="7211817417019188152">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c7211817417019188152-ce"></div></li><li class="comment" id="c7124087146171280829"><div class="avatar-image-container"><img src="//resources.blogblog.com/img/blank.gif" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://nixs.in" rel="nofollow">Tamil News</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1591598195450#c7124087146171280829">June 8, 2020 at 8:36&#8239;AM</a></span></div><p class="comment-content">Nice try...but need some improvemnt</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="7124087146171280829">Reply</a><span class="item-control blog-admin blog-admin pid-352684498"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=7124087146171280829">Delete</a></span></span></div><div class="comment-replies"><div id="c7124087146171280829-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c7124087146171280829-ra" class="thread-chrome thread-expanded"><div></div><div id="c7124087146171280829-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="7124087146171280829">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c7124087146171280829-ce"></div></li><li class="comment" id="c265659440888864108"><div class="avatar-image-container"><img src="//resources.blogblog.com/img/blank.gif" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user">Anonymous</cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1592269422448#c265659440888864108">June 16, 2020 at 3:03&#8239;AM</a></span></div><p class="comment-content">Thanks <br></p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="265659440888864108">Reply</a><span class="item-control blog-admin blog-admin pid-352684498"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=265659440888864108">Delete</a></span></span></div><div class="comment-replies"><div id="c265659440888864108-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c265659440888864108-ra" class="thread-chrome thread-expanded"><div></div><div id="c265659440888864108-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="265659440888864108">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c265659440888864108-ce"></div></li><li class="comment" id="c4826823430614113637"><div class="avatar-image-container"><img src="//www.blogger.com/img/blogger_logo_round_35.png" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/05169349371836694203" rel="nofollow">Unknown</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1593411562380#c4826823430614113637">June 29, 2020 at 8:19&#8239;AM</a></span></div><p class="comment-content">thanks</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="4826823430614113637">Reply</a><span class="item-control blog-admin blog-admin pid-681342472"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=4826823430614113637">Delete</a></span></span></div><div class="comment-replies"><div id="c4826823430614113637-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c4826823430614113637-ra" class="thread-chrome thread-expanded"><div></div><div id="c4826823430614113637-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="4826823430614113637">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c4826823430614113637-ce"></div></li><li class="comment" id="c5802963922611266357"><div class="avatar-image-container"><img src="//resources.blogblog.com/img/blank.gif" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user">Anonymous</cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1596701595161#c5802963922611266357">August 6, 2020 at 10:13&#8239;AM</a></span></div><p class="comment-content">Thank you. Can you post custom sizes matrix generator?</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="5802963922611266357">Reply</a><span class="item-control blog-admin blog-admin pid-352684498"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=5802963922611266357">Delete</a></span></span></div><div class="comment-replies"><div id="c5802963922611266357-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c5802963922611266357-ra" class="thread-chrome thread-expanded"><div></div><div id="c5802963922611266357-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="5802963922611266357">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c5802963922611266357-ce"></div></li><li class="comment" id="c7475790952508839801"><div class="avatar-image-container"><img src="//www.blogger.com/img/blogger_logo_round_35.png" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/02431975834264766893" rel="nofollow">BEEY CHATEIA</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1600107680394#c7475790952508839801">September 14, 2020 at 8:21&#8239;PM</a></span></div><p class="comment-content">could you please add hex values for a 64*64 code pattern generator</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="7475790952508839801">Reply</a><span class="item-control blog-admin blog-admin pid-1339203409"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=7475790952508839801">Delete</a></span></span></div><div class="comment-replies"><div id="c7475790952508839801-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c7475790952508839801-ra" class="thread-chrome thread-expanded"><div></div><div id="c7475790952508839801-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="7475790952508839801">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c7475790952508839801-ce"></div></li><li class="comment" id="c388175018032207604"><div class="avatar-image-container"><img src="//www.blogger.com/img/blogger_logo_round_35.png" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/15864011848461809666" rel="nofollow">Unknown</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1601592814027#c388175018032207604">October 2, 2020 at 12:53&#8239;AM</a></span></div><p class="comment-content">is it possible to get an example code?</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="388175018032207604">Reply</a><span class="item-control blog-admin blog-admin pid-2033201247"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=388175018032207604">Delete</a></span></span></div><div class="comment-replies"><div id="c388175018032207604-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c388175018032207604-ra" class="thread-chrome thread-expanded"><div></div><div id="c388175018032207604-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="388175018032207604">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c388175018032207604-ce"></div></li><li class="comment" id="c4473784346411293126"><div class="avatar-image-container"><img src="//www.blogger.com/img/blogger_logo_round_35.png" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/03852513839276704103" rel="nofollow">Unknown</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1609834104935#c4473784346411293126">January 5, 2021 at 9:08&#8239;AM</a></span></div><p class="comment-content">error: &#39;B00000000000000000000000000000000&#39; was not declared in this scope</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="4473784346411293126">Reply</a><span class="item-control blog-admin blog-admin pid-845271187"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=4473784346411293126">Delete</a></span></span></div><div class="comment-replies"><div id="c4473784346411293126-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c4473784346411293126-ra" class="thread-chrome thread-expanded"><div></div><div id="c4473784346411293126-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="4473784346411293126">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c4473784346411293126-ce"></div></li><li class="comment" id="c7050584821512897201"><div class="avatar-image-container"><img src="//resources.blogblog.com/img/blank.gif" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user">Anonymous</cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1617185571278#c7050584821512897201">March 31, 2021 at 12:12&#8239;PM</a></span></div><p class="comment-content">very helpful</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="7050584821512897201">Reply</a><span class="item-control blog-admin blog-admin pid-352684498"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=7050584821512897201">Delete</a></span></span></div><div class="comment-replies"><div id="c7050584821512897201-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c7050584821512897201-ra" class="thread-chrome thread-expanded"><div></div><div id="c7050584821512897201-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="7050584821512897201">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c7050584821512897201-ce"></div></li><li class="comment" id="c6986872896250264121"><div class="avatar-image-container"><img src="//resources.blogblog.com/img/blank.gif" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user">Anonymous</cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1630433060873#c6986872896250264121">August 31, 2021 at 8:04&#8239;PM</a></span></div><p class="comment-content">error booooooooooooooooooooooooooooooooooooooooooooooo was not declared in this scope in arduino IDE</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="6986872896250264121">Reply</a><span class="item-control blog-admin blog-admin pid-352684498"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=6986872896250264121">Delete</a></span></span></div><div class="comment-replies"><div id="c6986872896250264121-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c6986872896250264121-ra" class="thread-chrome thread-expanded"><div></div><div id="c6986872896250264121-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="6986872896250264121">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c6986872896250264121-ce"></div></li><li class="comment" id="c3555212754423118664"><div class="avatar-image-container"><img src="//www.blogger.com/img/blogger_logo_round_35.png" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/07713095638112642963" rel="nofollow">Unknown</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1634145565001#c3555212754423118664">October 13, 2021 at 7:19&#8239;PM</a></span></div><p class="comment-content">Cordial saludo mi agradecimiento por la fabulosa herramienta que comparte gracias por compartir sus conocimientos</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="3555212754423118664">Reply</a><span class="item-control blog-admin blog-admin pid-2069882325"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=3555212754423118664">Delete</a></span></span></div><div class="comment-replies"><div id="c3555212754423118664-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c3555212754423118664-ra" class="thread-chrome thread-expanded"><div></div><div id="c3555212754423118664-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="3555212754423118664">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c3555212754423118664-ce"></div></li><li class="comment" id="c787016358072219221"><div class="avatar-image-container"><img src="//resources.blogblog.com/img/blank.gif" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user">Anonymous</cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html?showComment=1638191503628#c787016358072219221">November 29, 2021 at 2:11&#8239;PM</a></span></div><p class="comment-content">Hi there,<br><br>is it possible to generate the other direction, too? Inserting HEX or BINARY and receiving LED output?</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="787016358072219221">Reply</a><span class="item-control blog-admin blog-admin pid-352684498"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=8392959180134867028&amp;postID=787016358072219221">Delete</a></span></span></div><div class="comment-replies"><div id="c787016358072219221-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c787016358072219221-ra" class="thread-chrome thread-expanded"><div></div><div id="c787016358072219221-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="787016358072219221">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c787016358072219221-ce"></div></li></ol><div id="top-continue" class="continue"><a class="comment-reply" target="_self">Add comment</a></div><div class="comment-replybox-thread" id="top-ce"></div><div class="loadmore hidden" data-post-id="6509502210521228262"><a target="_self">Load more...</a></div></div>
+</div>
+</div>
+<p class='comment-footer'>
+<div class='comment-form'>
+<a name='comment-form'></a>
+<p>
+</p>
+<a href='https://www.blogger.com/comment/frame/8392959180134867028?po=6509502210521228262&hl=en' id='comment-editor-src'></a>
+<iframe allowtransparency='true' class='blogger-iframe-colorize blogger-comment-from-post' frameborder='0' height='410px' id='comment-editor' name='comment-editor' src='' width='100%'></iframe>
+<script src='https://www.blogger.com/static/v1/jsbin/2315299244-comment_from_post_iframe.js' type='text/javascript'></script>
+<script type='text/javascript'>
+      BLOG_CMT_createIframe('https://www.blogger.com/rpc_relay.html');
+    </script>
+</div>
+</p>
+<div id='backlinks-container'>
+<div id='Blog1_backlinks-container'>
+</div>
+</div>
+</div>
+</div>
+
+        </div></div>
+      
+</div>
+<div class='blog-pager' id='blog-pager'>
+<span id='blog-pager-newer-link'>
+<a class='blog-pager-newer-link' href="https://www.riyas.org/2013/12/turn-tv-into-smart-tv-cheap-smart-tv.html" id='Blog1_blog-pager-newer-link' title='Newer Post'>Newer Post</a>
+</span>
+<span id='blog-pager-older-link'>
+<a class='blog-pager-older-link' href="https://www.riyas.org/2013/12/broadcast-fm-reception-with-gnuradio.html" id='Blog1_blog-pager-older-link' title='Older Post'>Older Post</a>
+</span>
+<a class='home-link' href="https://www.riyas.org/">Home</a>
+</div>
+<div class='clear'></div>
+<div class='post-feeds'>
+<div class='feed-links'>
+Subscribe to:
+<a class='feed-link' href="https://www.riyas.org/feeds/6509502210521228262/comments/default" target='_blank' type='application/atom+xml'>Post Comments (Atom)</a>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+<div class='column-left-outer'>
+<div class='column-left-inner'>
+<aside>
+<div class='sidebar section' id='sidebar-left-1'><div class='widget HTML' data-version='1' id='HTML7'>
+<h2 class='title'>Feed</h2>
+<div class='widget-content'>
+<a href="http://feeds.feedburner.com/riyas/ECFX" title="Subscribe to my feed" rel="alternate" type="application/rss+xml"><img src="//feedburner.google.com/fb/images/pub/feed-icon32x32.png" alt="" style="border:0"/></a><a href="http://feeds.feedburner.com/riyas/ECFX" title="Subscribe to my feed" rel="alternate" type="application/rss+xml">Subscribe in a reader</a>
+</div>
+<div class='clear'></div>
+</div><div class='widget HTML' data-version='1' id='HTML6'>
+<div class='widget-content'>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- dynamic_ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2260500998550491"
+     data-ad-slot="6588223618"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class='clear'></div>
+</div><div class='widget HTML' data-version='1' id='HTML1'>
+<div class='widget-content'>
+<!--~~~~~~~~~~~~~~~~~ Include CSS and these JS files once: jQuery then plugin -->
+<link type="text/css" href="https://blogger-related-posts.googlecode.com/svn/v2/style1.css" rel="stylesheet" />
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://blogger-related-posts.googlecode.com/files/jquery.related-posts-widget-2.0.min.js"></script>
+<!---~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~ required HTML -->
+<div class="related-posts-widget">
+<!-- {
+	max_posts:6
+	,url_querystring:1
+	,post_page_only:0
+        ,thumbs:0
+} -->
+</div>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+</div>
+<div class='clear'></div>
+</div><div class='widget PopularPosts' data-version='1' id='PopularPosts1'>
+<h2>Recent</h2>
+<div class='widget-content popular-posts'>
+<ul>
+<li>
+<div class='item-content'>
+<div class='item-thumbnail'>
+<a href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html" target='_blank'>
+<img alt='' border='0' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEghxWIj4MKuM_41uOsdCRQoyi5YEN78wEdk77Oiuihua4lbc7cpfOpwAK6TSQ9Ewtj5z94qlWFPoPcthQmD78gRvz9BXd9KwUbYCrccymE_Bne8bLFf1w1fox-_5-R3ztHFeA3b6PNCg54g/w72-h72-p-k-no-nu/images.jpg'/>
+</a>
+</div>
+<div class='item-title'><a href="https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html">Online led matrix font generator with binary and hex codes for Arduino</a></div>
+<div class='item-snippet'> If you are looking for the nokia lcd (bitmap to hex codes for 84X48 lcd with PCD8544, it can be accessed at the link here Nokia LCD Hex Gen...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-thumbnail'>
+<a href="https://www.riyas.org/2017/01/online-tool-to-convert-bitmap-to-hex-nokia-arduino.html" target='_blank'>
+<img alt='' border='0' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgxlj_Kt5Hzpo_r_Kszp-MxBEicH6CKZqud5dtxx9SEEjKb9GKhGgze8KLtPZGzjElIYcs1hXPm_AVhTrK5IL4JA-1vPFHxAcyq47IvseeZ2_Iipf744CI0psa03Ct5OaEWe84RhiyeINur/w72-h72-p-k-no-nu/nokia_lcd.jpg'/>
+</a>
+</div>
+<div class='item-title'><a href="https://www.riyas.org/2017/01/online-tool-to-convert-bitmap-to-hex-nokia-arduino.html">Online tool to convert bitmap to hex codes for Arduino Graphic LCD 84x48 with PCD8544 controller Nokia 5110</a></div>
+<div class='item-snippet'>Here is a simple tool to convert bitmap images of 84 pixel wide and 48 pixel height to hex codes for using with arduino&#39;s and in other a...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-thumbnail'>
+<a href="https://www.riyas.org/2016/11/a-simple-si5351-based-vfo-signal_5.html" target='_blank'>
+<img alt='' border='0' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwnhu0OEVgEYl19FrwmP-hSsoD6L2doSa8hBrNBRGMvd1h-WOquP0bg26raH_Y0lF8zt4a3nhGfzUBwhj7bnGIXW36IkGoZNwUt0AHxoc2ih2wMKaqrZ-wOezla5taVNvkJE2oNidKashS/w72-h72-p-k-no-nu/si5351_pin_out.png'/>
+</a>
+</div>
+<div class='item-title'><a href="https://www.riyas.org/2016/11/a-simple-si5351-based-vfo-signal_5.html">A Simple  Si5351 based vfo (signal generator) for ham radio use [quick start-setting up and general details]</a></div>
+<div class='item-snippet'> A simple and stable vfo is an integral part for radio experiments. There are several solutions to generate an rf signal ( Popular ones are ...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-thumbnail'>
+<a href="https://www.riyas.org/2016/12/a-simple-si5351-vfo-and-bfo-with-s-meter.html" target='_blank'>
+<img alt='' border='0' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjLSGegZwC4tcFA27uF4S-7tEDvxCgaeze86tc6yMhBbW_UrP8ihGPlXO_4QfO-SA23rdi72NJnobg7C5jHcJw62HQAcd-xqOF49f0YFPK3dwCARjVCPzI10O-CoDxwHaVcH9WxNMU8BB9W/w72-h72-p-k-no-nu/si5351_vfo_bfo_with_S_meter.JPG'/>
+</a>
+</div>
+<div class='item-title'><a href="https://www.riyas.org/2016/12/a-simple-si5351-vfo-and-bfo-with-s-meter.html">A simple Si5351 vfo and bfo with S meter for hombrew transceiver- firmware based on arduino/atmega328p</a></div>
+<div class='item-snippet'>  Si5351 vfo cum bfo with S meter for hombrew trx     Here is a Simple vfo+bfo using Si5351 and a 16X2 lcd with an S-meter. It is based on a...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-thumbnail'>
+<a href="https://www.riyas.org/2015/07/a-simple-rf-remote-with-secure-rolling-code-and-arduino.html" target='_blank'>
+<img alt='' border='0' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEixuoYKdXZHgo6bEmXGMzVKS1WxnneXNKBzGRJ7Om4J9DsjCAX-0KWE18F0O6UZjTaVzolmZLjcfhFFnLJDmXlwJhm4Hv8dXopipMqDn17XaO0sai9NqlqU7RQp4I7XF_Nxqp0Wf9rdmlyz/w72-h72-p-k-no-nu/arduino_rolling_code_door_opener.JPG'/>
+</a>
+</div>
+<div class='item-title'><a href="https://www.riyas.org/2015/07/a-simple-rf-remote-with-secure-rolling-code-and-arduino.html">A simple RF remote with code hopping or rolling code on Arduino and AVR using cheap 433mhz rf modules</a></div>
+<div class='item-snippet'>  Secure door lock with arduino and rolling code/code hopping with AES   &#160;In many of my weekend projects, i used some cheap 433 mhz RF modul...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+</ul>
+<div class='clear'></div>
+</div>
+</div><div class='widget HTML' data-version='1' id='HTML4'>
+<div class='widget-content'>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- blog-long -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:600px"
+     data-ad-client="ca-pub-2260500998550491"
+     data-ad-slot="8082876412"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class='clear'></div>
+</div><div class='widget HTML' data-version='1' id='HTML3'>
+<div class='widget-content'>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-90062201-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<b>List of Topics </b>
+<br />
+<div><ul id="postList12"></ul></div>
+
+<script type="text/javascript">
+
+var startIndex = 1;
+var maxResults = 100;
+
+function sendQuery12()
+{
+   var scpt = document.createElement("script");
+   scpt.src = "/feeds/posts/summary?alt=json&callback=processPostList12&start-index=" + startIndex + "&max-results=" + maxResults;
+
+   document.body.appendChild(scpt);
+}
+
+function processPostList12(root)
+{
+   var elmt = document.getElementById("postList12");
+   if (!elmt)
+      return;
+
+   var feed = root.feed;
+
+   if (feed.entry.length > 0)
+   {
+      for (var i = 0; i < 9; i++)
+      {
+         var entry = feed.entry[i];
+
+         var title = entry.title.$t;
+
+         for (var j = 0; j < entry.link.length; j++)
+         {
+            if (entry.link[j].rel == "alternate")
+            {
+               var url = entry.link[j].href;
+
+               if (url && url.length > 0 && title && title.length > 0)
+               {
+                  var liE = document.createElement("li");
+
+                  var a1E = document.createElement("a");
+                  a1E.href = url;
+                  a1E.textContent = title;
+
+                  liE.appendChild(a1E);
+
+                  elmt.appendChild(liE);
+               }
+
+               break;
+            }
+         }
+      }
+
+      if (feed.entry.length >= maxResults)
+      {
+         startIndex += maxResults;
+         sendQuery12();
+      }
+   }
+}
+
+sendQuery12();</script>
+<br />
+<br />
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- blog-diy -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:336px;height:280px"
+     data-ad-client="ca-pub-2260500998550491"
+     data-ad-slot="9699210417"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class='clear'></div>
+</div></div>
+</aside>
+</div>
+</div>
+<div class='column-right-outer'>
+<div class='column-right-inner'>
+<aside>
+</aside>
+</div>
+</div>
+</div>
+<div style='clear: both'></div>
+<!-- columns -->
+</div>
+<!-- main -->
+</div>
+</div>
+<div class='main-cap-bottom cap-bottom'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+</div>
+<footer>
+<div class='footer-outer'>
+<div class='footer-cap-top cap-top'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+<div class='fauxborder-left footer-fauxborder-left'>
+<div class='fauxborder-right footer-fauxborder-right'></div>
+<div class='region-inner footer-inner'>
+<div class='foot no-items section' id='footer-1'></div>
+<table border='0' cellpadding='0' cellspacing='0' class='section-columns columns-2'>
+<tbody>
+<tr>
+<td class='first columns-cell'>
+<div class='foot no-items section' id='footer-2-1'></div>
+</td>
+<td class='columns-cell'>
+<div class='foot no-items section' id='footer-2-2'></div>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- outside of the include in order to lock Attribution widget -->
+<div class='foot section' id='footer-3' name='Footer'><div class='widget Attribution' data-version='1' id='Attribution1'>
+<div class='widget-content' style='text-align: center;'>
+www.riyas.org &#169; 2013. Simple theme. Theme images by <a href='http://www.istockphoto.com/file_closeup.php?id=6174206&platform=blogger' target='_blank'>blue_baron</a>. Powered by <a href='https://www.blogger.com' target='_blank'>Blogger</a>.
+</div>
+<div class='clear'></div>
+</div></div>
+</div>
+</div>
+<div class='footer-cap-bottom cap-bottom'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+</div>
+</footer>
+<!-- content -->
+</div>
+</div>
+<div class='content-cap-bottom cap-bottom'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+</div>
+</div>
+<script type='text/javascript'>
+    window.setTimeout(function() {
+        document.body.className = document.body.className.replace('loading', '');
+      }, 10);
+  </script>
+<!--It is your responsibility to notify your visitors about cookies used and data collected on your blog. Blogger makes a standard notification available for you to use on your blog, and you can customise it or replace it with your own notice. See http://www.blogger.com/go/cookiechoices for more details.-->
+<script defer='' src='/js/cookienotice.js'></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function(event) {
+      window.cookieChoices && cookieChoices.showCookieConsentBar && cookieChoices.showCookieConsentBar(
+          (window.cookieOptions && cookieOptions.msg) || 'This site uses cookies from Google to deliver its services and to analyse traffic. Your IP address and user agent are shared with Google, together with performance and security metrics, to ensure quality of service, generate usage statistics and to detect and address abuse.',
+          (window.cookieOptions && cookieOptions.close) || 'Got it',
+          (window.cookieOptions && cookieOptions.learn) || 'Learn more',
+          (window.cookieOptions && cookieOptions.link) || 'https://www.blogger.com/go/blogspot-cookies');
+    });
+  </script>
+
+<script type="text/javascript" src="https://www.blogger.com/static/v1/widgets/3704019819-widgets.js"></script>
+<script type='text/javascript'>
+window['__wavt'] = 'AOuZoY7ZLMRV7txiVvs7cjnX2NovLz6zUw:1733606289127';_WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d8392959180134867028','//www.riyas.org/2013/12/online-led-matrix-font-generator-with.html','8392959180134867028');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'blogId': '8392959180134867028', 'title': ' Learn on the fly ', 'url': 'http://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html', 'canonicalUrl': 'http://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html', 'homepageUrl': 'http://www.riyas.org/', 'searchUrl': 'http://www.riyas.org/search', 'canonicalHomepageUrl': 'http://www.riyas.org/', 'blogspotFaviconUrl': 'http://www.riyas.org/favicon.ico', 'bloggerUrl': 'https://www.blogger.com', 'hasCustomDomain': true, 'httpsEnabled': false, 'enabledCommentProfileImages': true, 'gPlusViewType': 'FILTERED_POSTMOD', 'adultContent': false, 'analyticsAccountNumber': '', 'encoding': 'UTF-8', 'locale': 'en', 'localeUnderscoreDelimited': 'en', 'languageDirection': 'ltr', 'isPrivate': false, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false, 'isDynamicViewsAvailable': true, 'feedLinks': '\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22 Learn on the fly  - Atom\x22 href\x3d\x22http://www.riyas.org/feeds/posts/default\x22 /\x3e\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/rss+xml\x22 title\x3d\x22 Learn on the fly  - RSS\x22 href\x3d\x22http://www.riyas.org/feeds/posts/default?alt\x3drss\x22 /\x3e\n\x3clink rel\x3d\x22service.post\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22 Learn on the fly  - Atom\x22 href\x3d\x22https://www.blogger.com/feeds/8392959180134867028/posts/default\x22 /\x3e\n\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22 Learn on the fly  - Atom\x22 href\x3d\x22http://www.riyas.org/feeds/6509502210521228262/comments/default\x22 /\x3e\n', 'meTag': '', 'adsenseClientId': 'ca-pub-2260500998550491', 'adsenseHostId': 'ca-host-pub-1556223355139109', 'adsenseHasAds': false, 'adsenseAutoAds': false, 'boqCommentIframeForm': true, 'loginRedirectParam': '', 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/36eb93a0ea1bb211', 'plusOneApiSrc': 'https://apis.google.com/js/platform.js', 'disableGComments': true, 'interstitialAccepted': false, 'sharing': {'platforms': [{'name': 'Get link', 'key': 'link', 'shareMessage': 'Get link', 'target': ''}, {'name': 'Facebook', 'key': 'facebook', 'shareMessage': 'Share to Facebook', 'target': 'facebook'}, {'name': 'BlogThis!', 'key': 'blogThis', 'shareMessage': 'BlogThis!', 'target': 'blog'}, {'name': 'X', 'key': 'twitter', 'shareMessage': 'Share to X', 'target': 'twitter'}, {'name': 'Pinterest', 'key': 'pinterest', 'shareMessage': 'Share to Pinterest', 'target': 'pinterest'}, {'name': 'Email', 'key': 'email', 'shareMessage': 'Email', 'target': 'email'}], 'disableGooglePlus': true, 'googlePlusShareButtonWidth': 0, 'googlePlusBootstrap': '\x3cscript type\x3d\x22text/javascript\x22\x3ewindow.___gcfg \x3d {\x27lang\x27: \x27en\x27};\x3c/script\x3e'}, 'hasCustomJumpLinkMessage': false, 'jumpLinkMessage': 'Read more', 'pageType': 'item', 'postId': '6509502210521228262', 'postImageThumbnailUrl': 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEghxWIj4MKuM_41uOsdCRQoyi5YEN78wEdk77Oiuihua4lbc7cpfOpwAK6TSQ9Ewtj5z94qlWFPoPcthQmD78gRvz9BXd9KwUbYCrccymE_Bne8bLFf1w1fox-_5-R3ztHFeA3b6PNCg54g/s72-c/images.jpg', 'postImageUrl': 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEghxWIj4MKuM_41uOsdCRQoyi5YEN78wEdk77Oiuihua4lbc7cpfOpwAK6TSQ9Ewtj5z94qlWFPoPcthQmD78gRvz9BXd9KwUbYCrccymE_Bne8bLFf1w1fox-_5-R3ztHFeA3b6PNCg54g/s200/images.jpg', 'pageName': 'Online led matrix font generator with binary and hex codes for Arduino', 'pageTitle': ' Learn on the fly : Online led matrix font generator with binary and hex codes for Arduino', 'metaDescription': 'Online led matrix font generator with binary and hex codes for Arduino'}}, {'name': 'features', 'data': {}}, {'name': 'messages', 'data': {'edit': 'Edit', 'linkCopiedToClipboard': 'Link copied to clipboard!', 'ok': 'Ok', 'postLink': 'Post Link'}}, {'name': 'template', 'data': {'name': 'custom', 'localizedName': 'Custom', 'isResponsive': false, 'isAlternateRendering': false, 'isCustom': true, 'variant': 'literate', 'variantId': 'literate'}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '?view\x3dclassic'}, 'flipcard': {'name': 'flipcard', 'url': '?view\x3dflipcard'}, 'magazine': {'name': 'magazine', 'url': '?view\x3dmagazine'}, 'mosaic': {'name': 'mosaic', 'url': '?view\x3dmosaic'}, 'sidebar': {'name': 'sidebar', 'url': '?view\x3dsidebar'}, 'snapshot': {'name': 'snapshot', 'url': '?view\x3dsnapshot'}, 'timeslide': {'name': 'timeslide', 'url': '?view\x3dtimeslide'}, 'isMobile': false, 'title': 'Online led matrix font generator with binary and hex codes for Arduino', 'description': 'Online led matrix font generator with binary and hex codes for Arduino', 'featuredImage': 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEghxWIj4MKuM_41uOsdCRQoyi5YEN78wEdk77Oiuihua4lbc7cpfOpwAK6TSQ9Ewtj5z94qlWFPoPcthQmD78gRvz9BXd9KwUbYCrccymE_Bne8bLFf1w1fox-_5-R3ztHFeA3b6PNCg54g/s200/images.jpg', 'url': 'http://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html', 'type': 'item', 'isSingleItem': true, 'isMultipleItems': false, 'isError': false, 'isPage': false, 'isPost': true, 'isHomepage': false, 'isArchive': false, 'isLabelSearch': false, 'postId': 6509502210521228262}}]);
+_WidgetManager._RegisterWidget('_HeaderView', new _WidgetInfo('Header1', 'header', document.getElementById('Header1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_PageListView', new _WidgetInfo('PageList1', 'crosscol', document.getElementById('PageList1'), {'title': 'Pages', 'links': [{'isCurrentPage': false, 'href': 'http://www.riyas.org/', 'title': 'Home'}, {'isCurrentPage': false, 'href': 'http://www.riyas.org/search/label/STM32F4', 'title': 'STM32'}, {'isCurrentPage': false, 'href': 'http://www.riyas.org/search/label/radio', 'title': 'Radio (RF)'}, {'isCurrentPage': false, 'href': 'http://blog.riyas.org/search/label/Arduino', 'title': 'AVR'}, {'isCurrentPage': false, 'href': 'http://www.riyas.org/search/label/raspberry%20pi', 'title': 'Raspberry Pi'}, {'isCurrentPage': false, 'href': 'http://www.riyas.org/search/label/esp8266', 'title': 'esp8266'}, {'isCurrentPage': false, 'href': 'http://www.riyas.org/search/label/ili9341', 'title': 'ili9341'}, {'isCurrentPage': false, 'href': 'http://www.riyas.org/search/label/infrared', 'title': 'Infrared'}, {'isCurrentPage': false, 'href': 'http://www.riyas.org/search/label/nrf24l01%20arduino', 'title': 'nrf24l01'}, {'isCurrentPage': false, 'href': 'http://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html', 'title': 'Online tool'}, {'isCurrentPage': false, 'href': 'http://www.riyas.org/2015/04/a-simple-standalone-antenna-analyzer-with-ili9341tft.html', 'title': 'Antenna Analyser'}, {'isCurrentPage': false, 'href': 'http://www.riyas.org/2017/01/online-tool-to-convert-bitmap-to-hex-nokia-arduino.html', 'title': 'Bitmap2Hex'}, {'isCurrentPage': false, 'href': 'http://www.riyas.org/p/disclaimer.html', 'id': '8295135916125847504', 'title': 'Disclaimer'}, {'isCurrentPage': false, 'href': 'http://www.riyas.org/p/contact.html', 'id': '3966728702960808551', 'title': 'Contact'}, {'isCurrentPage': false, 'href': 'http://www.riyas.org/p/table-of.html', 'id': '4364839351440631311', 'title': 'Table of Contents'}], 'mobile': false, 'showPlaceholder': true, 'hasCurrentPage': false}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'main', document.getElementById('Blog1'), {'cmtInteractionsEnabled': false, 'lightboxEnabled': true, 'lightboxModuleUrl': 'https://www.blogger.com/static/v1/jsbin/2385764300-lbx.js', 'lightboxCssUrl': 'https://www.blogger.com/static/v1/v-css/1964470060-lightbox_bundle.css'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML7', 'sidebar-left-1', document.getElementById('HTML7'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML6', 'sidebar-left-1', document.getElementById('HTML6'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML1', 'sidebar-left-1', document.getElementById('HTML1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_PopularPostsView', new _WidgetInfo('PopularPosts1', 'sidebar-left-1', document.getElementById('PopularPosts1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML4', 'sidebar-left-1', document.getElementById('HTML4'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML3', 'sidebar-left-1', document.getElementById('HTML3'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_AttributionView', new _WidgetInfo('Attribution1', 'footer-3', document.getElementById('Attribution1'), {}, 'displayModeFull'));
+</script>
+</body>
+</html>
