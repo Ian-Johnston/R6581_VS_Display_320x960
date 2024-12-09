@@ -463,18 +463,26 @@ int main(void) {
 
 	TIM2_Init();					// Initialize the timer
 
-	// Set colours for MAIN & AUX dependent on pin B0
+	// Read pin Bo - Set colours for MAIN & AUX
 	if (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_0) == GPIO_PIN_SET) {
 		// B0 high
-		MainColourFore = 0xFFFFFF;
-		AuxColourFore = 0xFFFF00;
-		AnnunColourFore = 0x00FF00;
+		MainColourFore = 0xFFFFFF;		// WHite
+		AuxColourFore = 0xFFFF00;		// Yellow
 	}
 	else {
 		// B0 low
-		MainColourFore = 0xFFFF00;
-		AuxColourFore = 0xFFFFFF;
-		AnnunColourFore = 0x00FF00;
+		MainColourFore = 0xFFFF00;		// Yellow
+		AuxColourFore = 0xFFFFFF;		// White
+	}
+
+	// Read pin B1 - Set colour for ANNUNCIATORS
+	if (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_1) == GPIO_PIN_SET) {
+		// B1 high
+		AnnunColourFore = 0x00FF00;		// Green
+	}
+	else {
+		// B1 low
+		AnnunColourFore = 0x00FFFF;		// Cyan
 	}
 		
 	HardwareReset();				// Reset LT7680 - Pull LCM_RESET low for 100ms and wait
