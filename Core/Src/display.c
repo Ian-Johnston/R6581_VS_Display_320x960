@@ -125,12 +125,19 @@ void DisplayMain() {
 			Xpos_MAIN,      // Cursor X
 			(dollarPosition * 52) + 52        // Cursor Y	832
 		);
-		int found = 0;
-		char MaindisplayStringAfter[19] = "";
-		for (int i = 1; i <= 18; i++) {
-			if (found) MaindisplayStringAfter[i - found - 1] = G[i];
-			if (G[i] == '$') found = i;
+		//int found = 0;
+		//char MaindisplayStringAfter[19] = "";
+		//for (int i = 1; i <= 18; i++) {
+		//	if (found) MaindisplayStringAfter[i - found - 1] = G[i];
+		//	if (G[i] == '$') found = i;
+		//}
+		//DrawText(MaindisplayStringAfter);
+		char MaindisplayStringAfter[19] = ""; // Adjust the size to match your max expected characters
+		int j = 0; // Index for the new string
+		for (int i = dollarPosition + 1; i <= 18; i++) { // Start after the $ and loop through the rest
+			MaindisplayStringAfter[j++] = MaindisplayString[i]; // Copy characters to the new string
 		}
+		MaindisplayStringAfter[18] = '\0'; // Null-terminate the new string
 		DrawText(MaindisplayStringAfter);
 
 	} else {
@@ -264,7 +271,7 @@ void DisplayAux() {
 			1,       // Line spacing
 			4,       // Character spacing
 			Xpos_AUX,     // Cursor X 170
-			yposohm  // Cursor Y
+			yposohm - 2  // Cursor Y - compensated by 2 pixels
 		);
 		// Write the OHM symbol
 		WriteRegister(0x04);
@@ -289,7 +296,7 @@ void DisplayAux() {
 				5,       // Line spacing
 				0,       // Character spacing
 				Xpos_AUX,     // Cursor X
-				yposohm + 27  // Cursor Y - double width is 12x2 + 3 pixels padding = 27
+				yposohm + 25  // Cursor Y - double width is 12x2 + 3 pixels padding = 27, but set to 25
 			);
 			char AuxdisplayStringAfter[30] = ""; // Adjust the size to match your max expected characters
 			int j = 0; // Index for the new string
@@ -317,7 +324,7 @@ void DisplayAux() {
 				5,       // Line spacing
 				0,       // Character spacing
 				Xpos_AUX,     // Cursor X
-				yposohm + 27  // Cursor Y - double width is 12x2 + 3 pixels padding = 27
+				yposohm + 23  // Cursor Y - double width is 12x2 + 3 pixels padding = 27, but set to 23
 			);
 			char AuxdisplayStringAfter[30] = ""; // Adjust the size to match your max expected characters
 			int j = 0; // Index for the new string
@@ -348,7 +355,7 @@ void DisplayAux() {
 				1,       // Line spacing
 				4,       // Character spacing
 				Xpos_AUX,     // Cursor X 170
-				yposohm - 2  // Cursor Y			// -2 just to compensate a couple of pixels
+				yposohm - 8  // Cursor Y			// -2 just to compensate a few of pixels
 			);
 			// Write the OHM symbol
 			WriteRegister(0x04);
@@ -371,7 +378,7 @@ void DisplayAux() {
 				5,       // Line spacing
 				0,       // Character spacing
 				Xpos_AUX,     // Cursor X
-				yposohm + 27  // Cursor Y - double width is 12x2 + 3 pixels padding = 27
+				yposohm + 17  // Cursor Y - double width is 12x2 + 3 pixels padding = 27......but set to 17
 			);
 			char AuxdisplayStringAftersecond[30] = ""; // Adjust the size to match your max expected characters
 			int k = 0; // Index for the new string
@@ -381,7 +388,6 @@ void DisplayAux() {
 			AuxdisplayStringAftersecond[29] = '\0'; // Null-terminate the new string
 			DrawText(AuxdisplayStringAftersecond);
 		}
-
 
 	} else {
 
