@@ -125,13 +125,6 @@ void DisplayMain() {
 			Xpos_MAIN,      // Cursor X
 			(dollarPosition * 52) + 52        // Cursor Y	832
 		);
-		//int found = 0;
-		//char MaindisplayStringAfter[19] = "";
-		//for (int i = 1; i <= 18; i++) {
-		//	if (found) MaindisplayStringAfter[i - found - 1] = G[i];
-		//	if (G[i] == '$') found = i;
-		//}
-		//DrawText(MaindisplayStringAfter);
 		char MaindisplayStringAfter[19] = ""; // Adjust the size to match your max expected characters
 		int j = 0; // Index for the new string
 		for (int i = dollarPosition + 1; i <= 18; i++) { // Start after the $ and loop through the rest
@@ -174,13 +167,15 @@ void DisplayAux() {
 	
 	// AUX ROW text to LCD
 
-	// This SUB needs tidied up!
+	// This SUB needs tidied up, or a better way of doing this!
 	// It has to detect number of $ symbols and print the before and after characters, print the OHM user defined character.
 	// The $ symbol can appear twice.
+	// I have tweaked some of the pixel positions due to the formula not being perfect
+	// 240 lines of code for this!
 
 	SetTextColors(AuxColourFore, 0x000000); // Foreground: Yellow, Background: Black
 
-	char AuxdisplayString[30] = "";              // String for G[19] to G[47]	30 characters in total so can store the null terminator also
+	char AuxdisplayString[30] = "";               // String for G[19] to G[47]	30 characters in total so can store the null terminator also
 	char BeforeDollar[30] = "";                   // To store characters before the $
 	char AfterDollar[30] = "";                    // To store characters after the $
 
@@ -407,11 +402,11 @@ void DisplayAux() {
 			60       // Cursor Y
 		);
 
-		char AuxdisplayString[30] = "";       // String for G[19] to G[33], 30 total, 29 plus null terminator
+		char AuxdisplayString[30] = "";         // String for G[19] to G[33], 30 total, 29 plus null terminator
 		for (int i = 19; i <= 47; i++) {
 			AuxdisplayString[i - 19] = G[i];    // Copy characters
 		}
-		AuxdisplayString[29] = '\0';         // Null-terminate the string (ensure clean output) at 30th position
+		AuxdisplayString[29] = '\0';            // Null-terminate the string (ensure clean output) at 30th position
 		DrawText(AuxdisplayString);
 
 	}

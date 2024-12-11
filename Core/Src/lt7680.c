@@ -405,7 +405,7 @@ void ClearScreen() {
 }
 
 
-// Draw Text Chunks
+// Draw Text Chunks - Not used (DrawText with FIFO supersedes)
 void DrawTextChunks(char* text) {
     uint8_t maxChunkSize = 20; // Limit to 20 characters
     char buffer[21];           // Buffer for 20 characters + null terminator
@@ -424,17 +424,14 @@ void DrawTextChunks(char* text) {
 
 // Draw text with FIFO checking
 void DrawText(char* text) {
+    WriteRegister(0xBA);       // Set the reads to the SPI Master Status Register
+    
     while (*text != '\0') {
         // Check the Tx FIFO Full Flag (Bit 6 of REG[BAh])
-        WriteRegister(0xBA);     // Point to the SPI Master Status Register
-        WriteData(0x00);         // Dummy write to follow WriteRegister requirement
-
         uint8_t Registerdata = ReadData(); // Read the register value
 
         // Wait until the FIFO is not full
         while (Registerdata & (1 << 6)) {
-            WriteRegister(0xBA);     // Repoint to the SPI Master Status Register
-            WriteData(0x00);         // Dummy write to follow WriteRegister requirement
             Registerdata = ReadData(); // Update the register value
         }
 
@@ -445,9 +442,8 @@ void DrawText(char* text) {
 }
 
 
-
 /*
-// Draw text
+// Draw text - retired, albeit it was fast!, because it caused a FIFO error when printing more than 22 characters in one go
 void DrawText(char* text) {                                         // simple version
     WriteRegister(0x04); // Register for writing text
     while (*text != '\0') {
