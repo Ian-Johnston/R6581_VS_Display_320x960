@@ -424,20 +424,22 @@ void DrawTextChunks(char* text) {
 
 // Draw text with FIFO checking
 void DrawText(char* text) {
-    WriteRegister(0xBA);       // Set the reads to the SPI Master Status Register
+    //WriteRegister(0xBA);       // Set the reads to the SPI Master Status Register
     
     while (*text != '\0') {
+        WriteRegister(0xBA);                                    // Set the reads to the SPI Master Status Register
         // Check the Tx FIFO Full Flag (Bit 6 of REG[BAh])
-        uint8_t Registerdata = ReadData(); // Read the register value
+        uint8_t Registerdata = ReadData();                      // Read the register value
 
         // Wait until the FIFO is not full
         while (Registerdata & (1 << 6)) {
-            Registerdata = ReadData(); // Update the register value
+            WriteRegister(0xBA);                                // Set the reads to the SPI Master Status Register
+            Registerdata = ReadData();                          // Update the register value
         }
 
-        WriteRegister(0x04);         // Register for writing text
-        WriteData((uint8_t)*text); // Write each character
-        ++text; // Move to the next character
+        WriteRegister(0x04);                                    // Register for writing text
+        WriteData((uint8_t)*text);                              // Write each character
+        ++text;                                                 // Move to the next character
     }
 }
 
