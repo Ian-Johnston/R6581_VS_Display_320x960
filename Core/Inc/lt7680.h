@@ -66,7 +66,8 @@ void LCD_HSYNC_Pulse_Width_LT(uint16_t val);
 void LCD_Vertical_Non_Display_LT(uint16_t val);
 void LCD_VSYNC_Start_Position_LT(uint16_t val);
 void LCD_VSYNC_Pulse_Width_LT(uint16_t val);
-void LCDConfigTurnOn_LT(void);
+void LCDConfig_LT(void);
+void LCDTurnOn_LT(void);
 void PWM_Prescaler_LT(void);
 void PWM_Clock_Mux_LT(void);
 void PWM_Configuration_LT(void);
@@ -141,6 +142,7 @@ void SetCanvasImageWidth_LT(void);
 
 // User
 #define DISP_TEST				0			// Display the LT7680 test card: 1 = test card, 0 = normal operation
-#define BACKLIGHT				100			// Backlighting brightness 0-100%
+#define BACKLIGHTFULL			100			// Backlighting brightness 0-100%
+#define BACKLIGHTOFF			0			// Backlighting brightness 0-100%
 
 #endif

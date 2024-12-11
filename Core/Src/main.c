@@ -500,7 +500,8 @@ int main(void) {
 	// Main loop timer
 	SetTimerDuration(35);			// 35 ms timed action set
 
-	LCDConfigTurnOn_LT();           // Turn on the LCD (at last minute)
+	HAL_Delay(5);
+	ConfigurePWMAndSetBrightness(BACKLIGHTFULL);  // Configure Timer-1 and PWM-1 for backlighting. Settable 0-100%
 
 //**************************************************************************************************
 // Main loop initialize

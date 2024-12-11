@@ -139,6 +139,13 @@ void SendAllToLT7680_LT() {
     HAL_Delay(100);
     SDRAM_Init_LT();                          // Initialize SDRAM after the reset
     HAL_Delay(5);
+
+    // Set backlighting Prescaler to zero which effectively turns off backlighting
+    WriteRegister(0x84);
+    WriteData(0x00); // Prescaler = 00
+
+    HAL_Delay(5);
+
     Set_LCD_Panel_LT();                       // Set up the panel interface
     HAL_Delay(100);
 
@@ -181,9 +188,7 @@ void SendAllToLT7680_LT() {
     HAL_Delay(5);
     Set_MISA_LT();                            // Configure the Main Image Start Address
     HAL_Delay(5);
-    ConfigurePWMAndSetBrightness(BACKLIGHT);  // Configure Timer-1 and PWM-1 for backlighting. Settable 0-100%
-    HAL_Delay(5);
-    
+   
     Text_Mode();
     ClearScreen();                          // Draws black 'spaces' across the whole screen - fast
      
