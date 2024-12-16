@@ -266,7 +266,7 @@ void DisplayAux() {
 			1,       // Line spacing
 			4,       // Character spacing
 			Xpos_AUX,     // Cursor X 170
-			yposohm - 2  // Cursor Y - compensated by 2 pixels
+			yposohm + 1  // Cursor Y - compensated by 2 pixels
 		);
 		// Write the OHM symbol
 		WriteRegister(0x04);
@@ -291,7 +291,7 @@ void DisplayAux() {
 				5,       // Line spacing
 				0,       // Character spacing
 				Xpos_AUX,     // Cursor X
-				yposohm + 25  // Cursor Y - double width is 12x2 + 3 pixels padding = 27, but set to 25
+				yposohm + 27  // Cursor Y - double width is 12x2 + 3 pixels padding = 27, but set to 25
 			);
 			char AuxdisplayStringAfter[30] = ""; // Adjust the size to match your max expected characters
 			int j = 0; // Index for the new string
@@ -319,7 +319,7 @@ void DisplayAux() {
 				5,       // Line spacing
 				0,       // Character spacing
 				Xpos_AUX,     // Cursor X
-				yposohm + 23  // Cursor Y - double width is 12x2 + 3 pixels padding = 27, but set to 23
+				yposohm + 25  // Cursor Y - double width is 12x2 + 3 pixels padding = 27, but set to 23
 			);
 			char AuxdisplayStringAfter[30] = ""; // Adjust the size to match your max expected characters
 			int j = 0; // Index for the new string
@@ -350,7 +350,7 @@ void DisplayAux() {
 				1,       // Line spacing
 				4,       // Character spacing
 				Xpos_AUX,     // Cursor X 170
-				yposohm - 8  // Cursor Y			// -2 just to compensate a few of pixels
+				yposohm - 6  // Cursor Y			// -2 just to compensate a few of pixels
 			);
 			// Write the OHM symbol
 			WriteRegister(0x04);

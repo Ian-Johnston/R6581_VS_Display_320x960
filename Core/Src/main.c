@@ -50,6 +50,7 @@ char G[48];  // MAIN: G1 to G18, AUX: G19 to G47
 _Bool Annunc[19]; // Annunciators re-ordered, 18off, G1 to G18 in left-to-right order
 _Bool AnnuncTemp[37]; // Temp array for annunciators. 18off, the order on LCD left to right = 8,7,6,5,4,3,2,1,18,17,16,15,14,13,12,11,10,9
 
+/*
 #define White          0xFFFF
 #define Black          0x0000
 #define Grey           0xF7DE
@@ -60,6 +61,7 @@ _Bool AnnuncTemp[37]; // Temp array for annunciators. 18off, the order on LCD le
 #define Green          0x07E0
 #define Cyan           0x7FFF
 #define Yellow         0xFFE0
+*/
 
 //******************************************************************************
 
@@ -463,7 +465,7 @@ int main(void) {
 
 	TIM2_Init();					// Initialize the timer
 
-	// Read pin Bo - Set colours for MAIN & AUX
+	// Read pin B0 - Set colours for MAIN & AUX
 	if (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_0) == GPIO_PIN_SET) {
 		// B0 high
 		MainColourFore = 0xFFFFFF;		// WHite
