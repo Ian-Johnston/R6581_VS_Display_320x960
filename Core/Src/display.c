@@ -164,12 +164,8 @@ void DisplayMain() {
 
 
 void DisplayAux() {
-	// AUX ROW text to LCD
 
-	// This SUB needs tidied up, or a better way of doing this!
-	// It has to detect number of $ symbols and print the before and after characters, print the OHM user defined character.
-	// The $ symbol can appear up to four times.
-	// I have tweaked some of the pixel positions due to the formula not being perfect.
+	// AUX ROW text to LCD
 
 	SetTextColors(AuxColourFore, 0x000000); // Foreground: Yellow, Background: Black
 
