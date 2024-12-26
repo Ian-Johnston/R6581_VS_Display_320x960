@@ -50,6 +50,9 @@ char G[48];  // MAIN: G1 to G18, AUX: G19 to G47
 _Bool Annunc[19]; // Annunciators re-ordered, 18off, G1 to G18 in left-to-right order
 _Bool AnnuncTemp[37]; // Temp array for annunciators. 18off, the order on LCD left to right = 8,7,6,5,4,3,2,1,18,17,16,15,14,13,12,11,10,9
 
+// Global variable to store the unmatched bitmap
+uint8_t unmatchedBitmap[FONT_HEIGHT] = { 0 }; // Initialize to zero
+
 /*
 #define White          0xFFFF
 #define Black          0x0000
@@ -175,7 +178,7 @@ const BitmapChar bitmap_characters[] = {
 	{{0x0E, 0x11, 0x10, 0x17, 0x11, 0x11, 0x0F}, 'G'},  // 0x47, G
 	{{0x11, 0x11, 0x11, 0x1F, 0x11, 0x11, 0x11}, 'H'},  // 0x48, H
 	{{0x0E, 0x04, 0x04, 0x04, 0x04, 0x04, 0x0E}, 'I'},  // 0x49, I
-	{{0x02, 0x04, 0x04, 0x04, 0x04, 0x04, 0x02}, 'J'},  // 0x4A, J
+	{{0x07, 0x02, 0x02, 0x02, 0x02, 0x12, 0x0C}, 'J'},  // 0x4A, J
 	{{0x11, 0x12, 0x14, 0x18, 0x14, 0x12, 0x11}, 'K'},  // 0x4B, K
 	{{0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x1F}, 'L'},  // 0x4C, L
 	{{0x11, 0x1B, 0x15, 0x15, 0x11, 0x11, 0x11}, 'M'},  // 0x4D, M
@@ -261,6 +264,10 @@ char BitmapToChar(const uint8_t* bitmap) {
 			return bitmap_characters[i].ascii; // Return the matching ASCII character
 		}
 	}
+
+	// uncomment this to capture the unmatched bitmap and use LIVE WATCH to display the array for it
+	//memcpy(unmatchedBitmap, bitmap, FONT_HEIGHT);
+
 	// If no match is found, return '?'
 	return '?';
 }
