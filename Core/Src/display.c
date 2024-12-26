@@ -274,8 +274,8 @@ void DisplayAux() {
 			yposoffset       // Cursor Y
 		);
 		DrawText(AuxdisplayString);
-		HAL_Delay(2);
-		DrawText(" ");	// extra space as some lit pixels can remain
+		//HAL_Delay(2);
+		//DrawText(" ");	// extra space as some lit pixels can remain
 	}
 }
 
