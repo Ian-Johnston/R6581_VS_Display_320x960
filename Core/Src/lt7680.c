@@ -42,22 +42,6 @@ volatile uint8_t system_ok = 0;
 volatile uint8_t LT7680_SPI_Read_ok = 0;
 volatile uint8_t System_Check = 0;
 volatile uint8_t SystemCheckTempValue = 0;
-volatile uint32_t TEST1 = 0;
-volatile uint32_t TEST2 = 0;
-volatile uint32_t TEST3 = 0;
-volatile uint32_t TEST4 = 0;
-volatile uint32_t TEST5 = 0;
-volatile uint32_t TEST6 = 0;
-volatile uint32_t TEST7 = 0;
-volatile uint32_t TEST8 = 0;
-volatile uint32_t TEST9 = 0;
-volatile uint32_t TEST10 = 0;
-volatile uint32_t TEST11 = 0;
-volatile uint32_t TEST12 = 0;
-volatile uint32_t TEST13 = 0;
-volatile uint32_t TEST14 = 0;
-volatile uint32_t TEST15 = 0;
-volatile uint32_t TEST16 = 0;
 
 void HardwareReset(void) {
     HAL_GPIO_WritePin(RESET_PORT, RESET_PIN, GPIO_PIN_RESET); // Pull reset low
@@ -946,8 +930,6 @@ void LCD_HorizontalWidth_VerticalHeight_LT(uint16_t WX, uint16_t HY) {          
     WriteData(tempWidth);
     WriteRegister(0x15);
     WriteData(tempWidthFineTune & 0x0F);    // Bits 0-3 only
-    TEST1 = tempWidth;
-    TEST2 = tempWidthFineTune & 0x0F;
 
     // Vertical Height
     // Ensure height is within valid range
@@ -964,8 +946,6 @@ void LCD_HorizontalWidth_VerticalHeight_LT(uint16_t WX, uint16_t HY) {          
     // Write the upper 3 bits of VDHR to Register 0x1B
     WriteRegister(0x1B);
     WriteData(vdhr >> 8); // Upper 3 bits of VDHR (bits 10-8)
-    TEST3 = (vdhr & 0xFF);
-    TEST4 = (vdhr >> 8);
 
 }
 
@@ -981,8 +961,6 @@ void LCD_Horizontal_Non_Display_LT(uint16_t val) {
     WriteData(tempHBPD);
     WriteRegister(0x17);
     WriteData(tempHBPDFineTune & 0x0F);    // Bits 0-3 only
-    TEST5 = tempHBPD;
-    TEST6 = tempHBPDFineTune & 0x0F;
 
 }
 
@@ -1002,7 +980,6 @@ void LCD_HSYNC_Start_Position_LT(uint16_t val) {
     // Write the calculated value to the register
     WriteRegister(0x18);
     WriteData(tempHFPD);
-    TEST7 = tempHFPD;
 
 }
 
@@ -1022,7 +999,7 @@ void LCD_HSYNC_Pulse_Width_LT(uint16_t val) {
     // Write the calculated value to the register
     WriteRegister(0x19);
     WriteData(tempHSPW);
-    TEST8 = tempHSPW;
+
 }
 
 
@@ -1034,8 +1011,7 @@ void LCD_Vertical_Non_Display_LT(uint16_t val) {
     WriteData(temp & 0xFF);
     WriteRegister(0x1D);
     WriteData((temp >> 8) & 0xFF);
-    TEST9 = temp & 0xFF;
-    TEST10 = (temp >> 8) & 0xFF;
+
 }
 
 
@@ -1045,7 +1021,7 @@ void LCD_VSYNC_Start_Position_LT(uint16_t val) {
     uint8_t temp = val - 1;
     WriteRegister(0x1E);
     WriteData(temp & 0xFF);
-    TEST11 = temp & 0xFF;
+
 }
 
 
@@ -1055,7 +1031,7 @@ void LCD_VSYNC_Pulse_Width_LT(uint16_t val) {
     uint8_t temp = val - 1;
     WriteRegister(0x1F);
     WriteData(temp & 0xFF);
-    TEST12 = temp & 0xFF;
+
 }
 
 
@@ -1226,8 +1202,6 @@ void SetMainImageWidth_LT() {
     WriteData(LCD_XSIZE_TFT & 0xFF);
     WriteRegister(0x25);
     WriteData((LCD_XSIZE_TFT >> 8) & 0x1F);  // Mask to 5 bits
-    TEST13 = LCD_XSIZE_TFT & 0xFF;
-    TEST14 = (LCD_XSIZE_TFT >> 8) & 0x1F;
 
 }
 
@@ -1246,8 +1220,7 @@ void SetMainWindowUpperLeftX_LT() {
     WriteData(lowByte);            // MWULX[7:0]
     WriteRegister(0x27);
     WriteData(highByte);           // MWULX[12:8]
-    TEST15 = lowByte;
-    TEST16 = highByte;
+
 }
 
 

@@ -32,9 +32,7 @@
 #include "stm32f1xx_hal.h"
 
 // Test only - IanJ
-//volatile int myVariable1 = 0; // Prevent optimization
-//volatile int myVariable2 = 0; // Prevent optimization
-//volatile int STSR = 0; // Prevent optimization
+//volatile int myVariable1 = 0;
 
 /* Variables ---------------------------------------------------------*/
 static char main_display_debug[LINE1_LEN + 1]; // Main display debug string
@@ -52,19 +50,6 @@ _Bool AnnuncTemp[37]; // Temp array for annunciators. 18off, the order on LCD le
 
 // Global variable to store the unmatched bitmap
 uint8_t unmatchedBitmap[FONT_HEIGHT] = { 0 }; // Initialize to zero
-
-/*
-#define White          0xFFFF
-#define Black          0x0000
-#define Grey           0xF7DE
-#define Blue           0x001F
-#define Blue2          0x051F
-#define Red            0xF800
-#define Magenta        0xF81F
-#define Green          0x07E0
-#define Cyan           0x7FFF
-#define Yellow         0xFFE0
-*/
 
 //******************************************************************************
 
@@ -382,18 +367,6 @@ void Main_Aux_R6581(void) {
 		else if (i == 15) G[16] = ascii_char;
 		else if (i == 16) G[17] = ascii_char;
 		else if (i == 17) G[18] = ascii_char;
-
-		// Append MAIN to debug buffers for additional debugging
-		//snprintf(LCD_buffer_bitmaps + strlen(LCD_buffer_bitmaps),
-		//	sizeof(LCD_buffer_bitmaps) - strlen(LCD_buffer_bitmaps),
-		//	"%d : [%02X, %02X, %02X, %02X, %02X, %02X, %02X]\n",
-		//	i, bitmap[0], bitmap[1], bitmap[2], bitmap[3],
-		//	bitmap[4], bitmap[5], bitmap[6]);
-
-		// Append annunciator states to debug string
-		//snprintf(annunciator_debug + strlen(annunciator_debug), 
-		//     sizeof(annunciator_debug) - strlen(annunciator_debug),
-		//     "G%d=%s ", i + 1, Annunciators[i] ? "ON" : "OFF");
 	}
 
 	// Null-terminate the Main display debug string
