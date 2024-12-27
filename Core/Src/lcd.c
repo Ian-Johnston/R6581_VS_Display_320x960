@@ -85,12 +85,6 @@ void DelayMicroseconds(uint16_t us) {
 
 
 void LCD_Clear(uint16_t color) {
-	// Set the active area to the full screen
-	// Black : 0x0000
-	// White : 0xFFFF
-	// Red   : 0xF800
-	// Green : 0x07E0
-	// Blue  : 0x001F
 
 	LCDWriteRegister(0x2A); // Column Address Set
 	LCDWriteData(0x00);     // Start column high byte
@@ -133,9 +127,6 @@ void LCD_Hor_Ver_Timing() {
 
 
 void BuyDisplay_Init() {
-
-	//LCDWriteRegister(0x01); // DT software reset    added by IanJ
-	//HAL_Delay(120);
 
 	// Refer to ST7701S datasheet and your TFT LCD datasheet in order to make teh following settings
 

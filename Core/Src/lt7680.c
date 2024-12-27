@@ -1174,23 +1174,6 @@ void Set_MISA_LT() {
     WriteRegister(0x22); WriteData(0x00);  // MISA[23:16]
     WriteRegister(0x23); WriteData(0x00);  // MISA[31:24]
      
-    /*
-    // Ensure bit[1:0] are 0 (align to 4-byte boundary)
-    uint32_t address = MAIN_IMAGE_START;
-
-    // Write MISA to LT7680 registers
-    WriteRegister(0x20);
-    WriteData((uint8_t)(address & 0xFF));        // Lower byte (MISA[7:0])
-
-    WriteRegister(0x21);
-    WriteData((uint8_t)((address >> 8) & 0xFF)); // Second byte (MISA[15:8])
-
-    WriteRegister(0x22);
-    WriteData((uint8_t)((address >> 16) & 0xFF)); // Third byte (MISA[23:16])
-
-    WriteRegister(0x23);
-    WriteData((uint8_t)((address >> 24) & 0xFF)); // Upper byte (MISA[31:24])
-    */
 }
 
 
