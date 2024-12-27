@@ -25,7 +25,7 @@
   * Colours = 262K
   * 
   * Controller = LT7680A-R
-  * 64Mb version
+  * 128Mb version
 */
 
 #include "lt7680.h"
