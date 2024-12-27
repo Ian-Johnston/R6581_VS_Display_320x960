@@ -170,11 +170,11 @@ void DisplayAux() {
 	SetTextColors(AuxColourFore, 0x000000); // Foreground: Yellow, Background: Black
 
 	char AuxdisplayString[30] = "";               // String for G[19] to G[47]
-	uint16_t dollarPositions[4] = { 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF }; // To store positions of up to 4 $
+	uint16_t dollarPositions[5] = { 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF }; // To store positions of up to 5 $
 	int dollarCount = 0; // Count of $ symbols found
 
 	// Customizable fudge factors for each $ symbol position
-	int fudgeFactors[4] = { 23, 23, 32, 104 }; // Adjust these values for each $ symbol's position
+	//int fudgeFactors[5] = { 23, 23, 32, 104 }; // Adjust these values for each $ symbol's position
 
 	// Populate AuxdisplayString from G[19] to G[47]
 	for (int i = 19; i <= 47; i++) {
@@ -182,8 +182,8 @@ void DisplayAux() {
 	}
 	AuxdisplayString[29] = '\0'; // Null-terminate at the 30th position because array starts at 0
 
-	// Find positions of up to 4 $ symbols
-	for (int i = 0; i < 30 && dollarCount < 4; i++) {
+	// Find positions of up to 5 $ symbols
+	for (int i = 0; i < 30 && dollarCount < 5; i++) {
 		if (AuxdisplayString[i] == '$') {
 			dollarPositions[dollarCount++] = i; // Store position and increment count
 		}
