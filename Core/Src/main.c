@@ -31,7 +31,7 @@
 #include "display.h"
 #include "stm32f1xx_hal.h"
 
-// Test only
+// Test only - IanJ
 //volatile int myVariable1 = 0; // Prevent optimization
 //volatile int myVariable2 = 0; // Prevent optimization
 //volatile int STSR = 0; // Prevent optimization
