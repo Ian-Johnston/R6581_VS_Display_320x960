@@ -30,8 +30,10 @@ uint32_t AnnunColourFore = 0x00FF00; // Green
 
 void DisplayMain() {
 
+	// This sub needs re-written in the same way the AUX line is now written - it's on the todo list.
+
 	// MAIN ROW - Print text to LCD, detect if there is an OHM symbol ($) and if so split into 3 parts, before-OHM-after
-	SetTextColors(MainColourFore, 0x000000); // Foreground: Yellow, Background: Black
+	SetTextColors(MainColourFore, 0x000000); // Foreground, Background
 
 	char MaindisplayString[19] = "";              // String for G[1] to G[18]
 	char BeforeDollar[19] = "";                   // To store characters before the $
@@ -133,7 +135,8 @@ void DisplayMain() {
 		MaindisplayStringAfter[18] = '\0'; // Null-terminate the new string
 		DrawText(MaindisplayStringAfter);
 
-	} else {
+	}
+	else {
 
 		ConfigureFontAndPosition(
 			0b00,    // Internal CGROM
@@ -167,7 +170,7 @@ void DisplayAux() {
 
 	// AUX ROW text to LCD
 
-	SetTextColors(AuxColourFore, 0x000000); // Foreground: Yellow, Background: Black
+	SetTextColors(AuxColourFore, 0x000000); // Foreground, Background
 
 	char AuxdisplayString[30] = "";               // String for G[19] to G[47]
 	uint16_t dollarPositions[5] = { 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF }; // To store positions of up to 5 $
@@ -274,11 +277,6 @@ void DisplayAux() {
 		//DrawText(" ");	// extra space as some lit pixels can remain
 	}
 }
-
-
-
-
-
 
 
 //******************************************************************************
