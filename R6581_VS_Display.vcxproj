@@ -84,7 +84,6 @@
     <ClCompile Include="Core\Src\display.c" />
     <ClCompile Include="Core\Src\lcd.c" />
     <ClCompile Include="Core\Src\lt7680.c" />
-    <ClCompile Include="Core\Src\test.c" />
     <ClCompile Include="Core\Src\timer.c" />
     <ClCompile Include="D:\Code_STM32\R6581_VS_Display\Core\Src\dma.c" />
     <ClCompile Include="D:\Code_STM32\R6581_VS_Display\Core\Src\gpio.c" />
@@ -113,7 +112,6 @@
     <ClInclude Include="Core\Inc\display.h" />
     <ClInclude Include="Core\Inc\lcd.h" />
     <ClInclude Include="Core\Inc\lt7680.h" />
-    <ClInclude Include="Core\Inc\test.h" />
     <ClInclude Include="Core\Inc\timer.h" />
     <None Include="stm32.props" />
     <ClInclude Include="D:\Code_STM32\R6581_VS_Display\Core\Inc\dma.h" />
