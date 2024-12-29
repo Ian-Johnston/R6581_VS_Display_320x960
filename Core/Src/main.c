@@ -10,7 +10,7 @@
   * To upload HEX from VS2022 = BUILD then PROGRAM AND START WITHOUT DEBUGGING
   * Use LIVE WATCH to view variables live debug
   * 
-  * For use with LT7680A-R & 320x960 TFT LCD
+  * For use with a LT7680A-R & 320x960 TFT LCD
   *
   ******************************************************************************
 */
