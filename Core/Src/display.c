@@ -404,7 +404,8 @@ void DisplaySplash() {
 				Xpos_SPLASH,     // Cursor X	230
 				100      // Cursor Y	360
 			);
-			char text[] = "Reverse engineering by By MickleT / TFT LCD by Ian Johnston";
+
+			char text[] = "Reverse engineering by By MickleT / TFT LCD by Ian Johnston";	
 			DrawText(text);
 		}
 	}

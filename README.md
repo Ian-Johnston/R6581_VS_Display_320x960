@@ -11,4 +11,7 @@ The .HEX file is located in /VisualGDB/Debug
 Uses VisualGDB available here:
 https://visualgdb.com
 
+NOTES:
+1. Function prototypes in the headers are missing, I couldn't be bothered! VS2022 seems to compile just fine and produce working code without them.
+
 Ian.

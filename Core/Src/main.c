@@ -427,23 +427,22 @@ void Main_Aux_R6581(void) {
 // Main
 int main(void) {
 
-	// Pull CS high and SCLK low immediately after reset
-	HAL_GPIO_WritePin(LCD_CS_Port, LCD_CS_Pin, GPIO_PIN_SET);			// Pull CS high
-	HAL_GPIO_WritePin(LCD_SCK_Port, LCD_SCK_Pin, GPIO_PIN_RESET);		// CLK pin low
-
 	// Reset of all peripherals, Initializes the Flash interface and the Systick.
 	HAL_Init();
 
 	// Configure the system clock
 	SystemClock_Config();
 
-	// Initialize all configured peripherals
-	MX_GPIO_Init();
-	MX_DMA_Init();
-	MX_SPI1_Init();
-	MX_SPI2_Init();
-
+	// Initialize all configured peripherals (except bit-bang SPI for S7701S LCD glass)
+	MX_GPIO_Init();					// I/O pins
+	MX_DMA_Init();					// DMA1 Ch.2 & Ch.4
+	MX_SPI1_Init();					// SPI1 - LT760A-R
+	MX_SPI2_Init();					// SPI2 - VFD
 	TIM2_Init();					// Initialize the timer
+
+	// Pull CS high and SCLK low immediately after reset
+	HAL_GPIO_WritePin(LCD_CS_Port, LCD_CS_Pin, GPIO_PIN_SET);			// Pull CS high
+	HAL_GPIO_WritePin(LCD_SCK_Port, LCD_SCK_Pin, GPIO_PIN_RESET);		// CLK pin low
 
 	// Read pin B0 - Set colours for MAIN & AUX
 	if (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_0) == GPIO_PIN_SET) {
