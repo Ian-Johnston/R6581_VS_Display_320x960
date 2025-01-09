@@ -94,6 +94,19 @@ void MX_GPIO_Init(void) {
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW; // Low speed is sufficient for input
     HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
+    // Configure GPIO pin A11 - DCV normally high pin
+    GPIO_InitStruct.Pin = GPIO_PIN_11;      // Select pin A11
+    GPIO_InitStruct.Mode = GPIO_MODE_INPUT; // Set as input
+    GPIO_InitStruct.Pull = GPIO_NOPULL;     // No resistor
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW; // Low speed is sufficient for input
+    HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+    // Configure GPIO pin A12 - DCV normally low pin
+    GPIO_InitStruct.Pin = GPIO_PIN_12;      // Select pin A12
+    GPIO_InitStruct.Mode = GPIO_MODE_INPUT; // Set as input
+    GPIO_InitStruct.Pull = GPIO_NOPULL;     // No resistor
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW; // Low speed is sufficient for input
+    HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 	
 	
     /* Configure GPIO pin : LT7680 MISO Pin */

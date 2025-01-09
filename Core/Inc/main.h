@@ -25,21 +25,6 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define TEST_OUT_Pin GPIO_PIN_13				// PC13 - LED
 #define TEST_OUT_GPIO_Port GPIOC
-
-//#define OLED_DC_Pin GPIO_PIN_2					// PA2 - not used
-//#define OLED_DC_GPIO_Port GPIOA
-
-//#define OLED_RES_Pin GPIO_PIN_3					// PA3 - not used
-//#define OLED_RES_GPIO_Port GPIOA
-
-//#define OLED_CS_Pin GPIO_PIN_4					// PA4 - CS
-//#define OLED_CS_GPIO_Port GPIOA
-
-//#define OLED_SCK_Pin GPIO_PIN_5					// PA5 - SCK
-//#define OLED_SCK_GPIO_Port GPIOA
-
-//#define OLED_SDA_Pin GPIO_PIN_7					// PA7 - MOSI
-//#define OLED_SDA_GPIO_Port GPIOA
 	
 // SPI Pin Definitions
 #define SPI_SCK_PIN        GPIO_PIN_5       // SCK = PA5
@@ -64,7 +49,7 @@ void Error_Handler(void);
 #define VFD_SDA_Pin GPIO_PIN_15					// PB15
 #define VFD_SDA_GPIO_Port GPIOB
 // Note: PB10 lt7680 reset pin is in lt7680.h
-	
+
 // The number of bytes in one data packet loaded into the U4 shift register
 #define PACKET_WIDTH    5
 // Number of packets in one display refresh cycle

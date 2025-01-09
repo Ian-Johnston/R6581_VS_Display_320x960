@@ -38,6 +38,8 @@
 static char main_display_debug[LINE1_LEN + 1]; // Main display debug string
 #define FONT_HEIGHT 7
 uint16_t dollarPosition = 0;
+_Bool oneVoltmode = false;
+_Bool oneVoltmodepreviousState = false;
 
 // Buffers for each LCD graphical item
 char LCD_buffer_packets[128];  // For packet data
@@ -465,6 +467,10 @@ int main(void) {
 		// B1 low
 		AnnunColourFore = 0x00FFFF;		// Cyan
 	}
+
+	if (oneVoltmode) {
+		HAL_GPIO_TogglePin(GPIOC, TEST_OUT_Pin); // Test LED toggle
+	}
 		
 	HardwareReset();				// Reset LT7680 - Pull LCM_RESET low for 100ms and wait
 
@@ -523,6 +529,24 @@ int main(void) {
 			DisplayAnnunciators();
 
 			HAL_Delay(6); // Allow the LT7680 sufficient processing time
+
+			// Read pin A11/A12 - Front panel DCV switch momentary - Enable 1VDC mode
+			GPIO_PinState pinA11 = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_11);
+			GPIO_PinState pinA12 = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_12);
+			if (pinA11 == GPIO_PIN_SET && pinA12 == GPIO_PIN_RESET) {
+				// Button is NOT pressed (normal state)
+				oneVoltmodepreviousState = false;
+			}
+			else if (pinA11 == pinA12) {
+				// Button is pressed (both pins are the same, HIGH or LOW)
+				//HAL_GPIO_TogglePin(GPIOC, TEST_OUT_Pin); // Test LED toggle
+				if (!oneVoltmodepreviousState) {
+					// Toggle the mode on the first detection of the press
+					oneVoltmode = !oneVoltmode;
+				}
+				// Update the previous state
+				oneVoltmodepreviousState = true;
+			}
 
 		}
 	}

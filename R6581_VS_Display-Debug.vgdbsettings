@@ -23,7 +23,11 @@
       </Version>
     </ToolchainID>
     <ProjectFile>R6581_VS_Display.vcxproj</ProjectFile>
-    <ParallelJobCount>0</ParallelJobCount>
+    <RemoteBuildEnvironment>
+      <Records />
+      <EnvironmentSetupFiles />
+    </RemoteBuildEnvironment>
+    <ParallelJobCount>1</ParallelJobCount>
     <SuppressDirectoryChangeMessages>true</SuppressDirectoryChangeMessages>
     <BuildAsRoot>false</BuildAsRoot>
   </Build>
@@ -39,6 +43,14 @@
     <PostDebugActions />
     <DebugStopActions />
     <BreakMode>Default</BreakMode>
+    <CustomBreakCommand>
+      <SkipWhenRunningCommandList>false</SkipWhenRunningCommandList>
+      <RemoteHost>
+        <HostName>BuildMachine</HostName>
+        <Transport>BuiltinShortcut</Transport>
+      </RemoteHost>
+      <BackgroundMode xsi:nil="true" />
+    </CustomBreakCommand>
   </CustomDebug>
   <CustomShortcuts>
     <Shortcuts />
@@ -67,7 +79,11 @@
   <Configurations />
   <ProgramArgumentsSuggestions />
   <Debug xsi:type="com.visualgdb.debug.embedded">
-    <AdditionalStartupCommands />
+    <AdditionalStartupCommands>
+      <GDBPreStartupCommands />
+      <GDBStartupCommands />
+      <GDBFinalizationCommands />
+    </AdditionalStartupCommands>
     <AdditionalGDBSettings>
       <Features>
         <DisableAutoDetection>false</DisableAutoDetection>

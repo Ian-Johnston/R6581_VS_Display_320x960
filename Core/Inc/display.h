@@ -20,6 +20,7 @@ extern _Bool Annunc[19];
 extern uint32_t MainColourFore;
 extern uint32_t AuxColourFore;
 extern uint32_t AnnunColourFore;
+extern _Bool oneVoltmode;
 
 // Function prototypes
 void DisplayMain(void);

@@ -35,6 +35,7 @@
     <ToolchainVersion>13.3.1/15.1/r3</ToolchainVersion>
     <MCUPropertyListFile>$(ProjectDir)stm32.props</MCUPropertyListFile>
     <GenerateHexFile>true</GenerateHexFile>
+    <UserVariablePropertyListFile>$(ProjectDir)$(ProjectName)-user.props</UserVariablePropertyListFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
     <ToolchainID>com.visualgdb.arm-eabi</ToolchainID>
@@ -44,26 +45,37 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
     <ClCompile>
       <PreprocessorDefinitions>USE_HAL_DRIVER;STM32F103xB;DEBUG=1;%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalOptions />
+      <AdditionalOptions>
+      </AdditionalOptions>
       <CLanguageStandard />
       <CPPLanguageStandard />
       <AdditionalIncludeDirectories>Files/Core/Inc;Files/Drivers/CMSIS/Device/ST/STM32F1xx/Include;Files/Drivers/CMSIS/Include;Files/Drivers/STM32F1xx_HAL_Driver/Inc;Core/Inc;Drivers/CMSIS/Device/ST/STM32F1xx/Include;Drivers/CMSIS/Include;Drivers/STM32F1xx_HAL_Driver/Inc;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalSystemIncludeDirectories>D:\Code_STM32\R6581_VS_Display\Drivers\LT7680_Driver;%(AdditionalSystemIncludeDirectories)</AdditionalSystemIncludeDirectories>
     </ClCompile>
     <Link>
-      <LibrarySearchDirectories>%(Link.LibrarySearchDirectories)</LibrarySearchDirectories>
-      <AdditionalLibraryNames>%(Link.AdditionalLibraryNames)</AdditionalLibraryNames>
-      <AdditionalLinkerInputs>%(Link.AdditionalLinkerInputs)</AdditionalLinkerInputs>
+      <LibrarySearchDirectories>;%(Link.LibrarySearchDirectories)</LibrarySearchDirectories>
+      <AdditionalLibraryNames>;%(Link.AdditionalLibraryNames)</AdditionalLibraryNames>
+      <AdditionalLinkerInputs>;%(Link.AdditionalLinkerInputs)</AdditionalLinkerInputs>
       <LinkerScript>Files\STM32F103C8TX_FLASH.ld</LinkerScript>
-      <AdditionalOptions />
+      <AdditionalOptions>
+      </AdditionalOptions>
       <ProduceRelocationRecords>true</ProduceRelocationRecords>
     </Link>
+    <ToolchainSettingsContainer>
+      <FloatABI>
+      </FloatABI>
+      <ARMFPU>
+      </ARMFPU>
+      <InstructionSet>
+      </InstructionSet>
+    </ToolchainSettingsContainer>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
     <ClCompile>
       <AdditionalIncludeDirectories>\Core\Inc;\Drivers\STM32F1xx_HAL_Driver\Inc;\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy;\Drivers\CMSIS\Device\ST\STM32F1xx\Include;\Drivers\CMSIS\Include;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>USE_HAL_DRIVER;STM32F103xB;%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalOptions />
+      <AdditionalOptions>
+      </AdditionalOptions>
       <CLanguageStandard />
       <CPPLanguageStandard />
     </ClCompile>
@@ -72,8 +84,17 @@
       <AdditionalLibraryNames>%(Link.AdditionalLibraryNames)</AdditionalLibraryNames>
       <AdditionalLinkerInputs>%(Link.AdditionalLinkerInputs)</AdditionalLinkerInputs>
       <LinkerScript>\STM32F103C8TX_FLASH.ld</LinkerScript>
-      <AdditionalOptions />
+      <AdditionalOptions>
+      </AdditionalOptions>
     </Link>
+    <ToolchainSettingsContainer>
+      <FloatABI>
+      </FloatABI>
+      <ARMFPU>
+      </ARMFPU>
+      <InstructionSet>
+      </InstructionSet>
+    </ToolchainSettingsContainer>
   </ItemDefinitionGroup>
   <ItemGroup>
   </ItemGroup>
@@ -181,5 +202,15 @@
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</DeploymentContent>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</DeploymentContent>
     </EmbeddedBinaryFile>
+    <ClCompile Include="$(EFP_BASE)\Profiler\FastSemihosting.cpp" />
+    <ClCompile Include="$(EFP_BASE)\Profiler\InstrumentingProfiler.cpp" />
+    <ClCompile Include="$(EFP_BASE)\Profiler\TestResourceManager.cpp" />
+    <ClCompile Include="$(EFP_BASE)\Profiler\ProfilerRTOS_FreeRTOS.c" />
+    <ClInclude Include="$(EFP_BASE)\Profiler\SysprogsProfiler.h" />
+    <ClInclude Include="$(EFP_BASE)\Profiler\SmallNumberCoder.h" />
+    <ClInclude Include="$(EFP_BASE)\Profiler\SysprogsProfilerInterface.h" />
+    <ClInclude Include="$(EFP_BASE)\Profiler\ProfilerFreeRTOSHooks.h" />
+    <ClInclude Include="$(EFP_BASE)\Profiler\CustomRealTimeWatches.h" />
+    <ClInclude Include="$(EFP_BASE)\Profiler\DebuggerChecker.h" />
   </ItemGroup>
 </Project>
