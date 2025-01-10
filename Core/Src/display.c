@@ -16,8 +16,8 @@
 #include <stdio.h>   // For debugging (optional)
 #include <stdbool.h>
 #include <ctype.h>
-#include <stdlib.h>
 #include <math.h>
+#include <stdlib.h>		// required for float (soft FPU)
 
 
 #define DURATION_MS 5000     // 5 seconds in milliseconds
@@ -406,13 +406,20 @@ void DisplayAux() {
 	if (dollarCount == 0) {
 
 		// Detect 1000mV Range
-		if ((strstr(MaindisplayString, "OVERLOAD") == NULL) &&
-			(strpbrk(MaindisplayString, "0123456789") != NULL) &&
-			(strstr(AuxdisplayString, "1000mV Range") != NULL)) {
+		//if ((strstr(MaindisplayString, "OVERLOAD") == NULL) &&			// does not contain
+		//	(strpbrk(MaindisplayString, "0123456789") != NULL) &&		// does contain
+		//	(strstr(AuxdisplayString, "1000mV Range") != NULL)) {		// does contain
+		//	onethousandmVmodedetected = true;
+		//} else {
+		//	onethousandmVmodedetected = false;
+		//	oneVoltmode = false;
+		//}
+		if ((strstr(AuxdisplayString, "1000mV Range") != NULL)) {		// does contain
 			onethousandmVmodedetected = true;
-		} else {
+		}
+		else {
 			onethousandmVmodedetected = false;
-			oneVoltmode = false;
+			//oneVoltmode = false;
 		}
 
 		// If in 1000mV range and user has enabled the new 1VDC mode

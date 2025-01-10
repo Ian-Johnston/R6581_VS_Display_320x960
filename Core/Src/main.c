@@ -30,6 +30,7 @@
 //#include <stdlib.h> // For rand()
 #include "display.h"
 #include "stm32f1xx_hal.h"
+#include <stdlib.h>		// required for float (soft FPU)
 
 // Test only - IanJ
 //volatile int myVariable1 = 0;
@@ -53,8 +54,12 @@ _Bool AnnuncTemp[37]; // Temp array for annunciators. 18off, the order on LCD le
 // Global variable to store the unmatched bitmap
 uint8_t unmatchedBitmap[FONT_HEIGHT] = { 0 }; // Initialize to zero
 
-_Bool test11 = false;
-_Bool test12 = false;
+// IanJ test only
+//_Bool test11 = false;
+//_Bool test12 = false;
+//float test13 = 0;
+//uint8_t test14 = 0;
+//float test15 = 0;
 
 //******************************************************************************
 
@@ -500,6 +505,11 @@ int main(void) {
 
 	while (1) {
 
+		// demo float (confirmation of Soft FPU
+		//char inputString[] = "123.456";
+		//test15 = atof(inputString);
+
+
 		Packets_to_chars();         // Convert packets from R6581 to characters
 		Main_Aux_R6581();           // Get R6581 VFD drive data
 
@@ -536,8 +546,7 @@ int main(void) {
 			// Read pins A11/A12 - Front panel DCV switch momentary - Enable 1VDC mode
 			GPIO_PinState pinA11 = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_11);
 			GPIO_PinState pinA12 = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_12);
-			//test11 = pinA11;
-			//test12 = pinA12;
+
 			if (pinA11 == GPIO_PIN_SET && pinA12 == GPIO_PIN_RESET) {
 				// Button is NOT pressed (normal state)
 				oneVoltmodepreviousState = false;
