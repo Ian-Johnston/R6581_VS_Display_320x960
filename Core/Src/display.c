@@ -287,10 +287,13 @@ void CheckDisplayStatus() {
 	if (displayBlank != displayBlankPrevious) {
 		if (displayBlank) {
 			// Changed to "DISPLAY OFF"
+			WriteRegister(0x84);                      // Set backlighting Prescaler to zero which effectively turns off backlighting
+			WriteData(0x00); // Prescaler = 00
 			LCDConfigTurnOff_LT();
 		}
 		else {
 			// Changed from "DISPLAY OFF" to something else, i.e. user has pressed a button to revive
+			ConfigurePWMAndSetBrightness(BACKLIGHTFULL);  // Configure Timer-1 and PWM-1 for backlighting. Settable 0-100%
 			LCDConfigTurnOn_LT();
 		}
 	}
