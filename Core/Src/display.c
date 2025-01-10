@@ -152,8 +152,8 @@ void DisplayMain() {
 		// and also if OVERLOAD is not being displayed
 		// and also that there are numbers being displayed, because when changing ranges manually the display can be blanked (no numbers)
 
-		//if (oneVoltmode && onethousandmVmodedetected && (strstr(MaindisplayString, "OVERLOAD") == NULL) && (strpbrk(MaindisplayString, "0123456789") != NULL)) {
-		if (oneVoltmode && onethousandmVmodedetected) {
+		if (oneVoltmode && onethousandmVmodedetected && (strstr(MaindisplayString, "OVERLOAD") == NULL) && (strpbrk(MaindisplayString, "0123456789") != NULL)) {
+		//if (oneVoltmode && onethousandmVmodedetected) {
 
 			// Standard R6581 display non-OHM mode, user has selected 1VDC rather than 1000mV mode by pressing DCV button whilst on 1000mV mode
 
