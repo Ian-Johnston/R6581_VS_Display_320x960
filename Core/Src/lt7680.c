@@ -1036,7 +1036,7 @@ void LCD_VSYNC_Pulse_Width_LT(uint16_t val) {
 
 
 // Register 0x12
-void LCDConfigTurnOn_LT() {                                                 // OK
+void LCDConfigTurnOn_LT() {
     uint8_t regValue = 0;
 
     // Bit 7: PCLK Inversion
@@ -1061,6 +1061,19 @@ void LCDConfigTurnOn_LT() {                                                 // O
     // Bits 2-0: Parallel PD[23:0] Output Sequence
     // 000: RGB, 001: RBG, 010: GRB, 011: GBR, 100: BRG, 101: BGR, 110: Gray, 111: Idle State
     regValue |= (OUTPUT_SEQ); // Set to RGB (default, adjust if necessary)
+
+    // Write the value to Register 0x12
+    WriteRegister(0x12);
+    WriteData(regValue);
+}
+
+
+// Register 0x12
+void LCDConfigTurnOff_LT() {
+    uint8_t regValue = 0;
+
+    // Bit 6: Display ON/OFF
+    regValue &= ~(1 << 6); // Clear Bit 6 (Set to 0 for Display Off)
 
     // Write the value to Register 0x12
     WriteRegister(0x12);

@@ -30,6 +30,9 @@ uint32_t AnnunColourFore = 0x00FF00; // Green
 
 _Bool onethousandmVmodedetected;
 char MaindisplayString[19] = "";              // String for G[1] to G[18]
+_Bool displayBlank = false;
+_Bool displayBlankPrevious = false;
+
 
 //uint16_t dollarPositionAUX = 0xFFFF;
 
@@ -143,8 +146,7 @@ void DisplayMain() {
 		MaindisplayStringAfter[18] = '\0'; // Null-terminate the new string
 		DrawText(MaindisplayStringAfter);
 
-	}
-	else {
+	} else {
 
 		// Every mode other than one that includes an OHM symbol
 		// and also if OVERLOAD is not being displayed
@@ -260,10 +262,41 @@ void DisplayMain() {
 			MaindisplayString[18] = '\0';                 // Null-terminate
 			DrawText(MaindisplayString);
 
+			// (strstr(MaindisplayString, "DISPLAY OFF") != NULL))
+			// LCDConfigTurnOn_LT();
+			// LCDConfigTurnOff_LT();
+			CheckDisplayStatus();
+
 		}
 
-
 	}
+
+}
+
+
+//******************************************************************************
+
+
+// "DISPLAY OFF" logic
+void CheckDisplayStatus() {
+
+	// Check if "DISPLAY OFF" is present in MaindisplayString
+	displayBlank = (strstr(MaindisplayString, "DISPLAY OFF") != NULL);
+
+	// If the display status has changed
+	if (displayBlank != displayBlankPrevious) {
+		if (displayBlank) {
+			// Changed to "DISPLAY OFF"
+			LCDConfigTurnOff_LT();
+		}
+		else {
+			// Changed from "DISPLAY OFF" to something else, i.e. user has pressed a button to revive
+			LCDConfigTurnOn_LT();
+		}
+	}
+
+	// Update the previous status
+	displayBlankPrevious = displayBlank;
 
 }
 

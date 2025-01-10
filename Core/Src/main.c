@@ -533,7 +533,7 @@ int main(void) {
 
 			HAL_Delay(6); // Allow the LT7680 sufficient processing time
 
-			// Read pin A11/A12 - Front panel DCV switch momentary - Enable 1VDC mode
+			// Read pins A11/A12 - Front panel DCV switch momentary - Enable 1VDC mode
 			GPIO_PinState pinA11 = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_11);
 			GPIO_PinState pinA12 = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_12);
 			//test11 = pinA11;
