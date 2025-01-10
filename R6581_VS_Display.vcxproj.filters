@@ -124,6 +124,9 @@
     <Filter Include="Header files\Device-specific files\Semihosting/Profiler">
       <UniqueIdentifier>{1019c6fa-e386-49f4-8f08-1287c7f9de13}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Hardware">
+      <UniqueIdentifier>{c5a1e903-3e9e-406c-b4b4-52ba5e2fd428}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="stm32.props">
@@ -232,6 +235,9 @@
     <ClInclude Include="$(EFP_BASE)\Profiler\DebuggerChecker.h">
       <Filter>Header files\Device-specific files\Semihosting/Profiler</Filter>
     </ClInclude>
+    <None Include="Hardware\7680-Controller_backside4_V1_2.zip">
+      <Filter>Hardware</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core\Inc\dma.h">

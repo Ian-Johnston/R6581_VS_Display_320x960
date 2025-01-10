@@ -134,6 +134,7 @@
     <ClInclude Include="Core\Inc\lcd.h" />
     <ClInclude Include="Core\Inc\lt7680.h" />
     <ClInclude Include="Core\Inc\timer.h" />
+    <None Include="Hardware\7680-Controller_backside4_V1_2.zip" />
     <None Include="stm32.props" />
     <ClInclude Include="Core\Inc\dma.h" />
     <ClInclude Include="Core\Inc\gpio.h" />
