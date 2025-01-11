@@ -14,6 +14,10 @@
 #include <stddef.h>
 #include "main.h"
 
+//#ifdef __cplusplus
+//extern "C" {
+//#endif
+
 // External global variable
 extern char G[48];
 extern _Bool Annunc[19];

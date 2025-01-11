@@ -33,6 +33,9 @@ char MaindisplayString[19] = "";              // String for G[1] to G[18]
 _Bool displayBlank = false;
 _Bool displayBlankPrevious = false;
 
+//float test15 = 0;
+//char test16[12];
+
 
 //uint16_t dollarPositionAUX = 0xFFFF;
 
@@ -167,6 +170,7 @@ void DisplayMain() {
 				MaindisplayString[i - 1] = G[i];          // Copy characters
 			}
 
+			// Extract the numerical part, divide by 1000 all whilst remainng string data
 			char prefix[19] = { 0 };       // To store the string before the numeric part
 			char numericPart[13] = { 0 };  // To store the numeric part
 			char suffix[] = "VDC";         // Fixed suffix
@@ -221,6 +225,41 @@ void DisplayMain() {
 			MaindisplayString[1] = ' ';          // Add space after the sign
 			strncpy(MaindisplayString + 2, result, strlen(result));            // Copy numericPart starting at position 2
 			strncpy(MaindisplayString + 18 - strlen(suffix), suffix, strlen(suffix)); // Add the suffix
+
+			/*
+			// atof test - needs work, not working
+			// atof works, but after that string is empty for some reason
+			float voltage;
+			voltage = (atof(numericPart)) / 1000;
+			// Format voltage into a string
+			//char result2[12]; // Enough to hold the formatted voltage
+			//snprintf(result2, sizeof(result2), "%.3f", voltage); // Format voltage to 3 decimal places
+			//test16[12] = result2;
+	
+			char voltageString[12];
+			snprintf(voltageString, sizeof(voltageString), "%.8f", voltage);
+			test16[12] = voltageString[12];
+
+			// Clear and rebuild MaindisplayString
+			memset(MaindisplayString, ' ', 18);  // Fill with spaces
+			MaindisplayString[18] = '\0';        // Null-terminate the string
+
+			// Add the prefix (including the sign)
+			if (prefix[0] != '\0') {
+				MaindisplayString[0] = prefix[0];    // Set the sign (+ or -) at position 0
+			}
+
+			// Add a space after the sign
+			MaindisplayString[1] = ' ';
+
+			// Add the formatted numeric part
+			strncpy(MaindisplayString + 2, voltageString, strlen(voltageString)); // Copy numeric part starting at position 2
+
+			// Add the suffix at the end
+			if (suffix[0] != '\0') {
+				strncpy(MaindisplayString + 18 - strlen(suffix), suffix, strlen(suffix));
+			}
+			*/
 
 			ConfigureFontAndPosition(
 				0b00,    // Internal CGROM

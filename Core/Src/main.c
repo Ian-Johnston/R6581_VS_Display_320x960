@@ -32,9 +32,6 @@
 #include "stm32f1xx_hal.h"
 #include <stdlib.h>		// required for float (soft FPU)
 
-// Test only - IanJ
-//volatile int myVariable1 = 0;
-
 /* Variables ---------------------------------------------------------*/
 static char main_display_debug[LINE1_LEN + 1]; // Main display debug string
 #define FONT_HEIGHT 7
