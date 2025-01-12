@@ -327,8 +327,7 @@ void CheckDisplayStatus() {
 	if (displayBlank != displayBlankPrevious) {
 		if (displayBlank) {
 			// Changed to "DISPLAY OFF"
-			WriteRegister(0x84);                      // Set backlighting Prescaler to zero which effectively turns off backlighting
-			WriteData(0x00); // Prescaler = 00
+			ConfigurePWMAndSetBrightness(0);
 			LCDConfigTurnOff_LT();
 		}
 		else {

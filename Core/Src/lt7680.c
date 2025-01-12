@@ -127,9 +127,9 @@ void SendAllToLT7680_LT() {
     Set_LCD_Panel_LT();                       // Set up the panel interface
     HAL_Delay(100);
 
-    WriteRegister(0x84);                      // Set backlighting Prescaler to zero which effectively turns off backlighting
-    WriteData(0x00); // Prescaler = 00
-    HAL_Delay(5);
+    //WriteRegister(0x84);                      // Set backlighting Prescaler to zero which effectively turns off backlighting
+    //WriteData(0x00); // Prescaler = 00
+    //HAL_Delay(5);
 
     LCDConfigTurnOn_LT();
     HAL_Delay(5);
