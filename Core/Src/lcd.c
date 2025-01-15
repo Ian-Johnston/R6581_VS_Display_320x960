@@ -154,8 +154,8 @@ void BuyDisplay_Init() {
 	LCDWriteData(0x00);				// 960 lines	00
 
 	LCDWriteRegister(0xC1);			// PORCTRL (C1h/C100h): Porch Control 
-	LCDWriteData(0x10);				// VBP = 10		(10 is decimal, so should be 0A..?....but it works so leaving as-is)		0x0A works and seems ok!
-	LCDWriteData(0x12);				// VFP = 12		(12 is decimal, so should be 0C..?....but it works so leaving as-is)		0x0C works and seems ok!
+	LCDWriteData(0x0A);				// VBP = 0A		(10 decimal)
+	LCDWriteData(0x0C);				// VFP = 0C		(12 decimal)
 
 	LCDWriteRegister(0xC2);			// INVSET (C2h/C200h): Inversion selection & Frame Rate Control 
 	LCDWriteData(0x37);				// C200h: Inversion Selection NLINV = 7								originally 37
