@@ -550,7 +550,6 @@ int main(void) {
 			}
 			else if (pinA11 == GPIO_PIN_RESET && pinA12 == GPIO_PIN_RESET && pinA11 == pinA12) {
 				// Button is pressed (both pins are the same, and LOW)
-				//HAL_GPIO_TogglePin(GPIOC, TEST_OUT_Pin); // Test LED toggle
 				if (!oneVoltmodepreviousState) {
 					// Toggle the mode on the first detection of the press
 					oneVoltmode = !oneVoltmode;

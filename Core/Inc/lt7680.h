@@ -106,12 +106,12 @@ void SetCanvasImageWidth_LT(void);
 #define SPI_CS_HIGH()      HAL_GPIO_WritePin(SPI_CS_PORT, SPI_CS_PIN, GPIO_PIN_SET)
 
 // TFT LCD Panel parameters - BuyDisplay (Some of them plus refresh rate are used to calculate CCLK, MCLK & PCLK)
-#define LCD_VBPD				10			// Vertical Back Porch		Spec for TFT = 10, but after power up for 20hrs the display started flickering. Set to 11 fixes this.
-#define LCD_VFPD				12			// Vertical Front Porch		Spec for TFT = 12
+#define LCD_VBPD				10			// Vertical Back Porch				TFT Spec = 10
+#define LCD_VFPD				12			// Vertical Front Porch				TFT Spec = 12
 #define LCD_VSPW				3			// Vertical Start Position
-#define LCD_HBPD				80			// Horizontal Back Porch	Spec = 80
-#define LCD_HFPD				30			// Horizontal Front Porch	Spec = 20
-#define LCD_HSPW				20			// Horizontal Start Position	Spec = 20
+#define LCD_HBPD				80			// Horizontal Back Porch			TFT Spec = 80
+#define LCD_HFPD				30			// Horizontal Front Porch			TFT Spec = 20, but after power up for 12hrs the display started flickering. Set to 30 seems to fix.
+#define LCD_HSPW				20			// Horizontal Start Position		TFT Spec = 20
 #define LCD_XSIZE_TFT			320			// Resolution - Horizontal pixels
 #define LCD_YSIZE_TFT			960			// Resolution - Vertical Pixels
 #define HSYNC_ACTIVE			0			// 0 = HSYNC Low Active
@@ -128,7 +128,7 @@ void SetCanvasImageWidth_LT(void);
 #define MCLK_MAX				100			// Max allowable
 #define CCLK_MAX				100			// Max allowable
 #define SDRAM_MCLK				20			// MHz
-#define SDRAM_CLKFREQ			64000000	// SDRAM clock frequency in Hz (clock source)
+#define SDRAM_CLKFREQ			64000000	// SDRAM clock frequency in Hz (clock source)		64000000
 #define SDRAM_SIZE				8192		// 2048 = 64Mb, 8192 = 128Mb (depends on LT768x used), LT7680A-R is 128Mb
 #define VSCAN_DIRECTION			0			// 0 = VSCAN Top to Bottom
 #define TFT_BIT					0b01		// 0b01 = 18bit, 0b00 = 24bit, 0b10 = 16bit, 0b11 = No TFT output - 18bit bus LT7680 to ST7701S
