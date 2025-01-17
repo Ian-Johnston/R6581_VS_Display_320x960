@@ -502,7 +502,7 @@ int main(void) {
 
 	while (1) {
 
-		// demo float (confirmation of Soft FPU
+		// demo float (confirmation of Soft FP)
 		//char inputString[] = "123.456";
 		//test15 = atof(inputString);
 

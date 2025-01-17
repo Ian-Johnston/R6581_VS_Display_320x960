@@ -1,0 +1,16 @@
+../Core/Src/SSD1322_OLED_lib/SSD1322_GFX.c:44:6:set_buffer_size	1
+../Core/Src/SSD1322_OLED_lib/SSD1322_GFX.c:59:6:fill_buffer	2
+../Core/Src/SSD1322_OLED_lib/SSD1322_GFX.c:86:6:draw_pixel	4
+../Core/Src/SSD1322_OLED_lib/SSD1322_GFX.c:118:6:draw_vline	14
+../Core/Src/SSD1322_OLED_lib/SSD1322_GFX.c:153:6:draw_hline	10
+../Core/Src/SSD1322_OLED_lib/SSD1322_GFX.c:190:6:draw_line	39
+../Core/Src/SSD1322_OLED_lib/SSD1322_GFX.c:278:6:draw_AA_line	48
+../Core/Src/SSD1322_OLED_lib/SSD1322_GFX.c:391:6:draw_rect	43
+../Core/Src/SSD1322_OLED_lib/SSD1322_GFX.c:416:6:draw_rect_filled	10
+../Core/Src/SSD1322_OLED_lib/SSD1322_GFX.c:442:6:draw_circle	47
+../Core/Src/SSD1322_OLED_lib/SSD1322_GFX.c:500:6:draw_bitmap_8bpp	8
+../Core/Src/SSD1322_OLED_lib/SSD1322_GFX.c:535:6:draw_bitmap_4bpp	12
+../Core/Src/SSD1322_OLED_lib/SSD1322_GFX.c:572:6:select_font	1
+../Core/Src/SSD1322_OLED_lib/SSD1322_GFX.c:594:6:draw_char	11
+../Core/Src/SSD1322_OLED_lib/SSD1322_GFX.c:656:6:draw_text	3
+../Core/Src/SSD1322_OLED_lib/SSD1322_GFX.c:684:6:send_buffer_to_OLED	1
