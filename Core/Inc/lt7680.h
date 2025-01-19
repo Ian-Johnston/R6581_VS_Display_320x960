@@ -110,7 +110,7 @@ void SetCanvasImageWidth_LT(void);
 #define LCD_VFPD				12			// Vertical Front Porch				TFT Spec = 12
 #define LCD_VSPW				3			// Vertical Start Position
 #define LCD_HBPD				80			// Horizontal Back Porch			TFT Spec = 80
-#define LCD_HFPD				30			// Horizontal Front Porch			TFT Spec = 20, but after power up for 12hrs the display started flickering. Set to 30 seems to fix.
+#define LCD_HFPD				30			// Horizontal Front Porch			30			TFT Spec = 20, but after power up for 12hrs the display started flickering. Set to 30 seems to fix.
 #define LCD_HSPW				20			// Horizontal Start Position		TFT Spec = 20
 #define LCD_XSIZE_TFT			320			// Resolution - Horizontal pixels
 #define LCD_YSIZE_TFT			960			// Resolution - Vertical Pixels

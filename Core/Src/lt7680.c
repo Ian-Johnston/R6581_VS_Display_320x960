@@ -173,12 +173,72 @@ void SendAllToLT7680_LT() {
    
     Text_Mode();
     ClearScreen();                          // Draws black 'spaces' across the whole screen - fast
-     
+    
 }
 
 
 //******************************************************************************
 // ROUTINES
+
+// Draw line on LCD, start point, end point, and RGB colour
+// Width is 1-pixel (not polyline)
+// Origin is top left on R6581T orientaton
+void DrawLine(uint16_t startX, uint16_t startY, uint16_t endX, uint16_t endY, uint16_t colorRED, uint16_t colorGREEN, uint16_t colorBLUE) {
+
+    // Start the drawing process
+    //WriteRegister(0x67);
+    //WriteData(0x01); // Set bit 0 to start drawing
+
+    // Set the starting point X-coordinate
+    WriteRegister(0x68); // DLHSR[7:0]
+    WriteData(startX & 0xFF);
+    WriteRegister(0x69); // DLHSR[12:8]
+    WriteData((startX >> 8) & 0x1F);
+
+    // Set the starting point Y-coordinate
+    WriteRegister(0x6A); // DLVSR[7:0]
+    WriteData(startY & 0xFF);
+    WriteRegister(0x6B); // DLVSR[12:8]
+    WriteData((startY >> 8) & 0x1F);
+
+    // Set the ending point X-coordinate
+    WriteRegister(0x6C); // DLHER[7:0]
+    WriteData(endX & 0xFF);
+    WriteRegister(0x6D); // DLHER[12:8]
+    WriteData((endX >> 8) & 0x1F);
+
+    // Set the ending point Y-coordinate
+    WriteRegister(0x6E); // DLVER[7:0]
+    WriteData(endY & 0xFF);
+    WriteRegister(0x6F); // DLVER[12:8]
+    WriteData((endY >> 8) & 0x1F);
+
+    // Set line width
+    //WriteRegister(0x63); // Line Width Register (Assumed for line width)
+    //WriteData(lineWidth);
+
+    // Set line color (Foreground Color Register)
+    WriteRegister(0xD2); // Foreground Color Low Byte
+    WriteData(colorRED);
+    WriteRegister(0xD3); // Foreground Color Low Byte
+    WriteData(colorGREEN);
+    WriteRegister(0xD4); // Foreground Color Low Byte
+    WriteData(colorBLUE);
+
+    WriteRegister(0x67); // Draw Line/Triangle Control Register
+    WriteData(0x80 | 0x00); // Start drawing (bit 7 = 1) and select "Draw Line" (bits 4-1 = 0000)
+
+    // Optionally, wait for the drawing to complete (polling)
+    //uint8_t drawlineFinished;
+    //do {
+    //    WriteRegister(0x67);                // Select the draw control register
+    //    drawlineFinished = ReadData();      // Read the draw status
+    //} while (drawlineFinished & 0x80);      // Bit 7 indicates whether drawing is in progress
+}
+
+
+
+
 
 // UGC symbol - 16x32
 void Ohms16x32SymbolStoreUCG() {

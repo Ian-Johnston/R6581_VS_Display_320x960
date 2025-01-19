@@ -540,6 +540,15 @@ int main(void) {
 
 			HAL_Delay(6); // Allow the LT7680 sufficient processing time
 
+			// Draw 4 vertical lines at far right verticle edge of LCD in order to erase random pixels that appear due to timing issues
+			// Origin is top left on R6581T orientaton
+			DrawLine(0, 938, 320, 938, 0x00, 0x00, 0x00);  // far right hand vertical line, black, 1 pixel line. 938 not 960 seems to be far right edge!
+			DrawLine(0, 937, 320, 937, 0x00, 0x00, 0x00);
+			DrawLine(0, 936, 320, 936, 0x00, 0x00, 0x00);
+			DrawLine(0, 935, 320, 935, 0x00, 0x00, 0x00);
+
+			HAL_Delay(6); // Allow the LT7680 sufficient processing time
+
 			// Read pins A11/A12 - Front panel DCV switch momentary - Enable 1VDC mode
 			GPIO_PinState pinA11 = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_11);
 			GPIO_PinState pinA12 = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_12);
