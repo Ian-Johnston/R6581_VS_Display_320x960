@@ -106,13 +106,13 @@ void SetCanvasImageWidth_LT(void);
 #define SPI_CS_HIGH()      HAL_GPIO_WritePin(SPI_CS_PORT, SPI_CS_PIN, GPIO_PIN_SET)
 
 // TFT LCD Panel parameters - BuyDisplay (Some of them plus refresh rate are used to calculate CCLK, MCLK & PCLK)
-#define LCD_VBPD				10			// Vertical Back Porch				TFT Spec = 10
-#define LCD_VFPD				12			// Vertical Front Porch				TFT Spec = 12
-#define LCD_VSPW				3			// Vertical Start Position
-#define LCD_HBPD				80			// Horizontal Back Porch			TFT Spec = 80
-#define LCD_HFPD				28			// Horizontal Front Porch			30			TFT Spec = 20, but after power up for 12hrs the display started flickering. Set to 30 seems to fix.
-#define LCD_HSPW				20			// Horizontal Start Position		TFT Spec = 20
-#define LCD_XSIZE_TFT			320			// Resolution - Horizontal pixels
+#define LCD_VBPD				17			// Vertical Back Porch				17
+#define LCD_VFPD				14			// Vertical Front Porch				14		Adafruit tft timings say 15 but per forum user changed to 14 to stop flickering
+#define LCD_VSPW				4			// Vertical Start Position			4		Adafruit tft timings says 2 but leaves single vertical line at far right, changed to 4 gets rid of it
+#define LCD_HBPD				50			// Horizontal Back Porch			50
+#define LCD_HFPD				30			// Horizontal Front Porch			30
+#define LCD_HSPW				10			// Horizontal Start Position		10
+#define LCD_XSIZE_TFT			400			// Resolution - Horizontal pixels (320 LCD is the 400 with first 80 missing)
 #define LCD_YSIZE_TFT			960			// Resolution - Vertical Pixels
 #define HSYNC_ACTIVE			0			// 0 = HSYNC Low Active
 #define VSYNC_ACTIVE			0			// 0 = VSYNC Low Active

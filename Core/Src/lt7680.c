@@ -408,6 +408,8 @@ void ConfigureFontAndPosition(uint8_t fontSource, uint8_t characterHeight, uint8
 }
 
 
+
+
 void ClearScreen() {
     uint16_t charWidth = 8;      // Character width in pixels
     uint16_t charHeight = 16;    // Character height in pixels
@@ -1213,6 +1215,22 @@ void Software_Reset_LT() {                                      // OK - needs ve
     //regValue &= ~(1 << 7); // Clear Bit 7
     //regValue &= ~(1 << 0); // Clear Bit 0
     //WriteDataToRegister(0x00, regValue);
+
+    /*
+    // Set porch settings via Pcb links
+    if (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_0) == GPIO_PIN_SET) {
+        // B0 high
+        #define LCD_VFPD = 14;
+    } else {
+        #define LCD_VFPD = 15;
+    }
+    if (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_1) == GPIO_PIN_SET) {
+        // B1 high
+    } else {
+
+    }
+    */
+
 }
 
 

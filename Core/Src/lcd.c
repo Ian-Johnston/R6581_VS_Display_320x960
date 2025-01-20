@@ -126,6 +126,272 @@ void LCD_Hor_Ver_Timing() {
 }
 
 
+void AdaFruit_Init() {
+
+	//ST7701S+AUO4.58
+	//https://cdn-shop.adafruit.com/product-files/5805/AUO4.58-ST7701S-3W-RGB18BIT_initcode.txt
+
+	LCDWriteRegister(0xFF);
+	LCDWriteData(0x77);
+	LCDWriteData(0x01);
+	LCDWriteData(0x00);
+	LCDWriteData(0x00);
+	LCDWriteData(0x13);
+
+	LCDWriteRegister(0xEF);
+	LCDWriteData(0x08);
+
+	LCDWriteRegister(0xFF);
+	LCDWriteData(0x77);
+	LCDWriteData(0x01);
+	LCDWriteData(0x00);
+	LCDWriteData(0x00);
+	LCDWriteData(0x10);
+
+	LCDWriteRegister(0xC0);
+	LCDWriteData(0x77);
+	LCDWriteData(0x00);
+
+	LCDWriteRegister(0xC1);
+	LCDWriteData(0x09);
+	LCDWriteData(0x08);
+
+	LCDWriteRegister(0xC2);//inv     
+	LCDWriteData(0x01);
+	LCDWriteData(0x02);
+
+	LCDWriteRegister(0xC3); //????    
+	LCDWriteData(0x02); //82 HVmode    02 DEmode 
+
+	LCDWriteRegister(0xCC);
+	LCDWriteData(0x10);
+
+	LCDWriteRegister(0xB0);
+	LCDWriteData(0x40);
+	LCDWriteData(0x14);
+	LCDWriteData(0x59);
+	LCDWriteData(0x10);
+	LCDWriteData(0x12);
+	LCDWriteData(0x08);
+	LCDWriteData(0x03);
+	LCDWriteData(0x09);
+	LCDWriteData(0x05);
+	LCDWriteData(0x1E);
+	LCDWriteData(0x05);
+	LCDWriteData(0x14);
+	LCDWriteData(0x10);
+	LCDWriteData(0x68);
+	LCDWriteData(0x33);
+	LCDWriteData(0x15);
+
+	LCDWriteRegister(0xB1);
+	LCDWriteData(0x40);
+	LCDWriteData(0x08);
+	LCDWriteData(0x53);
+	LCDWriteData(0x09);
+	LCDWriteData(0x11);
+	LCDWriteData(0x09);
+	LCDWriteData(0x02);
+	LCDWriteData(0x07);
+	LCDWriteData(0x09);
+	LCDWriteData(0x1A);
+	LCDWriteData(0x04);
+	LCDWriteData(0x12);
+	LCDWriteData(0x12);
+	LCDWriteData(0x64);
+	LCDWriteData(0x29);
+	LCDWriteData(0x29);
+
+	LCDWriteRegister(0xFF);
+	LCDWriteData(0x77);
+	LCDWriteData(0x01);
+	LCDWriteData(0x00);
+	LCDWriteData(0x00);
+	LCDWriteData(0x11);
+
+	LCDWriteRegister(0xB0);
+	LCDWriteData(0x6D);  //6D 
+
+	LCDWriteRegister(0xB1);   //vcom  
+	LCDWriteData(0x1D);
+
+	LCDWriteRegister(0xB2);
+	LCDWriteData(0x87);
+
+	LCDWriteRegister(0xB3);
+	LCDWriteData(0x80);
+
+	LCDWriteRegister(0xB5);
+	LCDWriteData(0x49);
+
+	LCDWriteRegister(0xB7);
+	LCDWriteData(0x85);
+
+	LCDWriteRegister(0xB8);
+	LCDWriteData(0x20);
+
+	LCDWriteRegister(0xC1);
+	LCDWriteData(0x78);
+
+	LCDWriteRegister(0xC2);
+	LCDWriteData(0x78);
+
+	LCDWriteRegister(0xD0);
+	LCDWriteData(0x88);
+
+	LCDWriteRegister(0xE0);
+	LCDWriteData(0x00);
+	LCDWriteData(0x00);
+	LCDWriteData(0x02);
+
+	LCDWriteRegister(0xE1);
+	LCDWriteData(0x02);
+	LCDWriteData(0x8C);
+	LCDWriteData(0x00);
+	LCDWriteData(0x00);
+	LCDWriteData(0x03);
+	LCDWriteData(0x8C);
+	LCDWriteData(0x00);
+	LCDWriteData(0x00);
+	LCDWriteData(0x00);
+	LCDWriteData(0x33);
+	LCDWriteData(0x33);
+
+	LCDWriteRegister(0xE2);
+	LCDWriteData(0x33);
+	LCDWriteData(0x33);
+	LCDWriteData(0x33);
+	LCDWriteData(0x33);
+	LCDWriteData(0xC9);
+	LCDWriteData(0x3C);
+	LCDWriteData(0x00);
+	LCDWriteData(0x00);
+	LCDWriteData(0xCA);
+	LCDWriteData(0x3C);
+	LCDWriteData(0x00);
+	LCDWriteData(0x00);
+	LCDWriteData(0x00);
+
+	LCDWriteRegister(0xE3);
+	LCDWriteData(0x00);
+	LCDWriteData(0x00);
+	LCDWriteData(0x33);
+	LCDWriteData(0x33);
+
+	LCDWriteRegister(0xE4);
+	LCDWriteData(0x44);
+	LCDWriteData(0x44);
+
+	LCDWriteRegister(0xE5);
+	LCDWriteData(0x05);
+	LCDWriteData(0xCD);
+	LCDWriteData(0x82);
+	LCDWriteData(0x82);
+	LCDWriteData(0x01);
+	LCDWriteData(0xC9);
+	LCDWriteData(0x82);
+	LCDWriteData(0x82);
+	LCDWriteData(0x07);
+	LCDWriteData(0xCF);
+	LCDWriteData(0x82);
+	LCDWriteData(0x82);
+	LCDWriteData(0x03);
+	LCDWriteData(0xCB);
+	LCDWriteData(0x82);
+	LCDWriteData(0x82);
+
+	LCDWriteRegister(0xE6);
+	LCDWriteData(0x00);
+	LCDWriteData(0x00);
+	LCDWriteData(0x33);
+	LCDWriteData(0x33);
+
+	LCDWriteRegister(0xE7);
+	LCDWriteData(0x44);
+	LCDWriteData(0x44);
+
+	LCDWriteRegister(0xE8);
+	LCDWriteData(0x06);
+	LCDWriteData(0xCE);
+	LCDWriteData(0x82);
+	LCDWriteData(0x82);
+	LCDWriteData(0x02);
+	LCDWriteData(0xCA);
+	LCDWriteData(0x82);
+	LCDWriteData(0x82);
+	LCDWriteData(0x08);
+	LCDWriteData(0xD0);
+	LCDWriteData(0x82);
+	LCDWriteData(0x82);
+	LCDWriteData(0x04);
+	LCDWriteData(0xCC);
+	LCDWriteData(0x82);
+	LCDWriteData(0x82);
+
+	LCDWriteRegister(0xEB);
+	LCDWriteData(0x08);
+	LCDWriteData(0x01);
+	LCDWriteData(0xE4);
+	LCDWriteData(0xE4);
+	LCDWriteData(0x88);
+	LCDWriteData(0x00);
+	LCDWriteData(0x40);
+
+	LCDWriteRegister(0xEC);
+	LCDWriteData(0x00);
+	LCDWriteData(0x00);
+	LCDWriteData(0x00);
+
+	LCDWriteRegister(0xED);
+	LCDWriteData(0xFF);
+	LCDWriteData(0xF0);
+	LCDWriteData(0x07);
+	LCDWriteData(0x65);
+	LCDWriteData(0x4F);
+	LCDWriteData(0xFC);
+	LCDWriteData(0xC2);
+	LCDWriteData(0x2F);
+	LCDWriteData(0xF2);
+	LCDWriteData(0x2C);
+	LCDWriteData(0xCF);
+	LCDWriteData(0xF4);
+	LCDWriteData(0x56);
+	LCDWriteData(0x70);
+	LCDWriteData(0x0F);
+	LCDWriteData(0xFF);
+
+	LCDWriteRegister(0xEF);
+	LCDWriteData(0x10);
+	LCDWriteData(0x0D);
+	LCDWriteData(0x04);
+	LCDWriteData(0x08);
+	LCDWriteData(0x3F);
+	LCDWriteData(0x1F);
+
+	LCDWriteRegister(0xFF);
+	LCDWriteData(0x77);
+	LCDWriteData(0x01);
+	LCDWriteData(0x00);
+	LCDWriteData(0x00);
+	LCDWriteData(0x00);
+
+	LCDWriteRegister(0x11);
+
+	HAL_Delay(120);
+
+	LCDWriteRegister(0x35);
+	LCDWriteData(0x00);
+
+	LCDWriteRegister(0x3A);
+	LCDWriteData(0x66);
+
+	//LCDWriteRegister(0x11);
+	//Delay(120);
+
+	LCDWriteRegister(0x29);
+}
+
+
 void BuyDisplay_Init() {
 
 	// Refer to ST7701S datasheet and your TFT LCD datasheet in order to make teh following settings
@@ -161,10 +427,13 @@ void BuyDisplay_Init() {
 	LCDWriteData(0x37);				// C200h: Inversion Selection NLINV = 7								originally 37
 	LCDWriteData(0x08);				// C201h: Frame Rate Control RTNI =	8								originally = 0x02, tried 0x00
 
-	LCDWriteRegister(0xC3);			// RGBCTRL (C3h/C300h): RGB control
-	LCDWriteData(0x81);				// C300h: DE/HV=HV, VSP=L, HSP=L, DP=Rising, EP=High	=> 10000001										0x81
-	LCDWriteData(0x00);				// C301h: HBP_HVRGB[7:0] (Horizontal Back Porch in HSYNC in cycles)	originally 0x05 = 5					0x01	0x20 works		50	00
-	LCDWriteData(0x22);				// C302h: VBP_HVRGB[7:0] (Vertical Back Porch HSYNC in cycles)		originally 0x0D = 13				0x0D					0A	22
+	//LCDWriteRegister(0xC3);			// RGBCTRL (C3h/C300h): RGB control
+	//LCDWriteData(0x81);				// C300h: DE/HV=HV, VSP=L, HSP=L, DP=Rising, EP=High	=> 10000001										0x81
+	//LCDWriteData(0x00);				// C301h: HBP_HVRGB[7:0] (Horizontal Back Porch in HSYNC in cycles)	originally 0x05 = 5					0x01	0x20 works		50	00
+	//LCDWriteData(0x22);				// C302h: VBP_HVRGB[7:0] (Vertical Back Porch HSYNC in cycles)		originally 0x0D = 13				0x0D					0A	22
+
+	LCDWriteRegister(0xC3); //????    
+	LCDWriteData(0x02); //82 HVmode    02 DEmode 
 	
 	LCDWriteRegister(0xCC);			// not known
 	LCDWriteData(0x10);
@@ -405,5 +674,3 @@ void BuyDisplay_Init() {
 	
 	LCDWriteRegister(0x29); 		// DISPON (29h/2900h): Display On 
 }
-
-

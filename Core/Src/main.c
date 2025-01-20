@@ -481,7 +481,8 @@ int main(void) {
 
 	HAL_Delay(1000);
 	
-	BuyDisplay_Init();				// Initialize ST7701S BuyDisplay 4.58" driver IC
+	//BuyDisplay_Init();				// Initialize ST7701S BuyDisplay 4.58" driver IC
+	AdaFruit_Init();				// Initialize ST7701S BuyDisplay 4.58" driver IC
 
 	HAL_Delay(100);
 
@@ -495,6 +496,8 @@ int main(void) {
 	HAL_Delay(5);
 	ConfigurePWMAndSetBrightness(BACKLIGHTFULL);  // Configure Timer-1 and PWM-1 for backlighting. Settable 0-100%
 
+	ClearScreen();					// Again.....
+
 //**************************************************************************************************
 // Main loop initialize
 
@@ -505,7 +508,6 @@ int main(void) {
 		// demo float (confirmation of Soft FP)
 		//char inputString[] = "123.456";
 		//test15 = atof(inputString);
-
 
 		Packets_to_chars();         // Convert packets from R6581 to characters
 		Main_Aux_R6581();           // Get R6581 VFD drive data
@@ -518,10 +520,6 @@ int main(void) {
 			timer_flag = 0;   // Clear the timer flag
 			task_ready = 0;   // Reset task-ready flag    
 			
-			// Blue Pill LCD update rate:
-			// Resistance mode = 14Hz
-			// All other modes = 20.4Hz
-
 			HAL_GPIO_TogglePin(GPIOC, TEST_OUT_Pin); // Test LED toggle
 
 			DisplaySplash();
@@ -540,12 +538,24 @@ int main(void) {
 
 			HAL_Delay(6); // Allow the LT7680 sufficient processing time
 
-			// Draw 4 vertical lines at far right verticle edge of LCD in order to erase random pixels that appear due to timing issues
+			// 400 based - Draw vertical lines at far right verticle edge of LCD in order to erase random pixels that appear due to timing issues
 			// Origin is top left on R6581T orientaton
-			DrawLine(0, 938, 320, 938, 0x00, 0x00, 0x00);  // far right hand vertical line, black, 1 pixel line. 938 not 960 seems to be far right edge!
-			DrawLine(0, 937, 320, 937, 0x00, 0x00, 0x00);
-			DrawLine(0, 936, 320, 936, 0x00, 0x00, 0x00);
-			DrawLine(0, 935, 320, 935, 0x00, 0x00, 0x00);
+			DrawLine(0, 959, 399, 959, 0x00, 0x00, 0x00);	// far right hand vertical line, black, 1 pixel line. (this line hidden!)
+			DrawLine(0, 958, 399, 958, 0x00, 0x00, 0x00);	// (this line hidden!)
+			DrawLine(0, 957, 399, 957, 0x00, 0x00, 0x00);
+			DrawLine(0, 956, 399, 956, 0x00, 0x00, 0x00);
+			DrawLine(0, 955, 399, 955, 0x00, 0x00, 0x00);
+			DrawLine(0, 954, 399, 954, 0x00, 0x00, 0x00);
+			DrawLine(0, 953, 399, 953, 0x00, 0x00, 0x00);
+			DrawLine(0, 952, 399, 952, 0x00, 0x00, 0x00);
+
+			// Test only - 400pixel based test lines for viewing the centre line and the left, middle and far right positions.
+			// The internal memory is set up as 400x960 but the leftmost 80 pixels are considered overscan and don't show up, thus 320
+			// Origin is top left on R6581T orientaton
+			//DrawLine(0, 0, 399, 0, 0xFF, 0xFF, 0xFF);		// far left hand vertical line, black, 1 pixel line. 938 not 960 seems to be far right edge!
+			//DrawLine(0, 480, 399, 480, 0xFF, 0xFF, 0xFF);	// mid-way
+			//DrawLine(0, 959, 399, 959, 0xFF, 0xFF, 0xFF);	// far right
+			//DrawLine(199, 0, 199, 959, 0xFF, 0x00, 0x00);	// centred on R6581T horizontally
 
 			HAL_Delay(6); // Allow the LT7680 sufficient processing time
 
@@ -553,6 +563,7 @@ int main(void) {
 			GPIO_PinState pinA11 = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_11);
 			GPIO_PinState pinA12 = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_12);
 
+			// 1000mVdc / 1Vdc mode select
 			if (pinA11 == GPIO_PIN_SET && pinA12 == GPIO_PIN_RESET) {
 				// Button is NOT pressed (normal state)
 				oneVoltmodepreviousState = false;

@@ -33,11 +33,11 @@ void DisplayAuxSecondHalf(void);
 void DisplayAnnunciatorsHalf(void);
 
 
-// Settings
-#define Xpos_MAIN				102			// These are actually the Y position because LCD is rotated 90deg in use. Values in pixels.
-#define Xpos_AUX				200
-#define Xpos_ANNUNC				70
-#define Xpos_SPLASH				250
+// Settings suited for 400x960 TFT LCD (320x960 physical)
+#define Xpos_MAIN				182			// These are actually the Y position on the R6581 because LCD is rotated 90deg in use. Values in pixels.
+#define Xpos_AUX				280
+#define Xpos_ANNUNC				150
+#define Xpos_SPLASH				330
 
 
 #endif // DISPLAY_H
