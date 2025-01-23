@@ -540,6 +540,11 @@ int main(void) {
 
 			// 400 based - Draw vertical lines at far right verticle edge of LCD in order to erase random pixels that appear due to timing issues
 			// Origin is top left on R6581T orientaton
+			//DrawLine(0, 964, 399, 964, 0x00, 0x00, 0x00);
+			//DrawLine(0, 960, 399, 960, 0x00, 0x00, 0x00);
+			//DrawLine(0, 962, 399, 962, 0x00, 0x00, 0x00);
+			//DrawLine(0, 963, 399, 963, 0x00, 0x00, 0x00);	// This line off screen but seems to get rid of the single vertical line at far right
+
 			DrawLine(0, 959, 399, 959, 0x00, 0x00, 0x00);	// far right hand vertical line, black, 1 pixel line. (this line hidden!)
 			DrawLine(0, 958, 399, 958, 0x00, 0x00, 0x00);	// (this line hidden!)
 			DrawLine(0, 957, 399, 957, 0x00, 0x00, 0x00);
@@ -551,7 +556,6 @@ int main(void) {
 
 			// Test only - 400pixel based test lines for viewing the centre line and the left, middle and far right positions.
 			// The internal memory is set up as 400x960 but the leftmost 80 pixels are considered overscan and don't show up, thus 320
-			// Origin is top left on R6581T orientaton
 			//DrawLine(0, 0, 399, 0, 0xFF, 0xFF, 0xFF);		// far left hand vertical line, black, 1 pixel line. 938 not 960 seems to be far right edge!
 			//DrawLine(0, 480, 399, 480, 0xFF, 0xFF, 0xFF);	// mid-way
 			//DrawLine(0, 959, 399, 959, 0xFF, 0xFF, 0xFF);	// far right
