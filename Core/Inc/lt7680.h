@@ -107,8 +107,8 @@ void SetCanvasImageWidth_LT(void);
 
 // TFT LCD Panel parameters - BuyDisplay (Some of them plus refresh rate are used to calculate CCLK, MCLK & PCLK)
 #define LCD_VBPD				17			// Vertical Back Porch				17
-#define LCD_VFPD				14			// Vertical Front Porch				14		Adafruit tft timings say 15 but per forum user changed to 14 to stop flickering
-#define LCD_VSPW				4			// Vertical Start Position			4		Adafruit tft timings says 2 but leaves single vertical line at far right, changed to 4 gets rid of it
+#define LCD_VFPD				15			// Vertical Front Porch				14		Adafruit tft timings say 15 but per forum user changed to 14 to stop flickering
+#define LCD_VSPW				3			// Vertical Start Position			4		Adafruit tft timings says 2 but leaves single vertical line at far right, changed to 4 gets rid of it
 #define LCD_HBPD				50			// Horizontal Back Porch			50
 #define LCD_HFPD				30			// Horizontal Front Porch			30
 #define LCD_HSPW				10			// Horizontal Start Position		10
