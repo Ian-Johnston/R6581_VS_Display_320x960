@@ -1,0 +1,29 @@
+Porch and start timings - LCD_VBPD, LCD_VFPD, LCD_VSPW, LCD_HBPD, LCD_HFPD, LCD_HSPW
+1 -  17, 15, 1, 50, 30, 10         Haven't tested fully
+2 -  17, 15, 2, 50, 30, 10         Stable with freezer spray & heat gun, single vertical line at right
+3 -  17, 15, 3, 50, 30, 10         Flickers when cold, no vertical line
+4 -  17, 15, 4, 50, 30, 10         Flickers badly
+5 -  17, 14, 1, 50, 30, 10         Flickers badly
+6 -  17, 14, 2, 50, 30, 10         Stable with freezer and heat gun, has a single vertical line
+7 -  17, 14, 3, 50, 30, 10         Stable with freezer and heat gun, has a single vertical line
+8 -  17, 14, 4, 50, 30, 10         Stable (except once on startup) with freezer and heat gun, no vertical line - ORIGINAL
+Option 6 seems to be the closest to the AdaFruit example but has a vertical line down the right hand side which I can't get rid of. It's the most stable.
+Well, I can by adjusting other parameters but it makes the TFT unstable (flickers).
+So, I have elected to go with option 6 and have put a thin strip of 1mm black tape down the right side over the pixels!
+Wierdly, my other R6581T, and ADCMT unit, has no flicker or pixel issues at all.
+
+################################################
+
+LCD manufacturer info:
+HD458002C40+specsheet.pdf
+
+RGB Interface Timing:
+HSYNC					5ns
+VSYNC					5ns
+ENABLE SETUP				5ns
+ENABLE HOLD				5ns
+DOTCLK PWDH HIGH PULSE WIDTH		15ns
+DOTCLK PWDL LOW PULSE WIDTH		15ns
+DOTCLK CYCLE TIME			33ns
+DB PD DATA SETUP TIME			5ns
+DB PD DATA HOLD TIME			5ns

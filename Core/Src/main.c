@@ -51,6 +51,10 @@ _Bool AnnuncTemp[37]; // Temp array for annunciators. 18off, the order on LCD le
 // Global variable to store the unmatched bitmap
 uint8_t unmatchedBitmap[FONT_HEIGHT] = { 0 }; // Initialize to zero
 
+// Flash area for saving settings
+#define FLASH_PAGE_ADDRESS 0x0801FC00 // Last 1 KB of Flash (Sector 127 for STM32F103C8T6)
+#define FLASH_PAGE_SIZE 1024          // Flash page size (STM32F103C8T6: 1 KB pages)
+
 // IanJ test only
 //_Bool test11 = false;
 //_Bool test12 = false;
@@ -91,6 +95,34 @@ volatile uint8_t Init_Completed_flag = 0;
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
+
+//******************************************************************************
+
+// Example structure for settings
+typedef struct {
+	//uint32_t setting1;  // Example: Some 32-bit setting
+	//uint16_t setting2;  // Example: Some 16-bit setting
+	//uint8_t setting3;   // Example: Some 8-bit setting
+	uint8_t setting_LCD_VBPD;
+	uint8_t setting_LCD_VFPD;
+	uint8_t setting_LCD_VSPW;
+	uint8_t setting_LCD_HBPD;
+	uint8_t setting_LCD_HFPD;
+	uint8_t setting_LCD_HSPW;
+	uint8_t reserved;   // Reserved for alignment
+} Settings;
+
+Settings userSettings = {
+	//.setting1 = 0x12345678, // Example default value
+	//.setting2 = 0xABCD,     // Example default value
+	//.setting3 = 0x42        // Example default value
+	.setting_LCD_VBPD = 17,		// default value
+	.setting_LCD_VFPD = 14,		// default value
+	.setting_LCD_VSPW = 2,		// default value
+	.setting_LCD_HBPD = 50,		// default value
+	.setting_LCD_HFPD = 30,		// default value
+	.setting_LCD_HSPW = 10		// default value
+};
 
 
 //******************************************************************************
@@ -498,6 +530,40 @@ int main(void) {
 
 	ClearScreen();					// Again.....
 
+	/*
+	// This is a WIP, hoping to be able to adjust the TFT timings from the front panel by the user, or a pushbutton or two on the pcb!
+
+	// Load settings from flash
+	LoadSettingsFromFlash(&userSettings);
+
+	// Check if loaded values are ok, if not, i.e. first one contains 255, then save of defaults
+	if (userSettings.setting_LCD_VBPD == 255) {
+		userSettings.setting_LCD_VBPD = LCD_VBPD;		// Assign default values from lt7680.h
+		userSettings.setting_LCD_VFPD = LCD_VFPD;
+		userSettings.setting_LCD_VSPW = LCD_VSPW;
+		userSettings.setting_LCD_HBPD = LCD_HBPD;
+		userSettings.setting_LCD_HFPD = LCD_HFPD;
+		userSettings.setting_LCD_HSPW = LCD_HSPW;
+		
+		SaveSettingsToFlash(&userSettings);					// Save default settings to flash
+
+		#undef LCD_VBPD										// Undefine the original value (see lt7680.h)
+		#define LCD_VBPD  userSettings.setting_LCD_VBPD		// Redefine with the new value
+		#undef LCD_VFPD
+		#define LCD_VFPD  userSettings.setting_LCD_VFPD
+		#undef LCD_VSPW
+		#define LCD_VSPW  userSettings.setting_LCD_VSPW
+		#undef LCD_HBPD
+		#define LCD_HBPD userSettings.setting_LCD_HBPD
+		#undef LCD_HFPD
+		#define LCD_HFPD  userSettings.setting_LCD_HFPD
+		#undef LCD_HSPW
+		#define LCD_HSPW  userSettings.setting_LCD_HSPW
+	}
+	*/
+
+
+
 //**************************************************************************************************
 // Main loop initialize
 
@@ -585,6 +651,43 @@ int main(void) {
 		}
 	}
 
+}
+
+
+// Function to save settings to flash
+void SaveSettingsToFlash(Settings* settings) {
+	HAL_FLASH_Unlock(); // Unlock the flash for writing
+
+	// Erase the flash page
+	FLASH_EraseInitTypeDef eraseInit;
+	uint32_t pageError = 0;
+
+	eraseInit.TypeErase = FLASH_TYPEERASE_PAGES;
+	eraseInit.PageAddress = FLASH_PAGE_ADDRESS;
+	eraseInit.NbPages = 1; // Erase one page
+
+	if (HAL_FLASHEx_Erase(&eraseInit, &pageError) != HAL_OK) {
+		HAL_FLASH_Lock(); // Lock flash if erase fails
+		return;
+	}
+
+	// Write settings to flash
+	uint32_t* data = (uint32_t*)settings;
+	for (uint32_t i = 0; i < sizeof(Settings) / 4; i++) {
+		if (HAL_FLASH_Program(FLASH_TYPEPROGRAM_WORD, FLASH_PAGE_ADDRESS + (i * 4), data[i]) != HAL_OK) {
+			HAL_FLASH_Lock(); // Lock flash if write fails
+			return;
+		}
+	}
+
+	HAL_FLASH_Lock(); // Lock the flash after writing
+}
+
+
+// Function to load settings from flash
+void LoadSettingsFromFlash(Settings* settings) {
+	uint32_t* flashData = (uint32_t*)FLASH_PAGE_ADDRESS;
+	memcpy(settings, flashData, sizeof(Settings));
 }
 
 
