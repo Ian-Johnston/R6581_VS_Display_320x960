@@ -611,6 +611,7 @@ int main(void) {
 			//DrawLine(0, 962, 399, 962, 0x00, 0x00, 0x00);
 			//DrawLine(0, 963, 399, 963, 0x00, 0x00, 0x00);	// This line off screen but seems to get rid of the single vertical line at far right
 
+			// right wipe
 			DrawLine(0, 959, 399, 959, 0x00, 0x00, 0x00);	// far right hand vertical line, black, 1 pixel line. (this line hidden!)
 			DrawLine(0, 958, 399, 958, 0x00, 0x00, 0x00);	// (this line hidden!)
 			DrawLine(0, 957, 399, 957, 0x00, 0x00, 0x00);

@@ -149,7 +149,7 @@ void AdaFruit_Init() {
 	LCDWriteData(0x10);
 
 	LCDWriteRegister(0xC0);
-	LCDWriteData(0x77);
+	LCDWriteData(0x77);				// 0x77 - GAMALOT made this 0x79 to help stability of first line
 	LCDWriteData(0x00);
 
 	LCDWriteRegister(0xC1);

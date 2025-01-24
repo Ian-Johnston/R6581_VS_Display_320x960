@@ -106,9 +106,9 @@ void SetCanvasImageWidth_LT(void);
 #define SPI_CS_HIGH()      HAL_GPIO_WritePin(SPI_CS_PORT, SPI_CS_PIN, GPIO_PIN_SET)
 
 // TFT LCD Panel parameters - BuyDisplay (Some of them plus refresh rate are used to calculate CCLK, MCLK & PCLK)
-#define LCD_VBPD				17			// Vertical Back Porch				17	17
-#define LCD_VFPD				14			// Vertical Front Porch				14	14		Adafruit tft timings say 15 but per forum user changed to 14 to stop flickering
-#define LCD_VSPW				2			// Vertical Start Position			4	2		Adafruit tft timings says 2 but leaves single vertical line at far right, changed to 4 gets rid of it, 2 works better
+#define LCD_VBPD				17			// Vertical Back Porch				17	17	17
+#define LCD_VFPD				14			// Vertical Front Porch				15	14	14		Adafruit tft timings say 15 but per forum user changed to 14 to stop flickering
+#define LCD_VSPW				2			// Vertical Start Position			2	4	2		Adafruit tft timings says 2 but leaves single vertical line at far right, 4 is no line but may flicker, 2 works better but has line
 #define LCD_HBPD				50			// Horizontal Back Porch			50
 #define LCD_HFPD				30			// Horizontal Front Porch			30
 #define LCD_HSPW				10			// Horizontal Start Position		10
@@ -123,10 +123,10 @@ void SetCanvasImageWidth_LT(void);
 #define PDE_IDLE_STATE			0			// PDE Idle STATE
 #define PCLK_IDLE_STATE			0			// PCLK Idle State
 #define PD_IDLE_STATE			0			// PD Idle State
-#define REFRESH_RATE			60			// Hz
-#define SCLK_MAX				65			// Max allowable
-#define MCLK_MAX				100			// Max allowable
-#define CCLK_MAX				100			// Max allowable
+#define REFRESH_RATE			60			// Hz				60
+#define SCLK_MAX				65			// Max allowable	65
+#define MCLK_MAX				100			// Max allowable	100
+#define CCLK_MAX				100			// Max allowable	100
 #define SDRAM_MCLK				20			// MHz
 #define SDRAM_CLKFREQ			64000000	// SDRAM clock frequency in Hz (clock source)		64000000
 #define SDRAM_SIZE				8192		// 2048 = 64Mb, 8192 = 128Mb (depends on LT768x used), LT7680A-R is 128Mb
