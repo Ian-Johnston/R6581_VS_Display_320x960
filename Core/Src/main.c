@@ -40,14 +40,6 @@ uint16_t dollarPosition = 0;
 _Bool oneVoltmode = false;
 _Bool oneVoltmodepreviousState = false;
 
-uint32_t TEST1 = 0;
-uint32_t TEST2 = 0;
-uint32_t TEST3 = 0;
-uint32_t TEST4 = 0;
-uint32_t TEST5 = 0;
-uint32_t TEST6 = 0;
-uint32_t TEST7 = 0;
-
 // EEProm emulation (Flash)
 #define EEPROM_START_ADDRESS 0x0800FC00 // Last page for 64KB Flash
 #define EEPROM_PAGE_SIZE     1024       // Page size in bytes
@@ -87,13 +79,6 @@ _Bool AnnuncTemp[37]; // Temp array for annunciators. 18off, the order on LCD le
 
 // Global variable to store the unmatched bitmap
 uint8_t unmatchedBitmap[FONT_HEIGHT] = { 0 }; // Initialize to zero
-
-// IanJ test only
-//_Bool test11 = false;
-//_Bool test12 = false;
-//float test13 = 0;
-//uint8_t test14 = 0;
-//float test15 = 0;
 
 //******************************************************************************
 
@@ -148,35 +133,6 @@ uint32_t setting_LCD_HFPD;
 uint32_t setting_LCD_HSPW;
 uint32_t setting_REFRESH_RATE;
 char setting_ADA_BUY[5];
-
-/*
-// Example structure for settings
-typedef struct {
-	//uint32_t setting1;  // Example: Some 32-bit setting
-	//uint16_t setting2;  // Example: Some 16-bit setting
-	//uint8_t setting3;   // Example: Some 8-bit setting
-	uint32_t setting_LCD_VBPD;
-	uint32_t setting_LCD_VFPD;
-	uint32_t setting_LCD_VSPW;
-	uint32_t setting_LCD_HBPD;
-	uint32_t setting_LCD_HFPD;
-	uint32_t setting_LCD_HSPW;
-	uint32_t setting_REFRESH_RATE;
-} Settings;
-
-Settings userSettings = {
-	//.setting1 = 0x12345678, // Example default value
-	//.setting2 = 0xABCD,     // Example default value
-	//.setting3 = 0x42        // Example default value
-	.setting_LCD_VBPD = 17,		// default value
-	.setting_LCD_VFPD = 14,		// default value
-	.setting_LCD_VSPW = 2,		// default value
-	.setting_LCD_HBPD = 50,		// default value
-	.setting_LCD_HFPD = 30,		// default value
-	.setting_LCD_HSPW = 10,		// default value
-	.setting_REFRESH_RATE = 60		// default value
-};
-*/
 
 //******************************************************************************
 
@@ -566,11 +522,6 @@ int main(void) {
 
 	HAL_Delay(1000);
 	
-	//BuyDisplay_Init();				// Initialize ST7701S BuyDisplay 4.58" driver IC
-	//AdaFruit_Init();				// Initialize ST7701S BuyDisplay 4.58" driver IC
-
-	HAL_Delay(100);
-
 	SendAllToLT7680_LT();			// run subs to setup LT7680 based on Levetop info
 
 	HAL_Delay(10);
@@ -657,8 +608,6 @@ int main(void) {
 	REFRESH_RATE = setting_REFRESH_RATE;
 	strcpy(ADA_BUY, setting_ADA_BUY);
 
-	//strcpy(ADA_BUY, "AdaF");		// test
-
 	// ST7701S critical setting
 	if (strcmp(ADA_BUY, "AdaF") == 0) {
 		AdaFruit_Init(); // Initialize AdaFruit driver
@@ -715,14 +664,7 @@ int main(void) {
 
 				HAL_Delay(6); // Allow the LT7680 sufficient processing time
 
-				// 400 based - Draw vertical lines at far right verticle edge of LCD in order to erase random pixels that appear due to timing issues
-				// Origin is top left on R6581T orientaton
-				//DrawLine(0, 964, 399, 964, 0x00, 0x00, 0x00);
-				//DrawLine(0, 960, 399, 960, 0x00, 0x00, 0x00);
-				//DrawLine(0, 962, 399, 962, 0x00, 0x00, 0x00);
-				//DrawLine(0, 963, 399, 963, 0x00, 0x00, 0x00);	// This line off screen but seems to get rid of the single vertical line at far right
-
-				// right wipe
+				// Right wipe
 				DrawLine(0, 959, 399, 959, 0x00, 0x00, 0x00);	// far right hand vertical line, black, 1 pixel line. (this line hidden!)
 				DrawLine(0, 958, 399, 958, 0x00, 0x00, 0x00);	// (this line hidden!)
 				DrawLine(0, 957, 399, 957, 0x00, 0x00, 0x00);
@@ -833,16 +775,6 @@ int main(void) {
 							EEPROM_Write4CharString(EEPROM_START_ADDRESS + 28, setting_ADA_BUY);
 						}
 
-						/*
-						TEST1 = setting_LCD_VBPD;
-						TEST2 = setting_LCD_VFPD;
-						TEST3 = setting_LCD_VSPW;
-						TEST4 = setting_LCD_HBPD;
-						TEST5 = setting_LCD_HFPD;
-						TEST6 = setting_LCD_HSPW;
-						TEST7 = setting_REFRESH_RATE;
-						*/
-
 						HAL_Delay(6);
 
 						SetTextColors(0x00FF00, 0x000000); // Foreground: green, Background: Black
@@ -896,7 +828,7 @@ int main(void) {
 							0b00,    // Height multiplier
 							1,       // Line spacing
 							4,       // Character spacing
-							190,     // Cursor X
+							195,     // Cursor X
 							0      // Cursor Y
 						);
 						char text3[] = "Power cycle may be necessary to achieve full effect";
@@ -935,7 +867,7 @@ int main(void) {
 							0b00,    // Height multiplier
 							1,       // Line spacing
 							4,       // Character spacing
-							270,     // Cursor X
+							275,     // Cursor X
 							0      // Cursor Y
 						);
 						char redefineValuesCurr[128]; // Ensure the buffer is large enough
@@ -967,7 +899,7 @@ int main(void) {
 								0b00,    // Height multiplier
 								1,       // Line spacing
 								4,       // Character spacing
-								290,     // Cursor X
+								300,     // Cursor X
 								0      // Cursor Y
 							);
 							char redefineValues[128]; // Ensure the buffer is large enough
