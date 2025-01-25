@@ -26,6 +26,15 @@ extern uint32_t AuxColourFore;
 extern uint32_t AnnunColourFore;
 extern _Bool oneVoltmode;
 
+extern uint32_t LCD_VBPD;
+extern uint32_t LCD_VFPD;
+extern uint32_t LCD_VSPW;
+extern uint32_t LCD_HBPD;
+extern uint32_t LCD_HFPD;
+extern uint32_t LCD_HSPW;
+extern uint32_t REFRESH_RATE;
+extern char ADA_BUY[5];
+
 // Function prototypes
 void DisplayMain(void);
 void DisplayAuxFirstHalf(void);

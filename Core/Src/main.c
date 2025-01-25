@@ -39,6 +39,42 @@ uint16_t dollarPosition = 0;
 _Bool oneVoltmode = false;
 _Bool oneVoltmodepreviousState = false;
 
+uint32_t TEST1 = 0;
+uint32_t TEST2 = 0;
+uint32_t TEST3 = 0;
+uint32_t TEST4 = 0;
+uint32_t TEST5 = 0;
+uint32_t TEST6 = 0;
+uint32_t TEST7 = 0;
+
+// EEProm emulation (Flash)
+#define EEPROM_START_ADDRESS 0x0800FC00 // Last page for 64KB Flash
+#define EEPROM_PAGE_SIZE     1024       // Page size in bytes
+
+// TFT timing vars
+_Bool timingModsOnBoot = false;
+_Bool timingModsOnBootDCV = false;
+_Bool timingModspreviousstate = false;
+uint8_t currentTimingSet = 0;		// Variable to track the current timing set (0 to 5)
+static bool isFirstPress = true; // Tracks whether this is the first press
+const uint32_t LCD_VBPD_SETTINGS[6]         = { 17, 17, 17, 17, 17, 10 };		// Define the timing settings for each mode
+const uint32_t LCD_VFPD_SETTINGS[6]         = { 14, 14, 14, 15, 15, 12 };
+const uint32_t LCD_VSPW_SETTINGS[6]         = { 2,  3,  4,  2,  2,  3 };
+const uint32_t LCD_HBPD_SETTINGS[6]         = { 50, 50, 50, 50, 50, 80 };
+const uint32_t LCD_HFPD_SETTINGS[6]         = { 30, 30, 30, 30, 30, 30 };
+const uint32_t LCD_HSPW_SETTINGS[6]         = { 10, 10, 10, 10, 10, 20 };
+const uint32_t REFRESH_RATE_SETTINGS[6]     = { 60, 60, 60, 60, 45, 60 };
+const char ADA_BUY_SETTINGS[6][5]           = {"AdaF", "AdaF", "AdaF", "AdaF", "AdaF", "BuyD"};		// 4 characters plus the null terminator('\0').
+uint8_t currentTimingSetNumberentries = 6;	// number of entries	
+uint32_t LCD_VBPD = 17;
+uint32_t LCD_VFPD = 14;
+uint32_t LCD_VSPW = 2;
+uint32_t LCD_HBPD = 50;
+uint32_t LCD_HFPD = 30;
+uint32_t LCD_HSPW = 10;
+uint32_t REFRESH_RATE = 60;
+char ADA_BUY[5] = "AdaF";
+
 // Buffers for each LCD graphical item
 char LCD_buffer_packets[128];  // For packet data
 char LCD_buffer_bitmaps[128];  // For decoded bitmap data
@@ -50,10 +86,6 @@ _Bool AnnuncTemp[37]; // Temp array for annunciators. 18off, the order on LCD le
 
 // Global variable to store the unmatched bitmap
 uint8_t unmatchedBitmap[FONT_HEIGHT] = { 0 }; // Initialize to zero
-
-// Flash area for saving settings
-#define FLASH_PAGE_ADDRESS 0x0801FC00 // Last 1 KB of Flash (Sector 127 for STM32F103C8T6)
-#define FLASH_PAGE_SIZE 1024          // Flash page size (STM32F103C8T6: 1 KB pages)
 
 // IanJ test only
 //_Bool test11 = false;
@@ -98,18 +130,37 @@ void SystemClock_Config(void);
 
 //******************************************************************************
 
+// TFT LCD settings
+uint32_t boot_LCD_VBPD;
+uint32_t boot_LCD_VFPD;
+uint32_t boot_LCD_VSPW;
+uint32_t boot_LCD_HBPD;
+uint32_t boot_LCD_HFPD;
+uint32_t boot_LCD_HSPW;
+uint32_t boot_REFRESH_RATE;
+char boot_ADA_BUY[5];
+uint32_t setting_LCD_VBPD;
+uint32_t setting_LCD_VFPD;
+uint32_t setting_LCD_VSPW;
+uint32_t setting_LCD_HBPD;
+uint32_t setting_LCD_HFPD;
+uint32_t setting_LCD_HSPW;
+uint32_t setting_REFRESH_RATE;
+char setting_ADA_BUY[5];
+
+/*
 // Example structure for settings
 typedef struct {
 	//uint32_t setting1;  // Example: Some 32-bit setting
 	//uint16_t setting2;  // Example: Some 16-bit setting
 	//uint8_t setting3;   // Example: Some 8-bit setting
-	uint8_t setting_LCD_VBPD;
-	uint8_t setting_LCD_VFPD;
-	uint8_t setting_LCD_VSPW;
-	uint8_t setting_LCD_HBPD;
-	uint8_t setting_LCD_HFPD;
-	uint8_t setting_LCD_HSPW;
-	uint8_t reserved;   // Reserved for alignment
+	uint32_t setting_LCD_VBPD;
+	uint32_t setting_LCD_VFPD;
+	uint32_t setting_LCD_VSPW;
+	uint32_t setting_LCD_HBPD;
+	uint32_t setting_LCD_HFPD;
+	uint32_t setting_LCD_HSPW;
+	uint32_t setting_REFRESH_RATE;
 } Settings;
 
 Settings userSettings = {
@@ -121,9 +172,10 @@ Settings userSettings = {
 	.setting_LCD_VSPW = 2,		// default value
 	.setting_LCD_HBPD = 50,		// default value
 	.setting_LCD_HFPD = 30,		// default value
-	.setting_LCD_HSPW = 10		// default value
+	.setting_LCD_HSPW = 10,		// default value
+	.setting_REFRESH_RATE = 60		// default value
 };
-
+*/
 
 //******************************************************************************
 
@@ -514,7 +566,7 @@ int main(void) {
 	HAL_Delay(1000);
 	
 	//BuyDisplay_Init();				// Initialize ST7701S BuyDisplay 4.58" driver IC
-	AdaFruit_Init();				// Initialize ST7701S BuyDisplay 4.58" driver IC
+	//AdaFruit_Init();				// Initialize ST7701S BuyDisplay 4.58" driver IC
 
 	HAL_Delay(100);
 
@@ -530,37 +582,93 @@ int main(void) {
 
 	ClearScreen();					// Again.....
 
-	/*
-	// This is a WIP, hoping to be able to adjust the TFT timings from the front panel by the user, or a pushbutton or two on the pcb!
-
-	// Load settings from flash
-	LoadSettingsFromFlash(&userSettings);
-
-	// Check if loaded values are ok, if not, i.e. first one contains 255, then save of defaults
-	if (userSettings.setting_LCD_VBPD == 255) {
-		userSettings.setting_LCD_VBPD = LCD_VBPD;		// Assign default values from lt7680.h
-		userSettings.setting_LCD_VFPD = LCD_VFPD;
-		userSettings.setting_LCD_VSPW = LCD_VSPW;
-		userSettings.setting_LCD_HBPD = LCD_HBPD;
-		userSettings.setting_LCD_HFPD = LCD_HFPD;
-		userSettings.setting_LCD_HSPW = LCD_HSPW;
-		
-		SaveSettingsToFlash(&userSettings);					// Save default settings to flash
-
-		#undef LCD_VBPD										// Undefine the original value (see lt7680.h)
-		#define LCD_VBPD  userSettings.setting_LCD_VBPD		// Redefine with the new value
-		#undef LCD_VFPD
-		#define LCD_VFPD  userSettings.setting_LCD_VFPD
-		#undef LCD_VSPW
-		#define LCD_VSPW  userSettings.setting_LCD_VSPW
-		#undef LCD_HBPD
-		#define LCD_HBPD userSettings.setting_LCD_HBPD
-		#undef LCD_HFPD
-		#define LCD_HFPD  userSettings.setting_LCD_HFPD
-		#undef LCD_HSPW
-		#define LCD_HSPW  userSettings.setting_LCD_HSPW
+	// Read pins A11/A12 - Enter timing changes on boot if DCV button held in during power up
+	GPIO_PinState pinA11 = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_11);
+	if (pinA11 == GPIO_PIN_RESET) {
+		timingModsOnBoot = true;
+	} else {
+		timingModsOnBoot = false;
 	}
-	*/
+
+
+	// test eeprom (flash)
+	//EEPROM_ErasePage(EEPROM_START_ADDRESS) == HAL_OK;
+	//EEPROM_WriteData(EEPROM_START_ADDRESS + 28, 123);
+	//TEST1 = EEPROM_ReadData(EEPROM_START_ADDRESS + 28);
+	// 
+	//EEPROM_ErasePage(EEPROM_START_ADDRESS) == HAL_OK;
+	//EEPROM_Write4CharString(EEPROM_START_ADDRESS + 28, "AdaF");
+
+	// Load settings from EEProm (Flash)
+	setting_LCD_VBPD = EEPROM_ReadData(EEPROM_START_ADDRESS);
+	setting_LCD_VFPD = EEPROM_ReadData(EEPROM_START_ADDRESS + 4);
+	setting_LCD_VSPW = EEPROM_ReadData(EEPROM_START_ADDRESS + 8);
+	setting_LCD_HBPD = EEPROM_ReadData(EEPROM_START_ADDRESS + 12);
+	setting_LCD_HFPD = EEPROM_ReadData(EEPROM_START_ADDRESS + 16);
+	setting_LCD_HSPW = EEPROM_ReadData(EEPROM_START_ADDRESS + 20);
+	setting_REFRESH_RATE = EEPROM_ReadData(EEPROM_START_ADDRESS + 24);
+	EEPROM_Read4CharString(EEPROM_START_ADDRESS + 28, setting_ADA_BUY);
+
+
+	// Copy retrieved vars from Flash for showing on splash screen
+	boot_LCD_VBPD = setting_LCD_VBPD;
+	boot_LCD_VFPD = setting_LCD_VFPD;
+	boot_LCD_VSPW = setting_LCD_VSPW;
+	boot_LCD_HBPD = setting_LCD_HBPD;
+	boot_LCD_HFPD = setting_LCD_HFPD;
+	boot_LCD_HSPW = setting_LCD_HSPW;
+	boot_REFRESH_RATE = setting_REFRESH_RATE;
+	strcpy(boot_ADA_BUY, setting_ADA_BUY);
+
+	// Check if loaded values are ok
+	if (setting_LCD_VBPD < 5 || setting_LCD_VBPD > 50) {
+
+		// Assign default values
+		setting_LCD_VBPD = LCD_VBPD;
+		setting_LCD_VFPD = LCD_VFPD;
+		setting_LCD_VSPW = LCD_VSPW;
+		setting_LCD_HBPD = LCD_HBPD;
+		setting_LCD_HFPD = LCD_HFPD;
+		setting_LCD_HSPW = LCD_HSPW;
+		setting_REFRESH_RATE = REFRESH_RATE;
+		strcpy(setting_ADA_BUY, ADA_BUY);
+
+		EEPROM_ErasePage(EEPROM_START_ADDRESS) == HAL_OK;
+	
+		EEPROM_WriteData(EEPROM_START_ADDRESS, setting_LCD_VBPD);
+		EEPROM_WriteData(EEPROM_START_ADDRESS + 4, setting_LCD_VFPD);
+		EEPROM_WriteData(EEPROM_START_ADDRESS + 8, setting_LCD_VSPW);
+		EEPROM_WriteData(EEPROM_START_ADDRESS + 12, setting_LCD_HBPD);
+		EEPROM_WriteData(EEPROM_START_ADDRESS + 16, setting_LCD_HFPD);
+		EEPROM_WriteData(EEPROM_START_ADDRESS + 20, setting_LCD_HSPW);
+		EEPROM_WriteData(EEPROM_START_ADDRESS + 24, setting_REFRESH_RATE);
+		EEPROM_Write4CharString(EEPROM_START_ADDRESS + 28, setting_ADA_BUY);
+	
+	}
+
+	// Populate the final vars to be used
+	LCD_VBPD = setting_LCD_VBPD;
+	LCD_VFPD = setting_LCD_VFPD;
+	LCD_VSPW = setting_LCD_VSPW;
+	LCD_HBPD = setting_LCD_HBPD;
+	LCD_HFPD = setting_LCD_HFPD;
+	LCD_HSPW = setting_LCD_HSPW;
+	REFRESH_RATE = setting_REFRESH_RATE;
+	strcpy(ADA_BUY, setting_ADA_BUY);
+
+	//strcpy(ADA_BUY, "AdaF");		// test
+
+	// ST7701S critical setting
+	if (strcmp(ADA_BUY, "AdaF") == 0) {
+		AdaFruit_Init(); // Initialize AdaFruit driver
+	}
+	else if (strcmp(ADA_BUY, "BuyD") == 0) {
+		BuyDisplay_Init(); // Initialize BuyDisplay driver
+	}
+	else {
+		strcpy(ADA_BUY, "AdaF");
+		AdaFruit_Init(); // Default - Initialize AdaFruit driver
+	}
 
 
 
@@ -586,68 +694,307 @@ int main(void) {
 			timer_flag = 0;   // Clear the timer flag
 			task_ready = 0;   // Reset task-ready flag    
 			
-			HAL_GPIO_TogglePin(GPIOC, TEST_OUT_Pin); // Test LED toggle
+			if (timingModsOnBoot == false) {
 
-			DisplaySplash();
+				HAL_GPIO_TogglePin(GPIOC, TEST_OUT_Pin); // Test LED toggle
 
-			HAL_Delay(6); // Allow the LT7680 sufficient processing time
+				DisplaySplash();
 
-			DisplayMain();
+				HAL_Delay(6); // Allow the LT7680 sufficient processing time
 
-			HAL_Delay(6); // Allow the LT7680 sufficient processing time
+				DisplayMain();
 
-			DisplayAux();
+				HAL_Delay(6); // Allow the LT7680 sufficient processing time
 
-			HAL_Delay(6); // Allow the LT7680 sufficient processing time
+				DisplayAux();
 
-			DisplayAnnunciators();
+				HAL_Delay(6); // Allow the LT7680 sufficient processing time
 
-			HAL_Delay(6); // Allow the LT7680 sufficient processing time
+				DisplayAnnunciators();
 
-			// 400 based - Draw vertical lines at far right verticle edge of LCD in order to erase random pixels that appear due to timing issues
-			// Origin is top left on R6581T orientaton
-			//DrawLine(0, 964, 399, 964, 0x00, 0x00, 0x00);
-			//DrawLine(0, 960, 399, 960, 0x00, 0x00, 0x00);
-			//DrawLine(0, 962, 399, 962, 0x00, 0x00, 0x00);
-			//DrawLine(0, 963, 399, 963, 0x00, 0x00, 0x00);	// This line off screen but seems to get rid of the single vertical line at far right
+				HAL_Delay(6); // Allow the LT7680 sufficient processing time
 
-			// right wipe
-			DrawLine(0, 959, 399, 959, 0x00, 0x00, 0x00);	// far right hand vertical line, black, 1 pixel line. (this line hidden!)
-			DrawLine(0, 958, 399, 958, 0x00, 0x00, 0x00);	// (this line hidden!)
-			DrawLine(0, 957, 399, 957, 0x00, 0x00, 0x00);
-			DrawLine(0, 956, 399, 956, 0x00, 0x00, 0x00);
-			DrawLine(0, 955, 399, 955, 0x00, 0x00, 0x00);
-			DrawLine(0, 954, 399, 954, 0x00, 0x00, 0x00);
-			DrawLine(0, 953, 399, 953, 0x00, 0x00, 0x00);
-			DrawLine(0, 952, 399, 952, 0x00, 0x00, 0x00);
+				// 400 based - Draw vertical lines at far right verticle edge of LCD in order to erase random pixels that appear due to timing issues
+				// Origin is top left on R6581T orientaton
+				//DrawLine(0, 964, 399, 964, 0x00, 0x00, 0x00);
+				//DrawLine(0, 960, 399, 960, 0x00, 0x00, 0x00);
+				//DrawLine(0, 962, 399, 962, 0x00, 0x00, 0x00);
+				//DrawLine(0, 963, 399, 963, 0x00, 0x00, 0x00);	// This line off screen but seems to get rid of the single vertical line at far right
 
-			// Test only - 400pixel based test lines for viewing the centre line and the left, middle and far right positions.
-			// The internal memory is set up as 400x960 but the leftmost 80 pixels are considered overscan and don't show up, thus 320
-			//DrawLine(0, 0, 399, 0, 0xFF, 0xFF, 0xFF);		// far left hand vertical line, black, 1 pixel line. 938 not 960 seems to be far right edge!
-			//DrawLine(0, 480, 399, 480, 0xFF, 0xFF, 0xFF);	// mid-way
-			//DrawLine(0, 959, 399, 959, 0xFF, 0xFF, 0xFF);	// far right
-			//DrawLine(199, 0, 199, 959, 0xFF, 0x00, 0x00);	// centred on R6581T horizontally
+				// right wipe
+				DrawLine(0, 959, 399, 959, 0x00, 0x00, 0x00);	// far right hand vertical line, black, 1 pixel line. (this line hidden!)
+				DrawLine(0, 958, 399, 958, 0x00, 0x00, 0x00);	// (this line hidden!)
+				DrawLine(0, 957, 399, 957, 0x00, 0x00, 0x00);
+				DrawLine(0, 956, 399, 956, 0x00, 0x00, 0x00);
+				DrawLine(0, 955, 399, 955, 0x00, 0x00, 0x00);
+				DrawLine(0, 954, 399, 954, 0x00, 0x00, 0x00);
+				DrawLine(0, 953, 399, 953, 0x00, 0x00, 0x00);
+				DrawLine(0, 952, 399, 952, 0x00, 0x00, 0x00);
 
-			HAL_Delay(6); // Allow the LT7680 sufficient processing time
+				// Test only - 400pixel based test lines for viewing the centre line and the left, middle and far right positions.
+				// The internal memory is set up as 400x960 but the leftmost 80 pixels are considered overscan and don't show up, thus 320
+				//DrawLine(0, 0, 399, 0, 0xFF, 0xFF, 0xFF);		// far left hand vertical line, black, 1 pixel line. 938 not 960 seems to be far right edge!
+				//DrawLine(0, 480, 399, 480, 0xFF, 0xFF, 0xFF);	// mid-way
+				//DrawLine(0, 959, 399, 959, 0xFF, 0xFF, 0xFF);	// far right
+				//DrawLine(199, 0, 199, 959, 0xFF, 0x00, 0x00);	// centred on R6581T horizontally
 
-			// Read pins A11/A12 - Front panel DCV switch momentary - Enable 1VDC mode
-			GPIO_PinState pinA11 = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_11);
-			GPIO_PinState pinA12 = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_12);
+				HAL_Delay(6); // Allow the LT7680 sufficient processing time
 
-			// 1000mVdc / 1Vdc mode select
-			if (pinA11 == GPIO_PIN_SET && pinA12 == GPIO_PIN_RESET) {
-				// Button is NOT pressed (normal state)
-				oneVoltmodepreviousState = false;
-			}
-			else if (pinA11 == GPIO_PIN_RESET && pinA12 == GPIO_PIN_RESET && pinA11 == pinA12) {
-				// Button is pressed (both pins are the same, and LOW)
-				if (!oneVoltmodepreviousState) {
-					// Toggle the mode on the first detection of the press
-					oneVoltmode = !oneVoltmode;
+				// Read pins A11/A12 - Front panel DCV switch momentary - Enable 1VDC mode
+				GPIO_PinState pinA11 = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_11);
+				GPIO_PinState pinA12 = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_12);
+
+				// 1000mVdc / 1Vdc mode select
+				if (pinA11 == GPIO_PIN_SET && pinA12 == GPIO_PIN_RESET) {
+					// Button is NOT pressed (normal state)
+					oneVoltmodepreviousState = false;
 				}
-				// Update the previous state
-				oneVoltmodepreviousState = true;
+				else if (pinA11 == GPIO_PIN_RESET && pinA12 == GPIO_PIN_RESET && pinA11 == pinA12) {
+					// Button is pressed (both pins are the same, and LOW)
+					if (!oneVoltmodepreviousState) {
+						// Toggle the mode on the first detection of the press
+						oneVoltmode = !oneVoltmode;
+					}
+					// Update the previous state
+					oneVoltmodepreviousState = true;
+				}
+
+			} else {
+
+				// Timing mode adjust, toggle round TFT LCD timings using DCV button
+				
+				// Read pins A11/A12 - Front panel DCV switch momentary
+				GPIO_PinState pinA11 = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_11);
+				GPIO_PinState pinA12 = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_12);
+
+				// DCV button pressed
+				if (pinA11 == GPIO_PIN_SET && pinA12 == GPIO_PIN_RESET) {
+					// Button is NOT pressed (normal state)
+					timingModspreviousstate = false;
+				} else if (pinA11 == GPIO_PIN_RESET && pinA12 == GPIO_PIN_RESET && pinA11 == pinA12) {
+					// Button is pressed (both pins are the same, and LOW)
+					if (!timingModspreviousstate) {
+						// Toggle the mode on the first detection of the press
+						timingModsOnBootDCV = !timingModsOnBootDCV;
+
+						// On each press cycle round the various settings
+						// Rotate through the timing settings
+						currentTimingSet = (currentTimingSet + 1) % currentTimingSetNumberentries;  // Cycle through 0 to n
+						// Update the user settings based on the current set
+
+						if (isFirstPress == false) {
+							setting_LCD_VBPD = LCD_VBPD_SETTINGS[currentTimingSet];
+							setting_LCD_VFPD = LCD_VFPD_SETTINGS[currentTimingSet];
+							setting_LCD_VSPW = LCD_VSPW_SETTINGS[currentTimingSet];
+							setting_LCD_HBPD = LCD_HBPD_SETTINGS[currentTimingSet];
+							setting_LCD_HFPD = LCD_HFPD_SETTINGS[currentTimingSet];
+							setting_LCD_HSPW = LCD_HSPW_SETTINGS[currentTimingSet];
+							setting_REFRESH_RATE = REFRESH_RATE_SETTINGS[currentTimingSet];
+							strcpy(setting_ADA_BUY, ADA_BUY_SETTINGS[currentTimingSet]);
+
+							LCD_VBPD = setting_LCD_VBPD;
+							LCD_VFPD = setting_LCD_VFPD;
+							LCD_VSPW = setting_LCD_VSPW;
+							LCD_HBPD = setting_LCD_HBPD;
+							LCD_HFPD = setting_LCD_HFPD;
+							LCD_HSPW = setting_LCD_HSPW;
+							REFRESH_RATE = setting_REFRESH_RATE;
+							strcpy(ADA_BUY, setting_ADA_BUY);
+
+							// run startup subs again to apply new settings
+							AdaFruit_Init();
+							HAL_Delay(5);
+							LT7680_PLL_Initial_LT();
+							HAL_Delay(5);
+							LCD_Horizontal_Non_Display_LT(LCD_HBPD);  // Horizontal Back Porch
+							HAL_Delay(5);
+							LCD_HSYNC_Start_Position_LT(LCD_HFPD);    // HSYNC Start Position
+							HAL_Delay(5);
+							LCD_HSYNC_Pulse_Width_LT(LCD_HSPW);       // HSYNC Pulse Width
+							HAL_Delay(5);
+							LCD_Vertical_Non_Display_LT(LCD_VBPD);    // Vertical Back Porch
+							HAL_Delay(5);
+							LCD_VSYNC_Start_Position_LT(LCD_VFPD);    // VSYNC Start Position
+							HAL_Delay(5);
+							LCD_VSYNC_Pulse_Width_LT(LCD_VSPW);       // VSYNC Pulse Width
+							HAL_Delay(5);
+
+							EEPROM_ErasePage(EEPROM_START_ADDRESS) == HAL_OK;		// Erase Flash
+
+							// Save the updated settings to flash
+							EEPROM_WriteData(EEPROM_START_ADDRESS, setting_LCD_VBPD);
+							EEPROM_WriteData(EEPROM_START_ADDRESS + 4, setting_LCD_VFPD);
+							EEPROM_WriteData(EEPROM_START_ADDRESS + 8, setting_LCD_VSPW);
+							EEPROM_WriteData(EEPROM_START_ADDRESS + 12, setting_LCD_HBPD);
+							EEPROM_WriteData(EEPROM_START_ADDRESS + 16, setting_LCD_HFPD);
+							EEPROM_WriteData(EEPROM_START_ADDRESS + 20, setting_LCD_HSPW);
+							EEPROM_WriteData(EEPROM_START_ADDRESS + 24, setting_REFRESH_RATE);
+							EEPROM_Write4CharString(EEPROM_START_ADDRESS + 28, setting_ADA_BUY);
+						}
+
+						/*
+						TEST1 = setting_LCD_VBPD;
+						TEST2 = setting_LCD_VFPD;
+						TEST3 = setting_LCD_VSPW;
+						TEST4 = setting_LCD_HBPD;
+						TEST5 = setting_LCD_HFPD;
+						TEST6 = setting_LCD_HSPW;
+						TEST7 = setting_REFRESH_RATE;
+						*/
+
+						HAL_Delay(6);
+
+						SetTextColors(0x00FF00, 0x000000); // Foreground: green, Background: Black
+						ConfigureFontAndPosition(
+							0b00,    // Internal CGROM
+							0b10,    // Font size
+							0b00,    // ISO 8859-1
+							0,       // Full alignment enabled
+							0,       // Chroma keying disabled
+							1,       // Rotate 90 degrees counterclockwise
+							0b00,    // Width multiplier
+							0b00,    // Height multiplier
+							1,       // Line spacing
+							4,       // Character spacing
+							140,     // Cursor X
+							0      // Cursor Y
+						);
+						char text1[] = "TFT LCD Timing Adjust";
+						DrawText(text1);
+
+						HAL_Delay(6);
+
+						SetTextColors(0xFFFFFF, 0x000000); // Foreground: green, Background: Black
+						ConfigureFontAndPosition(
+							0b00,    // Internal CGROM
+							0b01,    // Font size
+							0b00,    // ISO 8859-1
+							0,       // Full alignment enabled
+							0,       // Chroma keying disabled
+							1,       // Rotate 90 degrees counterclockwise
+							0b00,    // Width multiplier
+							0b00,    // Height multiplier
+							1,       // Line spacing
+							4,       // Character spacing
+							170,     // Cursor X
+							0      // Cursor Y
+						);
+						char text2[] = "Hit DCV to cycle round new TFT LCD settings";
+						DrawText(text2);
+
+						HAL_Delay(6);
+
+						ConfigureFontAndPosition(
+							0b00,    // Internal CGROM
+							0b01,    // Font size
+							0b00,    // ISO 8859-1
+							0,       // Full alignment enabled
+							0,       // Chroma keying disabled
+							1,       // Rotate 90 degrees counterclockwise
+							0b00,    // Width multiplier
+							0b00,    // Height multiplier
+							1,       // Line spacing
+							4,       // Character spacing
+							190,     // Cursor X
+							0      // Cursor Y
+						);
+						char text3[] = "Power cycle may be necessary to achieve full effect";
+						DrawText(text3);
+
+						HAL_Delay(6);
+
+						ConfigureFontAndPosition(
+							0b00,    // Internal CGROM
+							0b01,    // Font size
+							0b00,    // ISO 8859-1
+							0,       // Full alignment enabled
+							0,       // Chroma keying disabled
+							1,       // Rotate 90 degrees counterclockwise
+							0b00,    // Width multiplier
+							0b00,    // Height multiplier
+							1,       // Line spacing
+							4,       // Character spacing
+							250,     // Cursor X
+							0       // Cursor Y
+						);
+						char text4[] = "        VBPD VFPD VSPW HBPD HFPD HSPW REFR COG";
+						DrawText(text4);
+
+						HAL_Delay(6);
+
+						SetTextColors(0xFFFF00, 0x000000); // Foreground: Yellow, Background: Black
+						ConfigureFontAndPosition(
+							0b00,    // Internal CGROM
+							0b01,    // Font size
+							0b00,    // ISO 8859-1
+							0,       // Full alignment enabled
+							0,       // Chroma keying disabled
+							1,       // Rotate 90 degrees counterclockwise
+							0b00,    // Width multiplier
+							0b00,    // Height multiplier
+							1,       // Line spacing
+							4,       // Character spacing
+							270,     // Cursor X
+							0      // Cursor Y
+						);
+						char redefineValuesCurr[128]; // Ensure the buffer is large enough
+						snprintf(redefineValuesCurr, sizeof(redefineValuesCurr),
+							"CURRENT %d   %d   %d    %d   %d   %d   %d   %s",
+							boot_LCD_VBPD,
+							boot_LCD_VFPD,
+							boot_LCD_VSPW,
+							boot_LCD_HBPD,
+							boot_LCD_HFPD,
+							boot_LCD_HSPW,
+							boot_REFRESH_RATE,
+							boot_ADA_BUY
+						);
+						DrawText(redefineValuesCurr);
+
+						HAL_Delay(6);
+
+						if (isFirstPress == false) {
+							SetTextColors(0x00FF00, 0x000000); // Foreground: Yellow, Background: Black
+							ConfigureFontAndPosition(
+								0b00,    // Internal CGROM
+								0b01,    // Font size
+								0b00,    // ISO 8859-1
+								0,       // Full alignment enabled
+								0,       // Chroma keying disabled
+								1,       // Rotate 90 degrees counterclockwise
+								0b00,    // Width multiplier
+								0b00,    // Height multiplier
+								1,       // Line spacing
+								4,       // Character spacing
+								290,     // Cursor X
+								0      // Cursor Y
+							);
+							char redefineValues[128]; // Ensure the buffer is large enough
+							snprintf(redefineValues, sizeof(redefineValues),
+								"NEW     %d   %d   %d    %d   %d   %d   %d   %s",
+								setting_LCD_VBPD,
+								setting_LCD_VFPD,
+								setting_LCD_VSPW,
+								setting_LCD_HBPD,
+								setting_LCD_HFPD,
+								setting_LCD_HSPW,
+								setting_REFRESH_RATE,
+								setting_ADA_BUY
+							);
+							DrawText(redefineValues);
+						}
+
+						// Delay for button
+						HAL_Delay(120);
+
+					}
+
+					timingModspreviousstate = true;		// Update the previous state
+					isFirstPress = false;				// Reset the flag after the first press
+				}
+
 			}
+			
 
 		}
 	}
@@ -655,40 +1002,79 @@ int main(void) {
 }
 
 
-// Function to save settings to flash
-void SaveSettingsToFlash(Settings* settings) {
-	HAL_FLASH_Unlock(); // Unlock the flash for writing
 
-	// Erase the flash page
+// Write uint32_t to EEprom (Flash)
+HAL_StatusTypeDef EEPROM_WriteData(uint32_t address, uint32_t data) {
+	if (address < EEPROM_START_ADDRESS || address >= (EEPROM_START_ADDRESS + EEPROM_PAGE_SIZE)) {
+		return HAL_ERROR; // Address out of range
+	}
+	HAL_FLASH_Unlock();
+	HAL_StatusTypeDef status = HAL_FLASH_Program(FLASH_TYPEPROGRAM_WORD, address, data);
+	HAL_FLASH_Lock();
+	return status;
+}
+
+
+// Write CHAR string to EEprom (Flash), 4 chars max
+HAL_StatusTypeDef EEPROM_Write4CharString(uint32_t address, const char* str) {
+	if (strlen(str) > 4) {
+		return HAL_ERROR; // Limit the string length to 4 characters
+	}
+
+	uint32_t data = 0;
+
+	// Copy up to 4 characters into a 32-bit word
+	memcpy(&data, str, 4);
+
+	HAL_FLASH_Unlock();
+	HAL_StatusTypeDef status = HAL_FLASH_Program(FLASH_TYPEPROGRAM_WORD, address, data);
+	HAL_FLASH_Lock();
+
+	return status;
+}
+
+
+// Read uint32_t from EEProm (Flash)
+uint32_t EEPROM_ReadData(uint32_t address) {
+	if (address < EEPROM_START_ADDRESS || address >= (EEPROM_START_ADDRESS + EEPROM_PAGE_SIZE)) {
+		return 0xFFFFFFFF; // Invalid address
+	}
+	return *(uint32_t*)address;
+}
+
+
+// Read CHAR string from EEprom (Flash), 4 chars max
+void EEPROM_Read4CharString(uint32_t address, char* buffer) {
+	uint32_t data = *(uint32_t*)address; // Read the 32-bit word
+
+	// Copy the data into the buffer
+	memcpy(buffer, &data, 4);
+
+	// Ensure the string is null-terminated
+	buffer[4] = '\0';
+}
+
+
+
+// Erase EEprom (Flash) - necessary before write
+HAL_StatusTypeDef EEPROM_ErasePage(uint32_t address) {
+	if (address < EEPROM_START_ADDRESS || address >= (EEPROM_START_ADDRESS + EEPROM_PAGE_SIZE)) {
+		return HAL_ERROR; // Address out of range
+	}
+
+	HAL_FLASH_Unlock();
+
 	FLASH_EraseInitTypeDef eraseInit;
-	uint32_t pageError = 0;
+	uint32_t pageError;
 
 	eraseInit.TypeErase = FLASH_TYPEERASE_PAGES;
-	eraseInit.PageAddress = FLASH_PAGE_ADDRESS;
-	eraseInit.NbPages = 1; // Erase one page
+	eraseInit.PageAddress = address;
+	eraseInit.NbPages = 1; // Erase a single page
 
-	if (HAL_FLASHEx_Erase(&eraseInit, &pageError) != HAL_OK) {
-		HAL_FLASH_Lock(); // Lock flash if erase fails
-		return;
-	}
+	HAL_StatusTypeDef status = HAL_FLASHEx_Erase(&eraseInit, &pageError);
 
-	// Write settings to flash
-	uint32_t* data = (uint32_t*)settings;
-	for (uint32_t i = 0; i < sizeof(Settings) / 4; i++) {
-		if (HAL_FLASH_Program(FLASH_TYPEPROGRAM_WORD, FLASH_PAGE_ADDRESS + (i * 4), data[i]) != HAL_OK) {
-			HAL_FLASH_Lock(); // Lock flash if write fails
-			return;
-		}
-	}
-
-	HAL_FLASH_Lock(); // Lock the flash after writing
-}
-
-
-// Function to load settings from flash
-void LoadSettingsFromFlash(Settings* settings) {
-	uint32_t* flashData = (uint32_t*)FLASH_PAGE_ADDRESS;
-	memcpy(settings, flashData, sizeof(Settings));
+	HAL_FLASH_Lock();
+	return status;
 }
 
 

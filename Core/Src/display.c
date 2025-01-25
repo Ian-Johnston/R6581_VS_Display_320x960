@@ -602,6 +602,25 @@ void DisplaySplash() {
 			);
 			char text[] = "                                                           ";
 			DrawText(text);
+
+			SetTextColors(0xFF0000, 0x000000); // Foreground: Yellow, Background: Black
+			ConfigureFontAndPosition(
+				0b00,    // Internal CGROM
+				0b00,    // Font size
+				0b00,    // ISO 8859-1
+				0,       // Full alignment enabled
+				0,       // Chroma keying disabled
+				1,       // Rotate 90 degrees counterclockwise
+				0b00,    // Width multiplier
+				0b00,    // Height multiplier
+				1,       // Line spacing
+				4,       // Character spacing
+				130,     // Cursor X
+				640      // Cursor Y
+			);
+			char text2[] = "                        ";
+			DrawText(text2);
+
 		}
 		else {
 			// Perform operations within the 5-second window
@@ -618,12 +637,40 @@ void DisplaySplash() {
 				0b00,    // Height multiplier
 				1,       // Line spacing
 				4,       // Character spacing
-				Xpos_SPLASH,     // Cursor X	230
-				100      // Cursor Y	360
+				Xpos_SPLASH,     // Cursor X
+				100      // Cursor Y
 			);
-
-			char text[] = "Reverse engineering by By MickleT / TFT LCD by Ian Johnston";	
+			char text[] = "Reverse engineering by By MickleT / TFT LCD by Ian Johnston";
 			DrawText(text);
+
+			SetTextColors(0x909090, 0x000000); // Foreground: grey, Background: Black
+			ConfigureFontAndPosition(
+				0b00,    // Internal CGROM
+				0b00,    // Font size
+				0b00,    // ISO 8859-1
+				0,       // Full alignment enabled
+				0,       // Chroma keying disabled
+				1,       // Rotate 90 degrees counterclockwise
+				0b00,    // Width multiplier
+				0b00,    // Height multiplier
+				1,       // Line spacing
+				4,       // Character spacing
+				130,     // Cursor X
+				640      // Cursor Y
+			);
+			char textsettings[128]; // Ensure the buffer is large enough
+			snprintf(textsettings, sizeof(textsettings),
+				"%d %d %d %d %d %d %d %s",
+				LCD_VBPD,
+				LCD_VFPD,
+				LCD_VSPW,
+				LCD_HBPD,
+				LCD_HFPD,
+				LCD_HSPW,
+				REFRESH_RATE,
+				ADA_BUY
+			);
+			DrawText(textsettings);
 		}
 	}
 

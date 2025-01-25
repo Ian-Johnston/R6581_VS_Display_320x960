@@ -152,9 +152,13 @@ void AdaFruit_Init() {
 	LCDWriteData(0x77);				// 0x77 - GAMALOT made this 0x79 to help stability of first line
 	LCDWriteData(0x00);
 
-	LCDWriteRegister(0xC1);
-	LCDWriteData(0x09);
-	LCDWriteData(0x08);
+	//uint32_t hexVarVBPD = LCD_VBPD;		// Match the Porch settings from the LT780A-R to the ST7701S
+	//uint32_t hexVarVFPD = LCD_VFPD;
+	//LCDWriteRegister(0xC1);
+	//LCDWriteData((uint8_t)hexVarVBPD);
+	//LCDWriteData((uint8_t)hexVarVFPD);
+	LCDWriteData(0x09);				// VBPD	09
+	LCDWriteData(0x08);				// VFPD 08
 
 	LCDWriteRegister(0xC2);//inv     
 	LCDWriteData(0x01);
@@ -420,20 +424,20 @@ void BuyDisplay_Init() {
 	LCDWriteData(0x00);				// 960 lines	00
 
 	LCDWriteRegister(0xC1);			// PORCTRL (C1h/C100h): Porch Control 
-	LCDWriteData(0x0A);				// VBP = 0A		(10 decimal)
-	LCDWriteData(0x0C);				// VFP = 0C		(12 decimal)
+	LCDWriteData(0x0A);				// VBP = 0A		(10 decimal)		VBPD
+	LCDWriteData(0x0C);				// VFP = 0C		(12 decimal)		VFPD
 
 	LCDWriteRegister(0xC2);			// INVSET (C2h/C200h): Inversion selection & Frame Rate Control 
 	LCDWriteData(0x37);				// C200h: Inversion Selection NLINV = 7								originally 37
 	LCDWriteData(0x08);				// C201h: Frame Rate Control RTNI =	8								originally = 0x02, tried 0x00
 
-	//LCDWriteRegister(0xC3);			// RGBCTRL (C3h/C300h): RGB control
-	//LCDWriteData(0x81);				// C300h: DE/HV=HV, VSP=L, HSP=L, DP=Rising, EP=High	=> 10000001										0x81
-	//LCDWriteData(0x00);				// C301h: HBP_HVRGB[7:0] (Horizontal Back Porch in HSYNC in cycles)	originally 0x05 = 5					0x01	0x20 works		50	00
-	//LCDWriteData(0x22);				// C302h: VBP_HVRGB[7:0] (Vertical Back Porch HSYNC in cycles)		originally 0x0D = 13				0x0D					0A	22
+	LCDWriteRegister(0xC3);			// RGBCTRL (C3h/C300h): RGB control
+	LCDWriteData(0x81);				// C300h: DE/HV=HV, VSP=L, HSP=L, DP=Rising, EP=High	=> 10000001										0x81						81
+	LCDWriteData(0x38);				// C301h: HBP_HVRGB[7:0] (Horizontal Back Porch in HSYNC in cycles)	originally 0x05 = 5					0x01	0x20 works		50	00
+	LCDWriteData(0x22);				// C302h: VBP_HVRGB[7:0] (Vertical Back Porch HSYNC in cycles)		originally 0x0D = 13				0x0D					0A	22
 
-	LCDWriteRegister(0xC3); //????    
-	LCDWriteData(0x02); //82 HVmode    02 DEmode 
+	//LCDWriteRegister(0xC3); //????    
+	//LCDWriteData(0x02); //82 HVmode    02 DEmode 
 	
 	LCDWriteRegister(0xCC);			// not known
 	LCDWriteData(0x10);

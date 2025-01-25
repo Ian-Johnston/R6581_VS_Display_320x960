@@ -19,6 +19,12 @@ extern "C" {
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f1xx_hal.h"
 
+HAL_StatusTypeDef EEPROM_WriteData(uint32_t address, uint32_t data);				// Prototype for uint32_t write
+uint32_t EEPROM_ReadData(uint32_t address);											// Prototype for uint32_t read
+HAL_StatusTypeDef EEPROM_Write4CharString(uint32_t address, const char* str);		// Prototype for CHAR write
+void EEPROM_Read4CharString(uint32_t address, char* buffer);						// Prototype for CHAR read
+HAL_StatusTypeDef EEPROM_ErasePage(uint32_t address);								// Prototype for Erase
+
 /* Exported functions prototypes ---------------------------------------------*/
 void Error_Handler(void);
 
