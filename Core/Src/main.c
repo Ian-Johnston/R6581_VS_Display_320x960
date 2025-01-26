@@ -534,9 +534,9 @@ int main(void) {
 
 	ClearScreen();					// Again.....
 
-	// Read pins A11/A12 - Enter timing changes on boot if DCV button held in during power up
-	GPIO_PinState pinA11 = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_11);
-	if (pinA11 == GPIO_PIN_RESET) {
+	// Read pin A12 - Enter timing changes on boot if DCV button held in during power up
+	GPIO_PinState pinA12 = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_12);
+	if (pinA12 == GPIO_PIN_SET) {
 		timingModsOnBoot = true;
 	} else {
 		timingModsOnBoot = false;

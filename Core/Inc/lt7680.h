@@ -113,12 +113,16 @@ extern uint32_t LCD_HBPD;
 extern uint32_t LCD_HFPD;
 extern uint32_t LCD_HSPW;
 extern uint32_t REFRESH_RATE;
+
+// These have been moved to main.c as part of the user selectable timings
 //#define LCD_VBPD				17			// Vertical Back Porch				17	17	17
 //#define LCD_VFPD				14			// Vertical Front Porch				15	14	14		Adafruit tft timings say 15 but per forum user changed to 14 to stop flickering
 //#define LCD_VSPW				4			// Vertical Start Position			2	4	2		Adafruit tft timings says 2 but leaves single vertical line at far right, 4 is no line but may flicker, 2 works better but has line
 //#define LCD_HBPD				50			// Horizontal Back Porch			50
 //#define LCD_HFPD				30			// Horizontal Front Porch			30
 //#define LCD_HSPW				10			// Horizontal Start Position		10
+//#define REFRESH_RATE			60			// Hz								60
+
 #define LCD_XSIZE_TFT			400			// Resolution - Horizontal pixels (320 LCD is the 400 with first 80 missing)
 #define LCD_YSIZE_TFT			960			// Resolution - Vertical Pixels
 #define HSYNC_ACTIVE			0			// 0 = HSYNC Low Active
@@ -130,7 +134,6 @@ extern uint32_t REFRESH_RATE;
 #define PDE_IDLE_STATE			0			// PDE Idle STATE
 #define PCLK_IDLE_STATE			0			// PCLK Idle State
 #define PD_IDLE_STATE			0			// PD Idle State
-//#define REFRESH_RATE			60			// Hz				60
 #define SCLK_MAX				65			// Max allowable	65
 #define MCLK_MAX				100			// Max allowable	100
 #define CCLK_MAX				100			// Max allowable	100
