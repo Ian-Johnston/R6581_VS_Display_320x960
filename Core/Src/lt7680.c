@@ -177,6 +177,68 @@ void SendAllToLT7680_LT() {
 }
 
 
+void SendAllToLT7680_LT_2() {
+
+    //Software_Reset_LT();
+    //HAL_Delay(10);
+    //LT7680_PLL_Initial_LT();                  // Initialize PLL first for stable clocks
+    //HAL_Delay(100);
+    //SDRAM_Init_LT();                          // Initialize SDRAM after the reset
+    //HAL_Delay(5);
+
+    //Set_LCD_Panel_LT();                       // Set up the panel interface
+    //HAL_Delay(100);
+
+    //WriteRegister(0x84);                      // Set backlighting Prescaler to zero which effectively turns off backlighting
+    //WriteData(0x00); // Prescaler = 00
+    //HAL_Delay(5);
+
+    //LCDConfigTurnOn_LT();
+    //HAL_Delay(5);
+
+    //LCD_HorizontalWidth_VerticalHeight_LT(LCD_XSIZE_TFT, LCD_YSIZE_TFT);
+    HAL_Delay(5);
+    //LCD_Horizontal_Non_Display_LT(LCD_HBPD);  // Horizontal Back Porch ###
+    HAL_Delay(5);
+    //LCD_HSYNC_Start_Position_LT(LCD_HFPD);    // HSYNC Start Position
+    HAL_Delay(5);
+    //LCD_HSYNC_Pulse_Width_LT(LCD_HSPW);       // HSYNC Pulse Width
+    HAL_Delay(5);
+    //LCD_Vertical_Non_Display_LT(LCD_VBPD);    // Vertical Back Porch
+    HAL_Delay(5);
+    //LCD_VSYNC_Start_Position_LT(LCD_VFPD);    // VSYNC Start Position
+    HAL_Delay(5);
+    //LCD_VSYNC_Pulse_Width_LT(LCD_VSPW);       // VSYNC Pulse Width
+    HAL_Delay(5);
+    //SetColorDepth_LT();                       // Configure canvas color depth
+    HAL_Delay(5);
+    //Configure_Main_PIP_Window_LT();
+    HAL_Delay(5);
+    //SetMainImageWidth_LT();
+    HAL_Delay(5);
+    //SetMainWindowUpperLeftX_LT();
+    HAL_Delay(5);
+    //ConfigureActiveDisplayArea_LT();
+    HAL_Delay(5);
+    //SetActiveWindow_LT();                     // Set active window dimensions
+    HAL_Delay(5);
+    //SetCanvasStartAddress_LT();
+    HAL_Delay(5);
+    //SetCanvasImageWidth_LT();
+    HAL_Delay(5);
+    //ResetGraphicWritePosition_LT();
+    HAL_Delay(5);
+    //SetGraphicRWYCoordinate_LT();
+    HAL_Delay(5);
+    //Set_MISA_LT();                            // Configure the Main Image Start Address
+    HAL_Delay(5);
+
+    Text_Mode();
+    ClearScreen();                          // Draws black 'spaces' across the whole screen - fast
+
+}
+
+
 //******************************************************************************
 // ROUTINES
 

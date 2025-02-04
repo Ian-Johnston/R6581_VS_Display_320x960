@@ -620,7 +620,10 @@ int main(void) {
 		AdaFruit_Init(); // Default - Initialize AdaFruit driver
 	}
 
-
+	// TEST sending LT7680 setup info after ST7701S setup
+	//SendAllToLT7680_LT_2();			// run subs to setup LT7680 based on Levetop info
+	//HAL_Delay(10);
+	//ConfigurePWMAndSetBrightness(BACKLIGHTFULL);  // Configure Timer-1 and PWM-1 for backlighting. Settable 0-100%
 
 //**************************************************************************************************
 // Main loop initialize
